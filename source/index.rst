@@ -11,6 +11,7 @@ Welcome to coreLang's documentation!
    :caption: Contents:
 
    assets
+   associations
    mitre/mitre
 
 

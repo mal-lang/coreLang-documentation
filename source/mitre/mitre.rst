@@ -1,5 +1,5 @@
 MITRE
-===============
+=====
 
 .. toctree::
    :maxdepth: 2

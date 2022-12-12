@@ -1,9 +1,11 @@
 Assets
-------
+======
 
 .. contents::
    :depth: 2
    :local:
+
+.. _asset_iamobject:
 
 IAMObject
 ^^^^^^^^^
@@ -24,6 +26,8 @@ successfulLockout
 lockout
 """""""
 
+.. _asset_identity:
+
 Identity
 ^^^^^^^^
 assume
@@ -33,10 +37,14 @@ lockoutFromCredentials
 lockout
 """""""
 
+.. _asset_privileges:
+
 Privileges
 ^^^^^^^^^^
 assume
 """"""
+
+.. _asset_group:
 
 Group
 ^^^^^
@@ -44,6 +52,8 @@ assume
 """"""
 lockoutFromMembers
 """"""""""""""""""
+
+.. _asset_credentials:
 
 Credentials
 ^^^^^^^^^^^
@@ -76,6 +86,8 @@ guessCredentialsFromHash
 guessCredentials
 """"""""""""""""
 
+.. _asset_information:
+
 Information
 ^^^^^^^^^^^
 read
@@ -98,6 +110,8 @@ attemptDenyFromReplica
 """"""""""""""""""""""
 attemptExtractFromReplica
 """""""""""""""""""""""""
+
+.. _asset_data:
 
 Data
 ^^^^
@@ -174,6 +188,8 @@ reverseReach
 extract
 """""""
 
+.. _asset_hardware:
+
 Hardware
 ^^^^^^^^
 attemptUseVulnerabilityFromPhysicalAccess
@@ -227,6 +243,8 @@ read
 modify
 """"""
 
+.. _asset_softwareproduct:
+
 SoftwareProduct
 ^^^^^^^^^^^^^^^
 compromiseApplications
@@ -239,6 +257,8 @@ modifyApplications
 """"""""""""""""""
 denyApplications
 """"""""""""""""
+
+.. _asset_application:
 
 Application
 ^^^^^^^^^^^
@@ -379,6 +399,8 @@ denyFromNetworkingAsset
 denyFromLockout
 """""""""""""""
 
+.. _asset_idps:
+
 IDPS
 ^^^^
 bypassEffectiveness
@@ -390,10 +412,14 @@ fullAccess
 deny
 """"
 
+.. _asset_physicalzone:
+
 PhysicalZone
 ^^^^^^^^^^^^
 gainPhysicalAccess
 """"""""""""""""""
+
+.. _asset_network:
 
 Network
 ^^^^^^^
@@ -452,12 +478,16 @@ successfulAdversaryInTheMiddle
 adversaryInTheMiddle
 """"""""""""""""""""
 
+.. _asset_routingfirewall:
+
 RoutingFirewall
 ^^^^^^^^^^^^^^^
 deny
 """"
 fullAccess
 """"""""""
+
+.. _asset_connectionrule:
 
 ConnectionRule
 ^^^^^^^^^^^^^^
@@ -498,6 +528,8 @@ attemptDeny
 deny
 """"
 
+.. _asset_user:
+
 User
 ^^^^
 bypassSecurityAwareness
@@ -533,6 +565,8 @@ successfulUnsafeUserActivity
 unsafeUserActivity
 """"""""""""""""""
 
+.. _asset_vulnerability:
+
 Vulnerability
 ^^^^^^^^^^^^^
 attemptAbuse
@@ -545,6 +579,8 @@ exploit
 """""""
 impact
 """"""
+
+.. _asset_softwarevulnerability:
 
 SoftwareVulnerability
 ^^^^^^^^^^^^^^^^^^^^^
@@ -578,6 +614,8 @@ exploitTrivially
 """"""""""""""""
 exploitWithEffort
 """""""""""""""""
+
+.. _asset_hardwarevulnerability:
 
 HardwareVulnerability
 ^^^^^^^^^^^^^^^^^^^^^
