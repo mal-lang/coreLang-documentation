@@ -9,6 +9,12 @@ Assets
 
 IAMObject
 ^^^^^^^^^
+
+.. _asset_iamobject_notpresent:
+
+notPresent
+""""""""""
+
 attemptAssume
 """""""""""""
 successfulAssume
@@ -34,6 +40,9 @@ assume
 """"""
 lockoutFromCredentials
 """"""""""""""""""""""
+
+.. _asset_identity_lockout:
+
 lockout
 """""""
 
@@ -57,6 +66,27 @@ lockoutFromMembers
 
 Credentials
 ^^^^^^^^^^^
+
+.. _asset_credentials_notdisclosed:
+
+notDisclosed
+""""""""""""
+
+.. _asset_credentials_notguessable:
+
+notGuessable
+""""""""""""
+
+.. _asset_credentials_unique:
+
+unique
+""""""
+
+.. _asset_credentials_notPhishable:
+
+notPhishable
+""""""""""""
+
 read
 """"
 write
@@ -90,14 +120,29 @@ guessCredentials
 
 Information
 ^^^^^^^^^^^
+
+.. _asset_information_read:
+
 read
 """"
+
+.. _asset_information_write:
+
 write
 """""
+
+.. _asset_information_delete:
+
 delete
 """"""
+
+.. _asset_information_deny:
+
 deny
 """"
+
+.. _asset_information_extract:
+
 extract
 """""""
 attemptReadFromReplica
@@ -141,8 +186,12 @@ attemptRead
 """""""""""
 successfulRead
 """"""""""""""
+
+.. _asset_data_read:
+
 read
 """"
+
 authorizedReadFromIAM
 """""""""""""""""""""
 authorizedReadFromApplication
@@ -153,6 +202,9 @@ attemptWrite
 """"""""""""
 successfulWrite
 """""""""""""""
+
+.. _asset_data_write:
+
 write
 """""
 authorizedWriteFromIAM
@@ -165,6 +217,9 @@ attemptDelete
 """""""""""""
 successfulDelete
 """"""""""""""""
+
+.. _asset_data_delete:
+
 delete
 """"""
 authorizedDeleteFromIAM
@@ -177,6 +232,9 @@ attemptDeny
 """""""""""
 successfulDeny
 """"""""""""""
+
+.. _asset_data_deny:
+
 deny
 """"
 denyFromLockout
@@ -226,6 +284,12 @@ successfulHardwareModifications
 """""""""""""""""""""""""""""""
 hardwareModifications
 """""""""""""""""""""
+
+.. _asset_hardware_hardwaremodificationsprotection:
+
+hardwareModificationsProtection
+"""""""""""""""""""""""""""""""
+
 bypassHardwareModificationsProtection
 """""""""""""""""""""""""""""""""""""
 hardwareModificationsProtectionBypassed
@@ -262,10 +326,19 @@ denyApplications
 
 Application
 ^^^^^^^^^^^
+
+.. _asset_application_notpresent:
+
+notPresent
+"""""""""""""""""""""""
+
 attemptUseVulnerability
 """""""""""""""""""""""
 successfulUseVulnerability
 """"""""""""""""""""""""""
+
+.. _asset_application_usevulnerability:
+
 useVulnerability
 """"""""""""""""
 attemptReverseReach
@@ -294,6 +367,9 @@ specificAccessFromLocalConnection
 """""""""""""""""""""""""""""""""
 specificAccessFromNetworkConnection
 """""""""""""""""""""""""""""""""""
+
+.. _asset_application_specificaccess:
+
 specificAccess
 """"""""""""""
 bypassContainerization
@@ -306,6 +382,9 @@ localAccess
 """""""""""
 networkAccess
 """""""""""""
+
+.. _asset_application_fullaccess:
+
 fullAccess
 """"""""""
 physicalAccessAchieved
@@ -314,8 +393,12 @@ attemptUnsafeUserActivity
 """""""""""""""""""""""""
 successfulUnsafeUserActivity
 """"""""""""""""""""""""""""
+
+.. _asset_application_unsafeuseractivity:
+
 unsafeUserActivity
 """"""""""""""""""
+
 attackerUnsafeUserActivityCapability
 """"""""""""""""""""""""""""""""""""
 attackerUnsafeUserActivityCapabilityWithReverseReach
@@ -457,6 +540,12 @@ deny
 """"
 accessNetworkData
 """""""""""""""""
+
+.. _asset_network_eavesdropdefense:
+
+eavesdropDefense
+""""""""""""""""
+
 bypassEavesdropDefense
 """"""""""""""""""""""
 eavesdropDefenseBypassed
@@ -467,6 +556,12 @@ successfulEavesdrop
 """""""""""""""""""
 eavesdrop
 """""""""
+
+.. _asset_network_adversaryinthemiddledefense:
+
+adversaryInTheMiddleDefense
+"""""""""""""""""""""""""""
+
 bypassAdversaryInTheMiddleDefense
 """""""""""""""""""""""""""""""""
 adversaryInTheMiddleDefenseBypassed
@@ -491,6 +586,17 @@ fullAccess
 
 ConnectionRule
 ^^^^^^^^^^^^^^
+
+.. _asset_connectionrule_restricted:
+
+restricted
+""""""""""
+
+.. _asset_connectionrule_payloadinspection:
+
+payloadInspection
+"""""""""""""""""
+
 bypassRestricted
 """"""""""""""""
 restrictedBypassed
@@ -532,6 +638,23 @@ deny
 
 User
 ^^^^
+
+.. _asset_user_nopasswordreuse:
+
+noPasswordReuse
+"""""""""""""""
+
+.. _asset_user_noremovablemediausage:
+
+noRemovableMediaUsage
+"""""""""""""""""""""
+
+
+.. _asset_user_securityawareness:
+
+securityAwareness
+"""""""""""""""""
+
 bypassSecurityAwareness
 """""""""""""""""""""""
 securityAwarenessBypassed
@@ -546,14 +669,23 @@ attemptSocialEngineering
 """"""""""""""""""""""""
 successfulSocialEngineering
 """""""""""""""""""""""""""
+
+.. _asset_user_socialengineering:
+
 socialEngineering
 """""""""""""""""
 attemptDeliverMaliciousRemovableMedia
 """""""""""""""""""""""""""""""""""""
 successfulDeliverMaliciousRemovableMedia
 """"""""""""""""""""""""""""""""""""""""
+
+.. _asset_user_delivermaliciousremovablemedia:
+
 deliverMaliciousRemovableMedia
 """"""""""""""""""""""""""""""
+
+.. _asset_user_phishuser:
+
 phishUser
 """""""""
 credentialTheft
@@ -562,6 +694,9 @@ attemptUnsafeUserActivity
 """""""""""""""""""""""""
 successfulUnsafeUserActivity
 """"""""""""""""""""""""""""
+
+.. _asset_user_unsafeuseractivity:
+
 unsafeUserActivity
 """"""""""""""""""
 
@@ -584,6 +719,12 @@ impact
 
 SoftwareVulnerability
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. _asset_softwarevulnerability_notpresent:
+
+notPresent
+""""""""""
+
 inherentUserInteraction
 """""""""""""""""""""""
 networkAccessAchieved
