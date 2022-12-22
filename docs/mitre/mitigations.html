@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mitigations &#8212; coreLang v1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Tactics and Techniques" href="techniques.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mitigations">
+<h1>Mitigations<a class="headerlink" href="#mitigations" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#m1036-account-use-policies" id="id1">M1036   Account Use Policies</a></p></li>
+<li><p><a class="reference internal" href="#m1015-active-directory-configuration" id="id2">M1015   Active Directory Configuration</a></p></li>
+<li><p><a class="reference internal" href="#m1049-antivirus-antimalware" id="id3">M1049   Antivirus/Antimalware</a></p></li>
+<li><p><a class="reference internal" href="#m1013-application-developer-guidance" id="id4">M1013   Application Developer Guidance</a></p></li>
+<li><p><a class="reference internal" href="#m1048-application-isolation-and-sandboxing" id="id5">M1048   Application Isolation and Sandboxing</a></p></li>
+<li><p><a class="reference internal" href="#m1047-audit" id="id6">M1047   Audit</a></p></li>
+<li><p><a class="reference internal" href="#m1040-behavior-prevention-on-endpoint" id="id7">M1040   Behavior Prevention on Endpoint</a></p></li>
+<li><p><a class="reference internal" href="#m1046-boot-integrity" id="id8">M1046   Boot Integrity</a></p></li>
+<li><p><a class="reference internal" href="#m1045-code-signing" id="id9">M1045   Code Signing</a></p></li>
+<li><p><a class="reference internal" href="#m1043-credential-access-protection" id="id10">M1043   Credential Access Protection</a></p></li>
+<li><p><a class="reference internal" href="#m1053-data-backup" id="id11">M1053   Data Backup</a></p></li>
+<li><p><a class="reference internal" href="#m1057-data-loss-prevention" id="id12">M1057   Data Loss Prevention</a></p></li>
+<li><p><a class="reference internal" href="#m1042-disable-or-remove-feature-or-program" id="id13">M1042   Disable or Remove Feature or Program</a></p></li>
+<li><p><a class="reference internal" href="#m1055-do-not-mitigate" id="id14">M1055   Do Not Mitigate</a></p></li>
+<li><p><a class="reference internal" href="#m1041-encrypt-sensitive-information" id="id15">M1041   Encrypt Sensitive Information</a></p></li>
+<li><p><a class="reference internal" href="#m1039-environment-variable-permissions" id="id16">M1039   Environment Variable Permissions</a></p></li>
+<li><p><a class="reference internal" href="#m1038-execution-prevention" id="id17">M1038   Execution Prevention</a></p></li>
+<li><p><a class="reference internal" href="#m1050-exploit-protection" id="id18">M1050   Exploit Protection</a></p></li>
+<li><p><a class="reference internal" href="#m1037-filter-network-traffic" id="id19">M1037   Filter Network Traffic</a></p></li>
+<li><p><a class="reference internal" href="#m1035-limit-access-to-resource-over-network" id="id20">M1035   Limit Access to Resource Over Network</a></p></li>
+<li><p><a class="reference internal" href="#m1034-limit-hardware-installation" id="id21">M1034   Limit Hardware Installation</a></p></li>
+<li><p><a class="reference internal" href="#m1033-limit-software-installation" id="id22">M1033   Limit Software Installation</a></p></li>
+<li><p><a class="reference internal" href="#m1032-multi-factor-authentication" id="id23">M1032   Multi-factor Authentication</a></p></li>
+<li><p><a class="reference internal" href="#m1031-network-intrusion-prevention" id="id24">M1031   Network Intrusion Prevention</a></p></li>
+<li><p><a class="reference internal" href="#m1030-network-segmentation" id="id25">M1030   Network Segmentation</a></p></li>
+<li><p><a class="reference internal" href="#m1028-operating-system-configuration" id="id26">M1028   Operating System Configuration</a></p></li>
+<li><p><a class="reference internal" href="#m1027-password-policies" id="id27">M1027   Password Policies</a></p></li>
+<li><p><a class="reference internal" href="#m1056-pre-compromise" id="id28">M1056   Pre-compromise</a></p></li>
+<li><p><a class="reference internal" href="#m1026-privileged-account-management" id="id29">M1026   Privileged Account Management</a></p></li>
+<li><p><a class="reference internal" href="#m1025-privileged-process-integrity" id="id30">M1025   Privileged Process Integrity</a></p></li>
+<li><p><a class="reference internal" href="#m1029-remote-data-storage" id="id31">M1029   Remote Data Storage</a></p></li>
+<li><p><a class="reference internal" href="#m1022-restrict-file-and-directory-permissions" id="id32">M1022   Restrict File and Directory Permissions</a></p></li>
+<li><p><a class="reference internal" href="#m1044-restrict-library-loading" id="id33">M1044   Restrict Library Loading</a></p></li>
+<li><p><a class="reference internal" href="#m1024-restrict-registry-permissions" id="id34">M1024   Restrict Registry Permissions</a></p></li>
+<li><p><a class="reference internal" href="#m1021-restrict-web-based-content" id="id35">M1021   Restrict Web-Based Content</a></p></li>
+<li><p><a class="reference internal" href="#m1054-software-configuration" id="id36">M1054   Software Configuration</a></p></li>
+<li><p><a class="reference internal" href="#m1020-ssl-tls-inspection" id="id37">M1020   SSL/TLS Inspection</a></p></li>
+<li><p><a class="reference internal" href="#m1019-threat-intelligence-program" id="id38">M1019   Threat Intelligence Program</a></p></li>
+<li><p><a class="reference internal" href="#m1051-update-software" id="id39">M1051   Update Software</a></p></li>
+<li><p><a class="reference internal" href="#m1052-user-account-control" id="id40">M1052   User Account Control</a></p></li>
+<li><p><a class="reference internal" href="#m1018-user-account-management" id="id41">M1018   User Account Management</a></p></li>
+<li><p><a class="reference internal" href="#m1017-user-training" id="id42">M1017   User Training</a></p></li>
+<li><p><a class="reference internal" href="#m1016-vulnerability-scanning" id="id43">M1016   Vulnerability Scanning</a></p></li>
+</ul>
+</div>
+<section id="m1036-account-use-policies">
+<span id="mitre-account-use-policies"></span><h2><a class="toc-backref" href="#id1">M1036   Account Use Policies</a><a class="headerlink" href="#m1036-account-use-policies" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1036/">Mitre Description</a></p>
+<p>This mitigation is not covered by the language. We do model the <a class="reference internal" href="../assets.html#asset-identity-lockout"><span class="std std-ref">lockout</span></a> from account aspect mentioned, but only if the
+attacker is able to deny all of the <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> <a class="reference internal" href="../associations.html#association-identitycredentials"><span class="std std-ref">associated</span></a> associated with an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>.
+Location and device restrictions on logins are beyond the scope of the
+language.</p>
+</section>
+<section id="m1015-active-directory-configuration">
+<span id="mitre-active-directory-configuration"></span><h2><a class="toc-backref" href="#id2">M1015   Active Directory Configuration</a><a class="headerlink" href="#m1015-active-directory-configuration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1015/">Mitre Description</a></p>
+<p>Generally, this is too implementation specific for coreLang. However, we can
+represent many of the concepts in a high-level fashion through <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets, such as <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>, <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>,
+and <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>. The <a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on
+these assets can be used to reason about restricting certain permissions or
+roles.</p>
+</section>
+<section id="m1049-antivirus-antimalware">
+<span id="mitre-antivirus-antimalware"></span><h2><a class="toc-backref" href="#id3">M1049   Antivirus/Antimalware</a><a class="headerlink" href="#m1049-antivirus-antimalware" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1049/">Mitre Description</a></p>
+<p>Antivirus or antimalware tools are explicitly represented in the language by
+the <a class="reference internal" href="../assets.html#asset-idps"><span class="std std-ref">IDPS</span></a> asset that is used to <a class="reference internal" href="../associations.html#association-appprotection"><span class="std std-ref">safeguard</span></a> <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">applications</span></a> from
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability"><span class="std std-ref">software vulnerabilities</span></a> and <a class="reference internal" href="../assets.html#asset-application-unsafeuseractivity"><span class="std std-ref">unsafe
+user activity</span></a> that was induced by the
+attacker through <a class="reference internal" href="../assets.html#asset-user-socialengineering"><span class="std std-ref">social engineering</span></a>.</p>
+</section>
+<section id="m1013-application-developer-guidance">
+<span id="mitre-application-developer-guidance"></span><h2><a class="toc-backref" href="#id4">M1013   Application Developer Guidance</a><a class="headerlink" href="#m1013-application-developer-guidance" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1013/">Mitre Description</a></p>
+<p>This is not generally covered by the language as it is both too implementation
+specific and occurs outside of the actual attack timeline. However, the
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability-notpresent"><span class="std std-ref">notPresent</span></a> defense on
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability"><span class="std std-ref">SoftwareVulnerability</span></a> can be used to reason about restricting
+particular vulnerabilities in <a class="reference internal" href="../assets.html#asset-softwareproduct"><span class="std std-ref">software products</span></a>
+or <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">applications</span></a>. The guidance that has to deal with
+principle of least privilege can be represented via the
+<a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a>
+assets.</p>
+</section>
+<section id="m1048-application-isolation-and-sandboxing">
+<span id="mitre-application-isolation-and-sanboxing"></span><h2><a class="toc-backref" href="#id5">M1048   Application Isolation and Sandboxing</a><a class="headerlink" href="#m1048-application-isolation-and-sandboxing" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1048/">Mitre Description</a></p>
+<p><a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a> can <a class="reference internal" href="../associations.html#association-appexecution"><span class="std std-ref">host</span></a> other <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a> in
+coreLang and this association represents any type of containerization,
+sandboxing, or isolation. If the attacker gains <a class="reference internal" href="../assets.html#asset-application-fullaccess"><span class="std std-ref">full access</span></a> to the
+container they can attempt to connect to the host <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> since
+they are assumed to be able to bypass some of the sandboxing mechanisms.
+However, they are still somewhat restricted and cannot perform any other
+actions unless they have some <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">privileges</span></a> on the host
+or are able to exploit a <a class="reference internal" href="../assets.html#asset-softwarevulnerability"><span class="std std-ref">vulnerability</span></a>.
+If the attacker gets <a class="reference internal" href="../assets.html#asset-application-specificaccess"><span class="std std-ref">low privilege access</span></a> on the container the language still
+assumes that there might be convoluted situations where with considerable
+effort they can break the containerization and connect to the host
+application, but these are very unlikely.</p>
+</section>
+<section id="m1047-audit">
+<span id="mitre-audit"></span><h2><a class="toc-backref" href="#id6">M1047   Audit</a><a class="headerlink" href="#m1047-audit" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1047/">Mitre Description</a></p>
+<p>The Audit mitigation does not have a straightforward equivalent in
+coreLang, since it is very specific to the various techniques it applies to.
+Generally, this mitigation suggests regular reviews looking for artifacts that
+indicate an attacker’s actions. It is generally covered by <a class="reference internal" href="../assets.html#asset-idps"><span class="std std-ref">IDPS</span></a>
+asset and attack steps which require additional effort to succeed, the
+implication being that the attacker needs to invest additional time to succeed
+in order to avoid detection.</p>
+</section>
+<section id="m1040-behavior-prevention-on-endpoint">
+<span id="mitre-behavior-prevention-on-endpoint"></span><h2><a class="toc-backref" href="#id7">M1040   Behavior Prevention on Endpoint</a><a class="headerlink" href="#m1040-behavior-prevention-on-endpoint" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1040/">Mitre Description</a></p>
+<p>Behavior Prevention on Endpoint from coreLang’s perspective is very similar to
+the <a class="reference internal" href="#mitre-antivirus-antimalware"><span class="std std-ref">M1049   Antivirus/Antimalware</span></a> mitigation, and can usually be modeled
+the same way. If a technique or scenario suggests that one of these
+mitigations should be more narrowly focused on a particular exploit avenue
+then the <a class="reference internal" href="../assets.html#asset-softwarevulnerability-notpresent"><span class="std std-ref">notPresent</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability"><span class="std std-ref">SoftwareVulnerability</span></a> representing the vulnerable feature could
+also be used as a more precise way of restricting certain attack vectors.</p>
+</section>
+<section id="m1046-boot-integrity">
+<span id="mitre-boot-integrity"></span><h2><a class="toc-backref" href="#id8">M1046   Boot Integrity</a><a class="headerlink" href="#m1046-boot-integrity" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1046/">Mitre Description</a></p>
+<p>Many of the techniques that suggest this mitigation could use the same
+mechanisms that were described for <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a>, with the binary
+<a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> representing the system, BIOS, or EFI image and the
+<a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> being the operating system or firmware.</p>
+<p>If the boot integrity check is done by specialized hardware the
+<a class="reference internal" href="../assets.html#asset-hardware-hardwaremodificationsprotection"><span class="std std-ref">hardwareModificationsProtection</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-hardware"><span class="std std-ref">Hardware</span></a> asset can be used to represent the boot integrity check.</p>
+</section>
+<section id="m1045-code-signing">
+<span id="mitre-code-signing"></span><h2><a class="toc-backref" href="#id9">M1045   Code Signing</a><a class="headerlink" href="#m1045-code-signing" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1045/">Mitre Description</a></p>
+<p>The <a class="reference internal" href="../associations.html#association-signingcredentials"><span class="std std-ref">Signing Credentials</span></a> association
+between <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> and <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> can be used to
+represent signing of any type of <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a>. The signed
+<a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> cannot be <a class="reference internal" href="../assets.html#asset-data-write"><span class="std std-ref">overwritten</span></a> by the
+attacker unless they were able to compromise the signing
+<a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>.</p>
+<p>Often this signing mitigation is suggested for release binaries or source
+code. For these situations the <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> can then be specified as
+<a class="reference internal" href="../associations.html#association-infocontainment"><span class="std std-ref">containing</span></a> a <a class="reference internal" href="../assets.html#asset-softwareproduct"><span class="std std-ref">SoftwareProduct</span></a>
+designated as the <a class="reference internal" href="../associations.html#association-appsoftwareproduct"><span class="std std-ref">software package</span></a>
+used by one or more <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a>.</p>
+<p>If the <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> being signed do not represent a software package in
+binary or source code form they can be specified as a <a class="reference internal" href="../associations.html#association-data-dependence"><span class="std std-ref">dependence</span></a> for the <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> instead.</p>
+</section>
+<section id="m1043-credential-access-protection">
+<span id="mitre-credential-access-protection"></span><h2><a class="toc-backref" href="#id10">M1043   Credential Access Protection</a><a class="headerlink" href="#m1043-credential-access-protection" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1043/">Mitre Description</a></p>
+<p>There are two separate facets that this mitigation entails. First,
+restricting the security context in which certain drivers are executed to
+limit the impacts of successful attacker exploitation. This behavior is very
+similar to the other mitigations that deal with the least privilege principle,
+such as <a class="reference internal" href="#mitre-privileged-account-management"><span class="std std-ref">M1026   Privileged Account Management</span></a> and
+<a class="reference internal" href="#mitre-restrict-registry-permissions"><span class="std std-ref">M1024   Restrict Registry Permissions</span></a>. Second, making sure that password
+storing is encrypted, which is very similar to
+<a class="reference internal" href="#mitre-encrypt-sensitive-information"><span class="std std-ref">M1041   Encrypt Sensitive Information</span></a>.</p>
+</section>
+<section id="m1053-data-backup">
+<span id="mitre-data-backup"></span><h2><a class="toc-backref" href="#id11">M1053   Data Backup</a><a class="headerlink" href="#m1053-data-backup" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1053/">Mitre Description</a></p>
+<p>The <a class="reference internal" href="../associations.html#association-replica"><span class="std std-ref">Replica</span></a> association between
+<a class="reference internal" href="../assets.html#asset-information"><span class="std std-ref">Information</span></a> and <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> was specifically introduced
+during the validation process to implement this mitigation. An attacker that
+is able to <a class="reference internal" href="../assets.html#asset-data-read"><span class="std std-ref">read</span></a> a replica is granted <a class="reference internal" href="../assets.html#asset-data-read"><span class="std std-ref">read</span></a>
+on all other replicas since they contain the same information. However, for
+the <a class="reference internal" href="../assets.html#asset-information"><span class="std std-ref">Information</span></a> to suffer a <a class="reference internal" href="../assets.html#asset-information-write"><span class="std std-ref">write</span></a>,
+<a class="reference internal" href="../assets.html#asset-information-delete"><span class="std std-ref">delete</span></a>, or <a class="reference internal" href="../assets.html#asset-information-deny"><span class="std std-ref">deny</span></a> all of its
+replicas need to have been impacted by <a class="reference internal" href="../assets.html#asset-data-write"><span class="std std-ref">write</span></a>,
+<a class="reference internal" href="../assets.html#asset-data-delete"><span class="std std-ref">delete</span></a>, or <a class="reference internal" href="../assets.html#asset-data-deny"><span class="std std-ref">deny</span></a>, respectively. The
+language assumes that any of the replicas can be used to recover the
+information. This means that it does not cover more intricate scenarios, such
+as gradual poisoning of the backups or exploiting voting system mechanisms.</p>
+</section>
+<section id="m1057-data-loss-prevention">
+<span id="mitre-data-loss-prevention"></span><h2><a class="toc-backref" href="#id12">M1057   Data Loss Prevention</a><a class="headerlink" href="#m1057-data-loss-prevention" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1057/">Mitre Description</a></p>
+<p>This mitigation comprises of two separate components. First, restricting
+access to the data is functionally similar to
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.  Second, restricting the
+ability of the attacker to exfiltrate the data if they have accessed it is
+covered by the <a class="reference internal" href="../assets.html#asset-connectionrule-payloadinspection"><span class="std std-ref">payloadInspection</span></a> defense on
+the <a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRule</span></a> asset as detailed in the
+<a class="reference internal" href="#mitre-network-intrusion-prevention"><span class="std std-ref">M1031   Network Intrusion Prevention</span></a> mitigation.</p>
+<p>These two aspects match how exfiltration requires both access and network
+connectivity as discussed in <a class="reference internal" href="techniques.html#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a>.</p>
+</section>
+<section id="m1042-disable-or-remove-feature-or-program">
+<span id="mitre-disable-or-remove-feature-or-program"></span><h2><a class="toc-backref" href="#id13">M1042   Disable or Remove Feature or Program</a><a class="headerlink" href="#m1042-disable-or-remove-feature-or-program" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1042/">Mitre Description</a></p>
+<p>This is more of a structural mitigation, but the
+<a class="reference internal" href="../assets.html#asset-application-notpresent"><span class="std std-ref">notPresent</span></a> defense on <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> is an
+explicit way to reason about it.</p>
+</section>
+<section id="m1055-do-not-mitigate">
+<span id="mitre-do-not-mitigate"></span><h2><a class="toc-backref" href="#id14">M1055   Do Not Mitigate</a><a class="headerlink" href="#m1055-do-not-mitigate" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1055/">Mitre Description</a></p>
+<p>Not covered by the language as it is an indication of when not to apply other
+mitigations.</p>
+</section>
+<section id="m1041-encrypt-sensitive-information">
+<span id="mitre-encrypt-sensitive-information"></span><h2><a class="toc-backref" href="#id15">M1041   Encrypt Sensitive Information</a><a class="headerlink" href="#m1041-encrypt-sensitive-information" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1041/">Mitre Description</a></p>
+<p>This can be represent in coreLang by using <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> to
+<a class="reference internal" href="../associations.html#association-encryptioncredentials"><span class="std std-ref">encrypt</span></a> the relevant
+<a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a>. The encrypted <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> cannot be  <a class="reference internal" href="../assets.html#asset-data-read"><span class="std std-ref">read</span></a>, <a class="reference internal" href="../assets.html#asset-data-write"><span class="std std-ref">overwritten</span></a>, <a class="reference internal" href="../assets.html#asset-data-delete"><span class="std std-ref">deleted</span></a> by the attacker unless they were able to compromise the
+encryption <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>.  However, the <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> can still
+be <a class="reference internal" href="../assets.html#asset-data-deny"><span class="std std-ref">denied</span></a>.</p>
+</section>
+<section id="m1039-environment-variable-permissions">
+<span id="mitre-environment-variable-permissions"></span><h2><a class="toc-backref" href="#id16">M1039   Environment Variable Permissions</a><a class="headerlink" href="#m1039-environment-variable-permissions" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1039/">Mitre Description</a></p>
+<p>This mitigation is just a more specific application of
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>. If the environment
+variables can be used to hijack the execution of an <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a>
+the <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> representing them can be defined as a <a class="reference internal" href="../associations.html#association-data-dependence"><span class="std std-ref">dependence</span></a> for it.</p>
+</section>
+<section id="m1038-execution-prevention">
+<span id="mitre-execution-prevention"></span><h2><a class="toc-backref" href="#id17">M1038   Execution Prevention</a><a class="headerlink" href="#m1038-execution-prevention" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1038/">Mitre Description</a></p>
+<p>A large number of facets are encompassed by this mitigation, as the name
+would imply. Any mechanism that could restrict the ability of the attacker to
+gain execution is included. As such, these have already been covered in other
+mitigations, for example <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a>,
+<a class="reference internal" href="#mitre-antivirus-antimalware"><span class="std std-ref">M1049   Antivirus/Antimalware</span></a>,
+<a class="reference internal" href="#mitre-disable-or-remove-feature-or-program"><span class="std std-ref">M1042   Disable or Remove Feature or Program</span></a>, and
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.</p>
+</section>
+<section id="m1050-exploit-protection">
+<span id="mitre-exploit-protection"></span><h2><a class="toc-backref" href="#id18">M1050   Exploit Protection</a><a class="headerlink" href="#m1050-exploit-protection" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1050/">Mitre Description</a></p>
+<p>From coreLang’s perspective this is functionally identical to
+<a class="reference internal" href="#mitre-antivirus-antimalware"><span class="std std-ref">M1049   Antivirus/Antimalware</span></a>.</p>
+</section>
+<section id="m1037-filter-network-traffic">
+<span id="mitre-filter-network-traffic"></span><h2><a class="toc-backref" href="#id19">M1037   Filter Network Traffic</a><a class="headerlink" href="#m1037-filter-network-traffic" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1037/">Mitre Description</a></p>
+<p>Protocol-based traffic filtering is implemented in coreLang by using the
+<a class="reference internal" href="../assets.html#asset-connectionrule-restricted"><span class="std std-ref">restricted</span></a> defense on <a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRule</span></a>
+or by changing the model structure and removing <a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRules</span></a>.  The <a class="reference internal" href="../assets.html#asset-connectionrule-restricted"><span class="std std-ref">restricted</span></a> defense
+stops all traffic through the asset. This makes the
+<a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRule</span></a> behave as if it were not present in the model,
+which is in line with the structural approach of simply removing the asset.
+However, <a class="reference internal" href="../assets.html#asset-connectionrule-restricted"><span class="std std-ref">restricted</span></a> is assumed to be imperfect and
+that the attacker may find ways to bypass the filtering with substantial
+effort.</p>
+</section>
+<section id="m1035-limit-access-to-resource-over-network">
+<span id="mitre-limit-access-to-resource-over-network"></span><h2><a class="toc-backref" href="#id20">M1035   Limit Access to Resource Over Network</a><a class="headerlink" href="#m1035-limit-access-to-resource-over-network" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1035/">Mitre Description</a></p>
+<p>Many of the implementations suggested by this mitigation have to do with
+restricting particular connections based on certain protocols, ports, or
+configurations. All of these can be implemented using the same mechanisms that
+were mentioned for <a class="reference internal" href="#mitre-filter-network-traffic"><span class="std std-ref">M1037   Filter Network Traffic</span></a>. The scenarios
+where remote desktop gateways or virtual private networks are suggested can
+utilise an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> and <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> <a class="reference internal" href="../associations.html#association-identitycredentials"><span class="std std-ref">pair</span></a>. Where the <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> represents
+the security context on the <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> endpoints of the
+communication and the <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> represent the keys used to
+authenticate and encrypt <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> traversing the tunnel.</p>
+</section>
+<section id="m1034-limit-hardware-installation">
+<span id="mitre-limit-hardware-installation"></span><h2><a class="toc-backref" href="#id21">M1034   Limit Hardware Installation</a><a class="headerlink" href="#m1034-limit-hardware-installation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1034/">Mitre Description</a></p>
+<p>The <a class="reference internal" href="../assets.html#asset-hardware-hardwaremodificationsprotection"><span class="std std-ref">hardwareModificationsProtection</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-hardware"><span class="std std-ref">Hardware</span></a> asset prevents unsafe user actions on the hardware
+system.</p>
+</section>
+<section id="m1033-limit-software-installation">
+<span id="mitre-limit-software-installation"></span><h2><a class="toc-backref" href="#id22">M1033   Limit Software Installation</a><a class="headerlink" href="#m1033-limit-software-installation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1033/">Mitre Description</a></p>
+<p>Due to the fact that the attacker cannot introduce new assets into the model
+as a result of triggering attack steps software installation is generally not
+covered by the language. However, the suggestions for
+<a class="reference internal" href="#mitre-disable-or-remove-feature-or-program"><span class="std std-ref">M1042   Disable or Remove Feature or Program</span></a> are applicable to this
+mitigation as well, as they are alike.</p>
+</section>
+<section id="m1032-multi-factor-authentication">
+<span id="mitre-multi-factor-authentication"></span><h2><a class="toc-backref" href="#id23">M1032   Multi-factor Authentication</a><a class="headerlink" href="#m1032-multi-factor-authentication" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1032/">Mitre Description</a></p>
+<p>The <a class="reference internal" href="../associations.html#association-conditionalauthentication"><span class="std std-ref">Conditional Authentication</span></a>
+association between <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> is used to
+represent multi-factor authentication in coreLang. This protects the primary
+<a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> from being compromised unless the additional factors
+specified have also been compromised by the attacker. This association can be
+nested and multiple required factors can be specified for the same
+<a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>.</p>
+<p>Furthermore, three defenses on the <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> asset exist that
+allow the modeler to define its characteristics
+<a class="reference internal" href="../assets.html#asset-credentials-notguessable"><span class="std std-ref">notGuessable</span></a>, <a class="reference internal" href="../assets.html#asset-credentials-unique"><span class="std std-ref">unique</span></a>, and
+<a class="reference internal" href="../assets.html#asset-credentials-notphishable"><span class="std std-ref">notPhishable</span></a>. These allow <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> to
+represent a variety of authentication mechanisms, from biometrics to one-time
+passwords.</p>
+</section>
+<section id="m1031-network-intrusion-prevention">
+<span id="mitre-network-intrusion-prevention"></span><h2><a class="toc-backref" href="#id24">M1031   Network Intrusion Prevention</a><a class="headerlink" href="#m1031-network-intrusion-prevention" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1031/">Mitre Description</a></p>
+<p>Payload based filtering in coreLang is implemented via the
+<a class="reference internal" href="../assets.html#asset-connectionrule-payloadinspection"><span class="std std-ref">payloadInspection</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRule</span></a> asset. This defense prevents the attacker from
+being able to <a class="reference internal" href="../assets.html#asset-application-usevulnerability"><span class="std std-ref">exploit vulnerabilities</span></a> or <a class="reference internal" href="../assets.html#asset-application-unsafeuseractivity"><span class="std std-ref">induce unsafe user
+actions</span></a> on the
+<a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a> it reaches via inspected
+<a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">Connection Rules</span></a>, as the payload inspection is
+expected to detect the anomalous patterns and filter the traffic out. However,
+the adversary would still be able to utilize legitimate
+<a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> to authenticate since these would not stand out as
+atypical.</p>
+<p>The <a class="reference internal" href="../assets.html#asset-network-adversaryinthemiddledefense"><span class="std std-ref">adversaryInTheMiddleDefense</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-network"><span class="std std-ref">Network</span></a> asset can also be used to protect <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> that
+<a class="reference internal" href="../associations.html#association-dataintransit"><span class="std std-ref">transit</span></a> the <a class="reference internal" href="../assets.html#asset-network"><span class="std std-ref">Network</span></a> from
+<a class="reference internal" href="techniques.html#mitre-technique-adversary-in-the-middle"><span class="std std-ref">Adversary-in-the-Middle</span></a> attacks.</p>
+</section>
+<section id="m1030-network-segmentation">
+<span id="mitre-network-segmentation"></span><h2><a class="toc-backref" href="#id25">M1030   Network Segmentation</a><a class="headerlink" href="#m1030-network-segmentation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1030/">Mitre Description</a></p>
+<p>From coreLang’s viewpoint this mitigation is equivalent to
+<a class="reference internal" href="#mitre-filter-network-traffic"><span class="std std-ref">M1037   Filter Network Traffic</span></a>.</p>
+</section>
+<section id="m1028-operating-system-configuration">
+<span id="mitre-operating-system-configuration"></span><h2><a class="toc-backref" href="#id26">M1028   Operating System Configuration</a><a class="headerlink" href="#m1028-operating-system-configuration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1028/">Mitre Description</a></p>
+<p>This mitigation defines a specific place, the operating system, where security
+improvements can be made. From coreLang’s perspective the operating system is
+simply an <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a>. Usually, it will host other
+<a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a> <a class="reference internal" href="../associations.html#association-appexecution"><span class="std std-ref">running on</span></a> it and sometimes the <a class="reference internal" href="../assets.html#asset-hardware"><span class="std std-ref">Hardware</span></a> it
+<a class="reference internal" href="../associations.html#association-sysexecution"><span class="std std-ref">runs on</span></a> will also be represented.</p>
+<p>Most of the implementations suggested by this mitigation for various
+techniques are covered by other mitigations, they are just applied to
+operating system components. See
+<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>,
+<a class="reference internal" href="#mitre-disable-or-remove-feature-or-program"><span class="std std-ref">M1042   Disable or Remove Feature or Program</span></a>,
+<a class="reference internal" href="#mitre-limit-hardware-installation"><span class="std std-ref">M1034   Limit Hardware Installation</span></a>, <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a>,
+<a class="reference internal" href="#mitre-privileged-account-management"><span class="std std-ref">M1026   Privileged Account Management</span></a>, and
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.</p>
+</section>
+<section id="m1027-password-policies">
+<span id="mitre-password-policies"></span><h2><a class="toc-backref" href="#id27">M1027   Password Policies</a><a class="headerlink" href="#m1027-password-policies" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1027/">Mitre Description</a></p>
+<p>In addition to the <a class="reference internal" href="../assets.html#asset-credentials-notguessable"><span class="std std-ref">notGuessable</span></a>, <a class="reference internal" href="../assets.html#asset-credentials-unique"><span class="std std-ref">unique</span></a>, and
+<a class="reference internal" href="../assets.html#asset-credentials-notphishable"><span class="std std-ref">notPhishable</span></a> defenses on <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>
+already mentioned by <a class="reference internal" href="#mitre-multi-factor-authentication"><span class="std std-ref">M1032   Multi-factor Authentication</span></a>, the language
+also makes assumptions regarding the password strength based on the
+<a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a>’s <a class="reference internal" href="../assets.html#asset-user-securityawareness"><span class="std std-ref">security awareness</span></a>.</p>
+<p>If a <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> asset is guessable(it does not have the
+<a class="reference internal" href="../assets.html#asset-credentials-notguessable"><span class="std std-ref">notGuessable</span></a> defense enabled) and it has an
+<a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> <a class="reference internal" href="../associations.html#association-identitycredentials"><span class="std std-ref">associated</span></a> with
+it, which in turn has a <a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a> <a class="reference internal" href="../associations.html#association-userassignedindentities"><span class="std std-ref">associated</span></a> with it, the <a class="reference internal" href="../assets.html#asset-user-securityawareness"><span class="std std-ref">security awareness</span></a> of that <a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a> will determine how
+easy it is to guess the <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>.</p>
+</section>
+<section id="m1056-pre-compromise">
+<span id="mitre-pre-compromise"></span><h2><a class="toc-backref" href="#id28">M1056   Pre-compromise</a><a class="headerlink" href="#m1056-pre-compromise" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1056/">Mitre Description</a></p>
+<p>The aspects of the attack before the actual compromise are beyond the scope of
+coreLang.</p>
+</section>
+<section id="m1026-privileged-account-management">
+<span id="mitre-privileged-account-management"></span><h2><a class="toc-backref" href="#id29">M1026   Privileged Account Management</a><a class="headerlink" href="#m1026-privileged-account-management" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1026/">Mitre Description</a></p>
+<p>Privileged Account Management is a more targeted instance of
+<a class="reference internal" href="#mitre-user-account-management"><span class="std std-ref">M1018   User Account Management</span></a>, it places the emphasis on the access
+control roles that are very impactful, such as SYSTEM and root.</p>
+</section>
+<section id="m1025-privileged-process-integrity">
+<span id="mitre-privileged-process-integrity"></span><h2><a class="toc-backref" href="#id30">M1025   Privileged Process Integrity</a><a class="headerlink" href="#m1025-privileged-process-integrity" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1025/">Mitre Description</a></p>
+<p>This mitigation highlights the importance of protecting software processes,
+mentioned in <a class="reference internal" href="#mitre-execution-prevention"><span class="std std-ref">M1038   Execution Prevention</span></a>, with a particular emphasis on
+the <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a> aspects for Windows systems, for elevated
+privileges processes.</p>
+<p>In coreLang a privileged process would be one which is executed in an elevated
+security context, represented by one of the <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a>
+assets(<a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>, <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>, or <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>)
+with <a class="reference internal" href="../associations.html#association-executionprivilegeaccess"><span class="std std-ref">Execution Privileges Access</span></a>
+on the <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a> depicting the process, that also has
+<a class="reference internal" href="../associations.html#association-executionprivilegeaccess"><span class="std std-ref">Execution Privileges Access</span></a> or
+<a class="reference internal" href="../associations.html#association-highprivilegeapplicationaccess"><span class="std std-ref">High Privileges Access</span></a> on
+other <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a>.</p>
+</section>
+<section id="m1029-remote-data-storage">
+<span id="mitre-remote-data-storage"></span><h2><a class="toc-backref" href="#id31">M1029   Remote Data Storage</a><a class="headerlink" href="#m1029-remote-data-storage" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1029/">Mitre Description</a></p>
+<p>Much of this technique has to do with structural improvements where the
+<a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a> the attacker is seeking to attain are not present on systems
+that are deemed more vulnerable. Other aspects are creating backups, covered
+by <a class="reference internal" href="#mitre-data-backup"><span class="std std-ref">M1053   Data Backup</span></a>, and encrypting sensitive data, discussed in
+<a class="reference internal" href="#mitre-encrypt-sensitive-information"><span class="std std-ref">M1041   Encrypt Sensitive Information</span></a>.</p>
+</section>
+<section id="m1022-restrict-file-and-directory-permissions">
+<span id="mitre-restrict-file-and-directory-permissions"></span><h2><a class="toc-backref" href="#id32">M1022   Restrict File and Directory Permissions</a><a class="headerlink" href="#m1022-restrict-file-and-directory-permissions" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1022/">Mitre Description</a></p>
+<p><a class="reference internal" href="../associations.html#association-readprivileges"><span class="std std-ref">Read</span></a>, <a class="reference internal" href="../associations.html#association-writeprivileges"><span class="std std-ref">Write</span></a>, and <a class="reference internal" href="../associations.html#association-deleteprivileges"><span class="std std-ref">Delete</span></a> privileges can be defined for <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets(<a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>, <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>, or
+<a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>) to designate their permissions on <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a>,
+which is how files and directories are represented in coreLang.</p>
+<p>This mitigation suggests structural changes to the models by removing
+extraneous privileges. The <a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets can be used to speculate about the attack
+vectors that removing these permission would thwart. <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>
+are a good candidate for modelling these scenarios since they can be
+associated with either an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> or a <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a> as
+<a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> to represent that those
+<a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a> act as a subset of permissions available to those
+roles. Therefore the unnecessary permissions can be represented as
+<a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> of the <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>
+or <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>.</p>
+</section>
+<section id="m1044-restrict-library-loading">
+<span id="mitre-restrict-library-loading"></span><h2><a class="toc-backref" href="#id33">M1044   Restrict Library Loading</a><a class="headerlink" href="#m1044-restrict-library-loading" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1044/">Mitre Description</a></p>
+<p>From coreLang’s viewpoint this is a more specific example of
+<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>.</p>
+</section>
+<section id="m1024-restrict-registry-permissions">
+<span id="mitre-restrict-registry-permissions"></span><h2><a class="toc-backref" href="#id34">M1024   Restrict Registry Permissions</a><a class="headerlink" href="#m1024-restrict-registry-permissions" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1024/">Mitre Description</a></p>
+<p>This is similar to <a class="reference internal" href="#mitre-environment-variable-permissions"><span class="std std-ref">M1039   Environment Variable Permissions</span></a>.</p>
+</section>
+<section id="m1021-restrict-web-based-content">
+<span id="mitre-restrict-web-based-content"></span><h2><a class="toc-backref" href="#id35">M1021   Restrict Web-Based Content</a><a class="headerlink" href="#m1021-restrict-web-based-content" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1021/">Mitre Description</a></p>
+<p>Most of the restrictions suggested are applied on the host side, which would
+match <a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>.</p>
+</section>
+<section id="m1054-software-configuration">
+<span id="mitre-software-configuration"></span><h2><a class="toc-backref" href="#id36">M1054   Software Configuration</a><a class="headerlink" href="#m1054-software-configuration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1054/">Mitre Description</a></p>
+<p>This is a more general application of the same mechanisms described for
+<a class="reference internal" href="#mitre-operating-system-configuration"><span class="std std-ref">M1028   Operating System Configuration</span></a>.</p>
+</section>
+<section id="m1020-ssl-tls-inspection">
+<span id="mitre-ssl-tls-inspection"></span><h2><a class="toc-backref" href="#id37">M1020   SSL/TLS Inspection</a><a class="headerlink" href="#m1020-ssl-tls-inspection" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1020/">Mitre Description</a></p>
+<p>This is not possible in coreLang. If the <a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">Connection
+Rule</span></a>’s <a class="reference internal" href="../assets.html#asset-connectionrule-payloadinspection"><span class="std std-ref">Payload
+Inspection</span></a> defense is bypassed due
+<a class="reference internal" href="../associations.html#association-encryptioncredentials"><span class="std std-ref">encrypted</span></a> <a class="reference internal" href="../assets.html#asset-data"><span class="std std-ref">Data</span></a>
+traversing the <a class="reference internal" href="../assets.html#asset-connectionrule"><span class="std std-ref">ConnectionRule</span></a> there is no mechanism through which
+the inspection can be restored.</p>
+</section>
+<section id="m1019-threat-intelligence-program">
+<span id="mitre-threat-intelligence-program"></span><h2><a class="toc-backref" href="#id38">M1019   Threat Intelligence Program</a><a class="headerlink" href="#m1019-threat-intelligence-program" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1019/">Mitre Description</a></p>
+<p>The aspects described are beyond the scope of coreLang modeling.</p>
+</section>
+<section id="m1051-update-software">
+<span id="mitre-update-software"></span><h2><a class="toc-backref" href="#id39">M1051   Update Software</a><a class="headerlink" href="#m1051-update-software" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1051/">Mitre Description</a></p>
+<p>This can be represented in the same way as the
+<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>.</p>
+</section>
+<section id="m1052-user-account-control">
+<span id="mitre-user-account-control"></span><h2><a class="toc-backref" href="#id40">M1052   User Account Control</a><a class="headerlink" href="#m1052-user-account-control" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1052/">Mitre Description</a></p>
+<p>This mitigation has to do with the configuration of the Windows User Access
+Control feature to reduce the risks of privilege escalation. It can be
+implemented by removing, or enabling the
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability-notpresent"><span class="std std-ref">notPresent</span></a> defense on, the
+<a class="reference internal" href="../assets.html#asset-softwarevulnerability"><span class="std std-ref">SoftwareVulnerability</span></a> described in the
+<a class="reference internal" href="techniques.html#mitre-technique-exploit-for-privilege-escalation"><span class="std std-ref">Exploitation for Privilege Escalation</span></a> technique.</p>
+</section>
+<section id="m1018-user-account-management">
+<span id="mitre-user-account-management"></span><h2><a class="toc-backref" href="#id41">M1018   User Account Management</a><a class="headerlink" href="#m1018-user-account-management" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1018/">Mitre Description</a></p>
+<p>This mitigation is analogous to
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.</p>
+<p><a class="reference internal" href="../associations.html#association-executionprivilegeaccess"><span class="std std-ref">Execution</span></a>, <a class="reference internal" href="../associations.html#association-highprivilegeapplicationaccess"><span class="std std-ref">High</span></a>, and <a class="reference internal" href="../associations.html#association-lowprivilegeapplicationaccess"><span class="std std-ref">Low</span></a> privileges can be defined for
+<a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets(<a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>, <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>,
+or <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>) to designate their permissions for
+<a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a>.</p>
+<p><a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets can also be granted <a class="reference internal" href="../associations.html#association-accountmanagement"><span class="std std-ref">management</span></a> privileges on other <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets.</p>
+<p>This mitigation suggests structural changes to the models by removing
+extraneous privileges. The <a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets can be used to speculate about the attack
+vectors that removing these permissions would thwart. <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>
+are a good candidate for modelling these scenarios since they can be
+associated with either an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> or a <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a> as
+<a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> to represent that those
+<a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a> act as a subset of permissions available to those
+roles. Therefore the unnecessary permissions can be represented as
+<a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> of the <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a>
+or <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a>.</p>
+</section>
+<section id="m1017-user-training">
+<span id="mitre-user-training"></span><h2><a class="toc-backref" href="#id42">M1017   User Training</a><a class="headerlink" href="#m1017-user-training" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1017/">Mitre Description</a></p>
+<p>The principle way to represent this technique in coreLang is the
+<a class="reference internal" href="../assets.html#asset-user-securityawareness"><span class="std std-ref">Security Awareness</span></a> defense on the
+<a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a>. This defense prevents a variety of disruptions enabled by
+<a class="reference internal" href="../assets.html#asset-user-socialengineering"><span class="std std-ref">Social Engineering</span></a>, such as
+<a class="reference internal" href="../assets.html#asset-user-phishuser"><span class="std std-ref">phishing the user</span></a> for <a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a>
+or tricking them into performing <a class="reference internal" href="../assets.html#asset-user-unsafeuseractivity"><span class="std std-ref">unsafe user actions</span></a> on <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a>.</p>
+<p>Additionally, two separate more specialized defenses, also exist on the
+<a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a>. <a class="reference internal" href="../assets.html#asset-user-nopasswordreuse"><span class="std std-ref">No Passoward Reuse</span></a>
+specifies if a particular <a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a> will use the same
+<a class="reference internal" href="../assets.html#asset-credentials"><span class="std std-ref">Credentials</span></a> for multiple purposes. <a class="reference internal" href="../assets.html#asset-user-noremovablemediausage"><span class="std std-ref">No Removable Media
+Usage</span></a> defines if a <a class="reference internal" href="../assets.html#asset-user"><span class="std std-ref">User</span></a> will
+spread attacks that <a class="reference internal" href="../assets.html#asset-user-delivermaliciousremovablemedia"><span class="std std-ref">propagate through removable media
+drives</span></a>.</p>
+</section>
+<section id="m1016-vulnerability-scanning">
+<span id="mitre-vulnerability-scanning"></span><h2><a class="toc-backref" href="#id43">M1016   Vulnerability Scanning</a><a class="headerlink" href="#m1016-vulnerability-scanning" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://attack.mitre.org/mitigations/M1016/">Mitre Description</a></p>
+<p>This can be represented in the same way as the
+<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">coreLang</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../assets.html">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../associations.html">Associations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mitre.html">MITRE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="techniques.html">Tactics and Techniques</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mitigations</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="mitre.html">MITRE</a><ul>
+      <li>Previous: <a href="techniques.html" title="previous chapter">Tactics and Techniques</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Andrei Buhaiu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/mitre/mitigations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
