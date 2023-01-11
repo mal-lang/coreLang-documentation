@@ -615,7 +615,7 @@ Control feature to reduce the risks of privilege escalation. It can be
 implemented by removing, or enabling the
 :ref:`asset_softwarevulnerability_notpresent` defense on, the
 :ref:`asset_softwarevulnerability` described in the
-:ref:`mitre_technique_exploit_for_privilege_escalation` technique.
+:ref:`mitre_technique_exploitation_for_privilege_escalation` technique.
 
 .. _mitre_user_account_management:
 
