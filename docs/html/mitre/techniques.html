@@ -39,33 +39,1246 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#tactics" id="id1">Tactics</a></p>
 <ul>
-<li><p><a class="reference internal" href="#exfiltration" id="id2">Exfiltration</a></p></li>
+<li><p><a class="reference internal" href="#collection" id="id2">Collection</a></p></li>
+<li><p><a class="reference internal" href="#command-and-control" id="id3">Command and Control</a></p></li>
+<li><p><a class="reference internal" href="#credential-access" id="id4">Credential Access</a></p></li>
+<li><p><a class="reference internal" href="#defense-evasion" id="id5">Defense Evasion</a></p></li>
+<li><p><a class="reference internal" href="#discovery" id="id6">Discovery</a></p></li>
+<li><p><a class="reference internal" href="#execution" id="id7">Execution</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration" id="id8">Exfiltration</a></p></li>
+<li><p><a class="reference internal" href="#impact" id="id9">Impact</a></p></li>
+<li><p><a class="reference internal" href="#initial-access" id="id10">Initial Access</a></p></li>
+<li><p><a class="reference internal" href="#lateral-movement" id="id11">Lateral Movement</a></p></li>
+<li><p><a class="reference internal" href="#persistence" id="id12">Persistence</a></p></li>
+<li><p><a class="reference internal" href="#privilege-escalation" id="id13">Privilege Escalation</a></p></li>
+<li><p><a class="reference internal" href="#reconnaissance" id="id14">Reconnaissance</a></p></li>
+<li><p><a class="reference internal" href="#resource-development" id="id15">Resource Development</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#techniques" id="id3">Techniques</a></p>
+<li><p><a class="reference internal" href="#techniques" id="id16">Techniques</a></p>
 <ul>
-<li><p><a class="reference internal" href="#adversary-in-the-middle" id="id4">Adversary-in-the-Middle</a></p></li>
-<li><p><a class="reference internal" href="#exploitation-for-privilege-escalation" id="id5">Exploitation for Privilege Escalation</a></p></li>
+<li><p><a class="reference internal" href="#abuse-elevation-control-mechanism" id="id17">Abuse Elevation Control Mechanism</a></p></li>
+<li><p><a class="reference internal" href="#access-token-manipulation" id="id18">Access Token Manipulation</a></p></li>
+<li><p><a class="reference internal" href="#account-access-removal" id="id19">Account Access Removal</a></p></li>
+<li><p><a class="reference internal" href="#account-discovery" id="id20">Account Discovery</a></p></li>
+<li><p><a class="reference internal" href="#account-manipulation" id="id21">Account Manipulation</a></p></li>
+<li><p><a class="reference internal" href="#acquire-infrastructure" id="id22">Acquire Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#active-scanning" id="id23">Active Scanning</a></p></li>
+<li><p><a class="reference internal" href="#adversary-in-the-middle" id="id24">Adversary-in-the-Middle</a></p></li>
+<li><p><a class="reference internal" href="#application-layer-protocol" id="id25">Application Layer Protocol</a></p></li>
+<li><p><a class="reference internal" href="#application-window-discovery" id="id26">Application Window Discovery</a></p></li>
+<li><p><a class="reference internal" href="#archive-collected-data" id="id27">Archive Collected Data</a></p></li>
+<li><p><a class="reference internal" href="#audio-capture" id="id28">Audio Capture</a></p></li>
+<li><p><a class="reference internal" href="#automated-collection" id="id29">Automated Collection</a></p></li>
+<li><p><a class="reference internal" href="#automated-exfiltration" id="id30">Automated Exfiltration</a></p></li>
+<li><p><a class="reference internal" href="#bits-jobs" id="id31">BITS Jobs</a></p></li>
+<li><p><a class="reference internal" href="#boot-or-logon-autostart-execution" id="id32">Boot or Logon Autostart Execution</a></p></li>
+<li><p><a class="reference internal" href="#boot-or-logon-initialization-scripts" id="id33">Boot or Logon Initialization Scripts</a></p></li>
+<li><p><a class="reference internal" href="#browser-bookmark-discovery" id="id34">Browser Bookmark Discovery</a></p></li>
+<li><p><a class="reference internal" href="#browser-extensions" id="id35">Browser Extensions</a></p></li>
+<li><p><a class="reference internal" href="#browser-session-hijacking" id="id36">Browser Session Hijacking</a></p></li>
+<li><p><a class="reference internal" href="#brute-force" id="id37">Brute Force</a></p></li>
+<li><p><a class="reference internal" href="#build-image-on-host" id="id38">Build Image on Host</a></p></li>
+<li><p><a class="reference internal" href="#clipboard-data" id="id39">Clipboard Data</a></p></li>
+<li><p><a class="reference internal" href="#cloud-infrastructure-discovery" id="id40">Cloud Infrastructure Discovery</a></p></li>
+<li><p><a class="reference internal" href="#cloud-service-dashboard" id="id41">Cloud Service Dashboard</a></p></li>
+<li><p><a class="reference internal" href="#cloud-service-discovery" id="id42">Cloud Service Discovery</a></p></li>
+<li><p><a class="reference internal" href="#cloud-storage-object-discovery" id="id43">Cloud Storage Object Discovery</a></p></li>
+<li><p><a class="reference internal" href="#command-and-scripting-interpreter" id="id44">Command and Scripting Interpreter</a></p></li>
+<li><p><a class="reference internal" href="#communication-through-removable-media" id="id45">Communication Through Removable Media</a></p></li>
+<li><p><a class="reference internal" href="#compromise-accounts" id="id46">Compromise Accounts</a></p></li>
+<li><p><a class="reference internal" href="#compromise-client-software-binary" id="id47">Compromise Client Software Binary</a></p></li>
+<li><p><a class="reference internal" href="#compromise-infrastructure" id="id48">Compromise Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#container-administration-command" id="id49">Container Administration Command</a></p></li>
+<li><p><a class="reference internal" href="#container-and-resource-discovery" id="id50">Container and Resource Discovery</a></p></li>
+<li><p><a class="reference internal" href="#create-account" id="id51">Create Account</a></p></li>
+<li><p><a class="reference internal" href="#create-or-modify-system-process" id="id52">Create or Modify System Process</a></p></li>
+<li><p><a class="reference internal" href="#credentials-from-password-stores" id="id53">Credentials from Password Stores</a></p></li>
+<li><p><a class="reference internal" href="#data-destruction" id="id54">Data Destruction</a></p></li>
+<li><p><a class="reference internal" href="#data-encoding" id="id55">Data Encoding</a></p></li>
+<li><p><a class="reference internal" href="#data-encrypted-for-impact" id="id56">Data Encrypted for Impact</a></p></li>
+<li><p><a class="reference internal" href="#data-manipulation" id="id57">Data Manipulation</a></p></li>
+<li><p><a class="reference internal" href="#data-obfuscation" id="id58">Data Obfuscation</a></p></li>
+<li><p><a class="reference internal" href="#data-staged" id="id59">Data Staged</a></p></li>
+<li><p><a class="reference internal" href="#data-transfer-size-limits" id="id60">Data Transfer Size Limits</a></p></li>
+<li><p><a class="reference internal" href="#data-from-cloud-storage" id="id61">Data from Cloud Storage</a></p></li>
+<li><p><a class="reference internal" href="#data-from-configuration-repository" id="id62">Data from Configuration Repository</a></p></li>
+<li><p><a class="reference internal" href="#data-from-information-repositories" id="id63">Data from Information Repositories</a></p></li>
+<li><p><a class="reference internal" href="#data-from-local-system" id="id64">Data from Local System</a></p></li>
+<li><p><a class="reference internal" href="#data-from-network-shared-drive" id="id65">Data from Network Shared Drive</a></p></li>
+<li><p><a class="reference internal" href="#data-from-removable-media" id="id66">Data from Removable Media</a></p></li>
+<li><p><a class="reference internal" href="#debugger-evasion" id="id67">Debugger Evasion</a></p></li>
+<li><p><a class="reference internal" href="#defacement" id="id68">Defacement</a></p></li>
+<li><p><a class="reference internal" href="#deobfuscate-decode-files-or-information" id="id69">Deobfuscate/Decode Files or Information</a></p></li>
+<li><p><a class="reference internal" href="#deploy-container" id="id70">Deploy Container</a></p></li>
+<li><p><a class="reference internal" href="#develop-capabilities" id="id71">Develop Capabilities</a></p></li>
+<li><p><a class="reference internal" href="#direct-volume-access" id="id72">Direct Volume Access</a></p></li>
+<li><p><a class="reference internal" href="#disk-wipe" id="id73">Disk Wipe</a></p></li>
+<li><p><a class="reference internal" href="#domain-policy-modification" id="id74">Domain Policy Modification</a></p></li>
+<li><p><a class="reference internal" href="#domain-trust-discovery" id="id75">Domain Trust Discovery</a></p></li>
+<li><p><a class="reference internal" href="#drive-by-compromise" id="id76">Drive-by Compromise</a></p></li>
+<li><p><a class="reference internal" href="#dynamic-resolution" id="id77">Dynamic Resolution</a></p></li>
+<li><p><a class="reference internal" href="#email-collection" id="id78">Email Collection</a></p></li>
+<li><p><a class="reference internal" href="#encrypted-channel" id="id79">Encrypted Channel</a></p></li>
+<li><p><a class="reference internal" href="#endpoint-denial-of-service" id="id80">Endpoint Denial of Service</a></p></li>
+<li><p><a class="reference internal" href="#escape-to-host" id="id81">Escape to Host</a></p></li>
+<li><p><a class="reference internal" href="#establish-accounts" id="id82">Establish Accounts</a></p></li>
+<li><p><a class="reference internal" href="#event-triggered-execution" id="id83">Event Triggered Execution</a></p></li>
+<li><p><a class="reference internal" href="#execution-guardrails" id="id84">Execution Guardrails</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration-over-alternative-protocol" id="id85">Exfiltration Over Alternative Protocol</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration-over-c2-channel" id="id86">Exfiltration Over C2 Channel</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration-over-other-network-medium" id="id87">Exfiltration Over Other Network Medium</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration-over-physical-medium" id="id88">Exfiltration Over Physical Medium</a></p></li>
+<li><p><a class="reference internal" href="#exfiltration-over-web-service" id="id89">Exfiltration Over Web Service</a></p></li>
+<li><p><a class="reference internal" href="#exploit-public-facing-application" id="id90">Exploit Public-Facing Application</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-for-client-execution" id="id91">Exploitation for Client Execution</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-for-credential-access" id="id92">Exploitation for Credential Access</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-for-defense-evasion" id="id93">Exploitation for Defense Evasion</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-for-privilege-escalation" id="id94">Exploitation for Privilege Escalation</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-of-remote-services" id="id95">Exploitation of Remote Services</a></p></li>
+<li><p><a class="reference internal" href="#external-remote-services" id="id96">External Remote Services</a></p></li>
+<li><p><a class="reference internal" href="#fallback-channels" id="id97">Fallback Channels</a></p></li>
+<li><p><a class="reference internal" href="#file-and-directory-discovery" id="id98">File and Directory Discovery</a></p></li>
+<li><p><a class="reference internal" href="#file-and-directory-permissions-modification" id="id99">File and Directory Permissions Modification</a></p></li>
+<li><p><a class="reference internal" href="#firmware-corruption" id="id100">Firmware Corruption</a></p></li>
+<li><p><a class="reference internal" href="#forced-authentication" id="id101">Forced Authentication</a></p></li>
+<li><p><a class="reference internal" href="#forge-web-credentials" id="id102">Forge Web Credentials</a></p></li>
+<li><p><a class="reference internal" href="#gather-victim-host-information" id="id103">Gather Victim Host Information</a></p></li>
+<li><p><a class="reference internal" href="#gather-victim-identity-information" id="id104">Gather Victim Identity Information</a></p></li>
+<li><p><a class="reference internal" href="#gather-victim-network-information" id="id105">Gather Victim Network Information</a></p></li>
+<li><p><a class="reference internal" href="#gather-victim-org-information" id="id106">Gather Victim Org Information</a></p></li>
+<li><p><a class="reference internal" href="#group-policy-discovery" id="id107">Group Policy Discovery</a></p></li>
+<li><p><a class="reference internal" href="#hardware-additions" id="id108">Hardware Additions</a></p></li>
+<li><p><a class="reference internal" href="#hide-artifacts" id="id109">Hide Artifacts</a></p></li>
+<li><p><a class="reference internal" href="#hijack-execution-flow" id="id110">Hijack Execution Flow</a></p></li>
+<li><p><a class="reference internal" href="#impair-defenses" id="id111">Impair Defenses</a></p></li>
+<li><p><a class="reference internal" href="#implant-internal-image" id="id112">Implant Internal Image</a></p></li>
+<li><p><a class="reference internal" href="#indicator-removal" id="id113">Indicator Removal</a></p></li>
+<li><p><a class="reference internal" href="#indirect-command-execution" id="id114">Indirect Command Execution</a></p></li>
+<li><p><a class="reference internal" href="#ingress-tool-transfer" id="id115">Ingress Tool Transfer</a></p></li>
+<li><p><a class="reference internal" href="#inhibit-system-recovery" id="id116">Inhibit System Recovery</a></p></li>
+<li><p><a class="reference internal" href="#input-capture" id="id117">Input Capture</a></p></li>
+<li><p><a class="reference internal" href="#inter-process-communication" id="id118">Inter-Process Communication</a></p></li>
+<li><p><a class="reference internal" href="#internal-spearphishing" id="id119">Internal Spearphishing</a></p></li>
+<li><p><a class="reference internal" href="#lateral-tool-transfer" id="id120">Lateral Tool Transfer</a></p></li>
+<li><p><a class="reference internal" href="#masquerading" id="id121">Masquerading</a></p></li>
+<li><p><a class="reference internal" href="#modify-authentication-process" id="id122">Modify Authentication Process</a></p></li>
+<li><p><a class="reference internal" href="#modify-cloud-compute-infrastructure" id="id123">Modify Cloud Compute Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#modify-registry" id="id124">Modify Registry</a></p></li>
+<li><p><a class="reference internal" href="#modify-system-image" id="id125">Modify System Image</a></p></li>
+<li><p><a class="reference internal" href="#multi-factor-authentication-interception" id="id126">Multi-Factor Authentication Interception</a></p></li>
+<li><p><a class="reference internal" href="#multi-factor-authentication-request-generation" id="id127">Multi-Factor Authentication Request Generation</a></p></li>
+<li><p><a class="reference internal" href="#multi-stage-channels" id="id128">Multi-Stage Channels</a></p></li>
+<li><p><a class="reference internal" href="#native-api" id="id129">Native API</a></p></li>
+<li><p><a class="reference internal" href="#network-boundary-bridging" id="id130">Network Boundary Bridging</a></p></li>
+<li><p><a class="reference internal" href="#network-denial-of-service" id="id131">Network Denial of Service</a></p></li>
+<li><p><a class="reference internal" href="#network-service-discovery" id="id132">Network Service Discovery</a></p></li>
+<li><p><a class="reference internal" href="#network-share-discovery" id="id133">Network Share Discovery</a></p></li>
+<li><p><a class="reference internal" href="#network-sniffing" id="id134">Network Sniffing</a></p></li>
+<li><p><a class="reference internal" href="#non-application-layer-protocol" id="id135">Non-Application Layer Protocol</a></p></li>
+<li><p><a class="reference internal" href="#non-standard-port" id="id136">Non-Standard Port</a></p></li>
+<li><p><a class="reference internal" href="#os-credential-dumping" id="id137">OS Credential Dumping</a></p></li>
+<li><p><a class="reference internal" href="#obfuscated-files-or-information" id="id138">Obfuscated Files or Information</a></p></li>
+<li><p><a class="reference internal" href="#obtain-capabilities" id="id139">Obtain Capabilities</a></p></li>
+<li><p><a class="reference internal" href="#office-application-startup" id="id140">Office Application Startup</a></p></li>
+<li><p><a class="reference internal" href="#password-policy-discovery" id="id141">Password Policy Discovery</a></p></li>
+<li><p><a class="reference internal" href="#peripheral-device-discovery" id="id142">Peripheral Device Discovery</a></p></li>
+<li><p><a class="reference internal" href="#permission-groups-discovery" id="id143">Permission Groups Discovery</a></p></li>
+<li><p><a class="reference internal" href="#phishing" id="id144">Phishing</a></p></li>
+<li><p><a class="reference internal" href="#phishing-for-information" id="id145">Phishing for Information</a></p></li>
+<li><p><a class="reference internal" href="#plist-file-modification" id="id146">Plist File Modification</a></p></li>
+<li><p><a class="reference internal" href="#pre-os-boot" id="id147">Pre-OS Boot</a></p></li>
+<li><p><a class="reference internal" href="#process-discovery" id="id148">Process Discovery</a></p></li>
+<li><p><a class="reference internal" href="#process-injection" id="id149">Process Injection</a></p></li>
+<li><p><a class="reference internal" href="#protocol-tunneling" id="id150">Protocol Tunneling</a></p></li>
+<li><p><a class="reference internal" href="#proxy" id="id151">Proxy</a></p></li>
+<li><p><a class="reference internal" href="#query-registry" id="id152">Query Registry</a></p></li>
+<li><p><a class="reference internal" href="#reflective-code-loading" id="id153">Reflective Code Loading</a></p></li>
+<li><p><a class="reference internal" href="#remote-access-software" id="id154">Remote Access Software</a></p></li>
+<li><p><a class="reference internal" href="#remote-service-session-hijacking" id="id155">Remote Service Session Hijacking</a></p></li>
+<li><p><a class="reference internal" href="#remote-services" id="id156">Remote Services</a></p></li>
+<li><p><a class="reference internal" href="#remote-system-discovery" id="id157">Remote System Discovery</a></p></li>
+<li><p><a class="reference internal" href="#replication-through-removable-media" id="id158">Replication Through Removable Media</a></p></li>
+<li><p><a class="reference internal" href="#resource-hijacking" id="id159">Resource Hijacking</a></p></li>
+<li><p><a class="reference internal" href="#rogue-domain-controller" id="id160">Rogue Domain Controller</a></p></li>
+<li><p><a class="reference internal" href="#rootkit" id="id161">Rootkit</a></p></li>
+<li><p><a class="reference internal" href="#scheduled-task-job" id="id162">Scheduled Task/Job</a></p></li>
+<li><p><a class="reference internal" href="#scheduled-transfer" id="id163">Scheduled Transfer</a></p></li>
+<li><p><a class="reference internal" href="#screen-capture" id="id164">Screen Capture</a></p></li>
+<li><p><a class="reference internal" href="#search-closed-sources" id="id165">Search Closed Sources</a></p></li>
+<li><p><a class="reference internal" href="#search-open-technical-databases" id="id166">Search Open Technical Databases</a></p></li>
+<li><p><a class="reference internal" href="#search-open-websites-domains" id="id167">Search Open Websites/Domains</a></p></li>
+<li><p><a class="reference internal" href="#search-victim-owned-websites" id="id168">Search Victim-Owned Websites</a></p></li>
+<li><p><a class="reference internal" href="#server-software-component" id="id169">Server Software Component</a></p></li>
+<li><p><a class="reference internal" href="#serverless-execution" id="id170">Serverless Execution</a></p></li>
+<li><p><a class="reference internal" href="#service-stop" id="id171">Service Stop</a></p></li>
+<li><p><a class="reference internal" href="#shared-modules" id="id172">Shared Modules</a></p></li>
+<li><p><a class="reference internal" href="#software-deployment-tools" id="id173">Software Deployment Tools</a></p></li>
+<li><p><a class="reference internal" href="#software-discovery" id="id174">Software Discovery</a></p></li>
+<li><p><a class="reference internal" href="#stage-capabilities" id="id175">Stage Capabilities</a></p></li>
+<li><p><a class="reference internal" href="#steal-application-access-token" id="id176">Steal Application Access Token</a></p></li>
+<li><p><a class="reference internal" href="#steal-web-session-cookie" id="id177">Steal Web Session Cookie</a></p></li>
+<li><p><a class="reference internal" href="#steal-or-forge-authentication-certificates" id="id178">Steal or Forge Authentication Certificates</a></p></li>
+<li><p><a class="reference internal" href="#steal-or-forge-kerberos-tickets" id="id179">Steal or Forge Kerberos Tickets</a></p></li>
+<li><p><a class="reference internal" href="#subvert-trust-controls" id="id180">Subvert Trust Controls</a></p></li>
+<li><p><a class="reference internal" href="#supply-chain-compromise" id="id181">Supply Chain Compromise</a></p></li>
+<li><p><a class="reference internal" href="#system-binary-proxy-execution" id="id182">System Binary Proxy Execution</a></p></li>
+<li><p><a class="reference internal" href="#system-information-discovery" id="id183">System Information Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-location-discovery" id="id184">System Location Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-network-configuration-discovery" id="id185">System Network Configuration Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-network-connections-discovery" id="id186">System Network Connections Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-owner-user-discovery" id="id187">System Owner/User Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-script-proxy-execution" id="id188">System Script Proxy Execution</a></p></li>
+<li><p><a class="reference internal" href="#system-service-discovery" id="id189">System Service Discovery</a></p></li>
+<li><p><a class="reference internal" href="#system-services" id="id190">System Services</a></p></li>
+<li><p><a class="reference internal" href="#system-shutdown-reboot" id="id191">System Shutdown/Reboot</a></p></li>
+<li><p><a class="reference internal" href="#system-time-discovery" id="id192">System Time Discovery</a></p></li>
+<li><p><a class="reference internal" href="#taint-shared-content" id="id193">Taint Shared Content</a></p></li>
+<li><p><a class="reference internal" href="#template-injection" id="id194">Template Injection</a></p></li>
+<li><p><a class="reference internal" href="#traffic-signaling" id="id195">Traffic Signaling</a></p></li>
+<li><p><a class="reference internal" href="#transfer-data-to-cloud-account" id="id196">Transfer Data to Cloud Account</a></p></li>
+<li><p><a class="reference internal" href="#trusted-developer-utilities-proxy-execution" id="id197">Trusted Developer Utilities Proxy Execution</a></p></li>
+<li><p><a class="reference internal" href="#trusted-relationship" id="id198">Trusted Relationship</a></p></li>
+<li><p><a class="reference internal" href="#unsecured-credentials" id="id199">Unsecured Credentials</a></p></li>
+<li><p><a class="reference internal" href="#unused-unsupported-cloud-regions" id="id200">Unused/Unsupported Cloud Regions</a></p></li>
+<li><p><a class="reference internal" href="#use-alternate-authentication-material" id="id201">Use Alternate Authentication Material</a></p></li>
+<li><p><a class="reference internal" href="#user-execution" id="id202">User Execution</a></p></li>
+<li><p><a class="reference internal" href="#valid-accounts" id="id203">Valid Accounts</a></p></li>
+<li><p><a class="reference internal" href="#video-capture" id="id204">Video Capture</a></p></li>
+<li><p><a class="reference internal" href="#virtualization-sandbox-evasion" id="id205">Virtualization/Sandbox Evasion</a></p></li>
+<li><p><a class="reference internal" href="#weaken-encryption" id="id206">Weaken Encryption</a></p></li>
+<li><p><a class="reference internal" href="#web-service" id="id207">Web Service</a></p></li>
+<li><p><a class="reference internal" href="#windows-management-instrumentation" id="id208">Windows Management Instrumentation</a></p></li>
+<li><p><a class="reference internal" href="#xsl-script-processing" id="id209">XSL Script Processing</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="tactics">
 <h2><a class="toc-backref" href="#id1">Tactics</a><a class="headerlink" href="#tactics" title="Permalink to this headline">¶</a></h2>
+<section id="collection">
+<span id="mitre-tactic-collection"></span><h3><a class="toc-backref" href="#id2">Collection</a><a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0009">Mitre Description</a></p>
+</section>
+<section id="command-and-control">
+<span id="mitre-tactic-command-and-control"></span><h3><a class="toc-backref" href="#id3">Command and Control</a><a class="headerlink" href="#command-and-control" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0011">Mitre Description</a></p>
+</section>
+<section id="credential-access">
+<span id="mitre-tactic-credential-access"></span><h3><a class="toc-backref" href="#id4">Credential Access</a><a class="headerlink" href="#credential-access" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0006">Mitre Description</a></p>
+</section>
+<section id="defense-evasion">
+<span id="mitre-tactic-defense-evasion"></span><h3><a class="toc-backref" href="#id5">Defense Evasion</a><a class="headerlink" href="#defense-evasion" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0005">Mitre Description</a></p>
+</section>
+<section id="discovery">
+<span id="mitre-tactic-discovery"></span><h3><a class="toc-backref" href="#id6">Discovery</a><a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0007">Mitre Description</a></p>
+</section>
+<section id="execution">
+<span id="mitre-tactic-execution"></span><h3><a class="toc-backref" href="#id7">Execution</a><a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0002">Mitre Description</a></p>
+</section>
 <section id="exfiltration">
-<span id="mitre-tactic-exfiltration"></span><h3><a class="toc-backref" href="#id2">Exfiltration</a><a class="headerlink" href="#exfiltration" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0010/">Mitre Description</a></p>
+<span id="mitre-tactic-exfiltration"></span><h3><a class="toc-backref" href="#id8">Exfiltration</a><a class="headerlink" href="#exfiltration" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0010">Mitre Description</a></p>
+</section>
+<section id="impact">
+<span id="mitre-tactic-impact"></span><h3><a class="toc-backref" href="#id9">Impact</a><a class="headerlink" href="#impact" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0040">Mitre Description</a></p>
+</section>
+<section id="initial-access">
+<span id="mitre-tactic-initial-access"></span><h3><a class="toc-backref" href="#id10">Initial Access</a><a class="headerlink" href="#initial-access" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0001">Mitre Description</a></p>
+</section>
+<section id="lateral-movement">
+<span id="mitre-tactic-lateral-movement"></span><h3><a class="toc-backref" href="#id11">Lateral Movement</a><a class="headerlink" href="#lateral-movement" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0008">Mitre Description</a></p>
+</section>
+<section id="persistence">
+<span id="mitre-tactic-persistence"></span><h3><a class="toc-backref" href="#id12">Persistence</a><a class="headerlink" href="#persistence" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0003">Mitre Description</a></p>
+</section>
+<section id="privilege-escalation">
+<span id="mitre-tactic-privilege-escalation"></span><h3><a class="toc-backref" href="#id13">Privilege Escalation</a><a class="headerlink" href="#privilege-escalation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0004">Mitre Description</a></p>
+</section>
+<section id="reconnaissance">
+<span id="mitre-tactic-reconnaissance"></span><h3><a class="toc-backref" href="#id14">Reconnaissance</a><a class="headerlink" href="#reconnaissance" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0043">Mitre Description</a></p>
+</section>
+<section id="resource-development">
+<span id="mitre-tactic-resource-development"></span><h3><a class="toc-backref" href="#id15">Resource Development</a><a class="headerlink" href="#resource-development" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://attack.mitre.org/tactics/TA0042">Mitre Description</a></p>
 </section>
 </section>
 <section id="techniques">
-<h2><a class="toc-backref" href="#id3">Techniques</a><a class="headerlink" href="#techniques" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Techniques</a><a class="headerlink" href="#techniques" title="Permalink to this headline">¶</a></h2>
+<section id="abuse-elevation-control-mechanism">
+<span id="mitre-technique-abuse-elevation-control-mechanism"></span><h3><a class="toc-backref" href="#id17">Abuse Elevation Control Mechanism</a><a class="headerlink" href="#abuse-elevation-control-mechanism" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1548">Mitre Description</a></p>
+</section>
+<section id="access-token-manipulation">
+<span id="mitre-technique-access-token-manipulation"></span><h3><a class="toc-backref" href="#id18">Access Token Manipulation</a><a class="headerlink" href="#access-token-manipulation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1134">Mitre Description</a></p>
+</section>
+<section id="account-access-removal">
+<span id="mitre-technique-account-access-removal"></span><h3><a class="toc-backref" href="#id19">Account Access Removal</a><a class="headerlink" href="#account-access-removal" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1531">Mitre Description</a></p>
+</section>
+<section id="account-discovery">
+<span id="mitre-technique-account-discovery"></span><h3><a class="toc-backref" href="#id20">Account Discovery</a><a class="headerlink" href="#account-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1087">Mitre Description</a></p>
+</section>
+<section id="account-manipulation">
+<span id="mitre-technique-account-manipulation"></span><h3><a class="toc-backref" href="#id21">Account Manipulation</a><a class="headerlink" href="#account-manipulation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1098">Mitre Description</a></p>
+</section>
+<section id="acquire-infrastructure">
+<span id="mitre-technique-acquire-infrastructure"></span><h3><a class="toc-backref" href="#id22">Acquire Infrastructure</a><a class="headerlink" href="#acquire-infrastructure" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1583">Mitre Description</a></p>
+</section>
+<section id="active-scanning">
+<span id="mitre-technique-active-scanning"></span><h3><a class="toc-backref" href="#id23">Active Scanning</a><a class="headerlink" href="#active-scanning" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1595">Mitre Description</a></p>
+</section>
 <section id="adversary-in-the-middle">
-<span id="mitre-technique-adversary-in-the-middle"></span><h3><a class="toc-backref" href="#id4">Adversary-in-the-Middle</a><a class="headerlink" href="#adversary-in-the-middle" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://attack.mitre.org/https://attack.mitre.org/techniques/T1557/">Mitre Description</a></p>
+<span id="mitre-technique-adversary-in-the-middle"></span><h3><a class="toc-backref" href="#id24">Adversary-in-the-Middle</a><a class="headerlink" href="#adversary-in-the-middle" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a>, <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1557">Mitre Description</a></p>
+</section>
+<section id="application-layer-protocol">
+<span id="mitre-technique-application-layer-protocol"></span><h3><a class="toc-backref" href="#id25">Application Layer Protocol</a><a class="headerlink" href="#application-layer-protocol" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1071">Mitre Description</a></p>
+</section>
+<section id="application-window-discovery">
+<span id="mitre-technique-application-window-discovery"></span><h3><a class="toc-backref" href="#id26">Application Window Discovery</a><a class="headerlink" href="#application-window-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1010">Mitre Description</a></p>
+</section>
+<section id="archive-collected-data">
+<span id="mitre-technique-archive-collected-data"></span><h3><a class="toc-backref" href="#id27">Archive Collected Data</a><a class="headerlink" href="#archive-collected-data" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1560">Mitre Description</a></p>
+</section>
+<section id="audio-capture">
+<span id="mitre-technique-audio-capture"></span><h3><a class="toc-backref" href="#id28">Audio Capture</a><a class="headerlink" href="#audio-capture" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1123">Mitre Description</a></p>
+</section>
+<section id="automated-collection">
+<span id="mitre-technique-automated-collection"></span><h3><a class="toc-backref" href="#id29">Automated Collection</a><a class="headerlink" href="#automated-collection" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1119">Mitre Description</a></p>
+</section>
+<section id="automated-exfiltration">
+<span id="mitre-technique-automated-exfiltration"></span><h3><a class="toc-backref" href="#id30">Automated Exfiltration</a><a class="headerlink" href="#automated-exfiltration" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1020">Mitre Description</a></p>
+</section>
+<section id="bits-jobs">
+<span id="mitre-technique-bits-jobs"></span><h3><a class="toc-backref" href="#id31">BITS Jobs</a><a class="headerlink" href="#bits-jobs" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1197">Mitre Description</a></p>
+</section>
+<section id="boot-or-logon-autostart-execution">
+<span id="mitre-technique-boot-or-logon-autostart-execution"></span><h3><a class="toc-backref" href="#id32">Boot or Logon Autostart Execution</a><a class="headerlink" href="#boot-or-logon-autostart-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1547">Mitre Description</a></p>
+</section>
+<section id="boot-or-logon-initialization-scripts">
+<span id="mitre-technique-boot-or-logon-initialization-scripts"></span><h3><a class="toc-backref" href="#id33">Boot or Logon Initialization Scripts</a><a class="headerlink" href="#boot-or-logon-initialization-scripts" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1037">Mitre Description</a></p>
+</section>
+<section id="browser-bookmark-discovery">
+<span id="mitre-technique-browser-bookmark-discovery"></span><h3><a class="toc-backref" href="#id34">Browser Bookmark Discovery</a><a class="headerlink" href="#browser-bookmark-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1217">Mitre Description</a></p>
+</section>
+<section id="browser-extensions">
+<span id="mitre-technique-browser-extensions"></span><h3><a class="toc-backref" href="#id35">Browser Extensions</a><a class="headerlink" href="#browser-extensions" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1176">Mitre Description</a></p>
+</section>
+<section id="browser-session-hijacking">
+<span id="mitre-technique-browser-session-hijacking"></span><h3><a class="toc-backref" href="#id36">Browser Session Hijacking</a><a class="headerlink" href="#browser-session-hijacking" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1185">Mitre Description</a></p>
+</section>
+<section id="brute-force">
+<span id="mitre-technique-brute-force"></span><h3><a class="toc-backref" href="#id37">Brute Force</a><a class="headerlink" href="#brute-force" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1110">Mitre Description</a></p>
+</section>
+<section id="build-image-on-host">
+<span id="mitre-technique-build-image-on-host"></span><h3><a class="toc-backref" href="#id38">Build Image on Host</a><a class="headerlink" href="#build-image-on-host" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1612">Mitre Description</a></p>
+</section>
+<section id="clipboard-data">
+<span id="mitre-technique-clipboard-data"></span><h3><a class="toc-backref" href="#id39">Clipboard Data</a><a class="headerlink" href="#clipboard-data" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1115">Mitre Description</a></p>
+</section>
+<section id="cloud-infrastructure-discovery">
+<span id="mitre-technique-cloud-infrastructure-discovery"></span><h3><a class="toc-backref" href="#id40">Cloud Infrastructure Discovery</a><a class="headerlink" href="#cloud-infrastructure-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1580">Mitre Description</a></p>
+</section>
+<section id="cloud-service-dashboard">
+<span id="mitre-technique-cloud-service-dashboard"></span><h3><a class="toc-backref" href="#id41">Cloud Service Dashboard</a><a class="headerlink" href="#cloud-service-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1538">Mitre Description</a></p>
+</section>
+<section id="cloud-service-discovery">
+<span id="mitre-technique-cloud-service-discovery"></span><h3><a class="toc-backref" href="#id42">Cloud Service Discovery</a><a class="headerlink" href="#cloud-service-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1526">Mitre Description</a></p>
+</section>
+<section id="cloud-storage-object-discovery">
+<span id="mitre-technique-cloud-storage-object-discovery"></span><h3><a class="toc-backref" href="#id43">Cloud Storage Object Discovery</a><a class="headerlink" href="#cloud-storage-object-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1619">Mitre Description</a></p>
+</section>
+<section id="command-and-scripting-interpreter">
+<span id="mitre-technique-command-and-scripting-interpreter"></span><h3><a class="toc-backref" href="#id44">Command and Scripting Interpreter</a><a class="headerlink" href="#command-and-scripting-interpreter" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1059">Mitre Description</a></p>
+</section>
+<section id="communication-through-removable-media">
+<span id="mitre-technique-communication-through-removable-media"></span><h3><a class="toc-backref" href="#id45">Communication Through Removable Media</a><a class="headerlink" href="#communication-through-removable-media" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1092">Mitre Description</a></p>
+</section>
+<section id="compromise-accounts">
+<span id="mitre-technique-compromise-accounts"></span><h3><a class="toc-backref" href="#id46">Compromise Accounts</a><a class="headerlink" href="#compromise-accounts" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1586">Mitre Description</a></p>
+</section>
+<section id="compromise-client-software-binary">
+<span id="mitre-technique-compromise-client-software-binary"></span><h3><a class="toc-backref" href="#id47">Compromise Client Software Binary</a><a class="headerlink" href="#compromise-client-software-binary" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1554">Mitre Description</a></p>
+</section>
+<section id="compromise-infrastructure">
+<span id="mitre-technique-compromise-infrastructure"></span><h3><a class="toc-backref" href="#id48">Compromise Infrastructure</a><a class="headerlink" href="#compromise-infrastructure" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1584">Mitre Description</a></p>
+</section>
+<section id="container-administration-command">
+<span id="mitre-technique-container-administration-command"></span><h3><a class="toc-backref" href="#id49">Container Administration Command</a><a class="headerlink" href="#container-administration-command" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1609">Mitre Description</a></p>
+</section>
+<section id="container-and-resource-discovery">
+<span id="mitre-technique-container-and-resource-discovery"></span><h3><a class="toc-backref" href="#id50">Container and Resource Discovery</a><a class="headerlink" href="#container-and-resource-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1613">Mitre Description</a></p>
+</section>
+<section id="create-account">
+<span id="mitre-technique-create-account"></span><h3><a class="toc-backref" href="#id51">Create Account</a><a class="headerlink" href="#create-account" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1136">Mitre Description</a></p>
+</section>
+<section id="create-or-modify-system-process">
+<span id="mitre-technique-create-or-modify-system-process"></span><h3><a class="toc-backref" href="#id52">Create or Modify System Process</a><a class="headerlink" href="#create-or-modify-system-process" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1543">Mitre Description</a></p>
+</section>
+<section id="credentials-from-password-stores">
+<span id="mitre-technique-credentials-from-password-stores"></span><h3><a class="toc-backref" href="#id53">Credentials from Password Stores</a><a class="headerlink" href="#credentials-from-password-stores" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1555">Mitre Description</a></p>
+</section>
+<section id="data-destruction">
+<span id="mitre-technique-data-destruction"></span><h3><a class="toc-backref" href="#id54">Data Destruction</a><a class="headerlink" href="#data-destruction" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1485">Mitre Description</a></p>
+</section>
+<section id="data-encoding">
+<span id="mitre-technique-data-encoding"></span><h3><a class="toc-backref" href="#id55">Data Encoding</a><a class="headerlink" href="#data-encoding" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1132">Mitre Description</a></p>
+</section>
+<section id="data-encrypted-for-impact">
+<span id="mitre-technique-data-encrypted-for-impact"></span><h3><a class="toc-backref" href="#id56">Data Encrypted for Impact</a><a class="headerlink" href="#data-encrypted-for-impact" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1486">Mitre Description</a></p>
+</section>
+<section id="data-manipulation">
+<span id="mitre-technique-data-manipulation"></span><h3><a class="toc-backref" href="#id57">Data Manipulation</a><a class="headerlink" href="#data-manipulation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1565">Mitre Description</a></p>
+</section>
+<section id="data-obfuscation">
+<span id="mitre-technique-data-obfuscation"></span><h3><a class="toc-backref" href="#id58">Data Obfuscation</a><a class="headerlink" href="#data-obfuscation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1001">Mitre Description</a></p>
+</section>
+<section id="data-staged">
+<span id="mitre-technique-data-staged"></span><h3><a class="toc-backref" href="#id59">Data Staged</a><a class="headerlink" href="#data-staged" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1074">Mitre Description</a></p>
+</section>
+<section id="data-transfer-size-limits">
+<span id="mitre-technique-data-transfer-size-limits"></span><h3><a class="toc-backref" href="#id60">Data Transfer Size Limits</a><a class="headerlink" href="#data-transfer-size-limits" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1030">Mitre Description</a></p>
+</section>
+<section id="data-from-cloud-storage">
+<span id="mitre-technique-data-from-cloud-storage"></span><h3><a class="toc-backref" href="#id61">Data from Cloud Storage</a><a class="headerlink" href="#data-from-cloud-storage" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1530">Mitre Description</a></p>
+</section>
+<section id="data-from-configuration-repository">
+<span id="mitre-technique-data-from-configuration-repository"></span><h3><a class="toc-backref" href="#id62">Data from Configuration Repository</a><a class="headerlink" href="#data-from-configuration-repository" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1602">Mitre Description</a></p>
+</section>
+<section id="data-from-information-repositories">
+<span id="mitre-technique-data-from-information-repositories"></span><h3><a class="toc-backref" href="#id63">Data from Information Repositories</a><a class="headerlink" href="#data-from-information-repositories" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1213">Mitre Description</a></p>
+</section>
+<section id="data-from-local-system">
+<span id="mitre-technique-data-from-local-system"></span><h3><a class="toc-backref" href="#id64">Data from Local System</a><a class="headerlink" href="#data-from-local-system" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1005">Mitre Description</a></p>
+</section>
+<section id="data-from-network-shared-drive">
+<span id="mitre-technique-data-from-network-shared-drive"></span><h3><a class="toc-backref" href="#id65">Data from Network Shared Drive</a><a class="headerlink" href="#data-from-network-shared-drive" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1039">Mitre Description</a></p>
+</section>
+<section id="data-from-removable-media">
+<span id="mitre-technique-data-from-removable-media"></span><h3><a class="toc-backref" href="#id66">Data from Removable Media</a><a class="headerlink" href="#data-from-removable-media" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1025">Mitre Description</a></p>
+</section>
+<section id="debugger-evasion">
+<span id="mitre-technique-debugger-evasion"></span><h3><a class="toc-backref" href="#id67">Debugger Evasion</a><a class="headerlink" href="#debugger-evasion" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1622">Mitre Description</a></p>
+</section>
+<section id="defacement">
+<span id="mitre-technique-defacement"></span><h3><a class="toc-backref" href="#id68">Defacement</a><a class="headerlink" href="#defacement" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1491">Mitre Description</a></p>
+</section>
+<section id="deobfuscate-decode-files-or-information">
+<span id="mitre-technique-deobfuscate-decode-files-or-information"></span><h3><a class="toc-backref" href="#id69">Deobfuscate/Decode Files or Information</a><a class="headerlink" href="#deobfuscate-decode-files-or-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1140">Mitre Description</a></p>
+</section>
+<section id="deploy-container">
+<span id="mitre-technique-deploy-container"></span><h3><a class="toc-backref" href="#id70">Deploy Container</a><a class="headerlink" href="#deploy-container" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1610">Mitre Description</a></p>
+</section>
+<section id="develop-capabilities">
+<span id="mitre-technique-develop-capabilities"></span><h3><a class="toc-backref" href="#id71">Develop Capabilities</a><a class="headerlink" href="#develop-capabilities" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1587">Mitre Description</a></p>
+</section>
+<section id="direct-volume-access">
+<span id="mitre-technique-direct-volume-access"></span><h3><a class="toc-backref" href="#id72">Direct Volume Access</a><a class="headerlink" href="#direct-volume-access" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1006">Mitre Description</a></p>
+</section>
+<section id="disk-wipe">
+<span id="mitre-technique-disk-wipe"></span><h3><a class="toc-backref" href="#id73">Disk Wipe</a><a class="headerlink" href="#disk-wipe" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1561">Mitre Description</a></p>
+</section>
+<section id="domain-policy-modification">
+<span id="mitre-technique-domain-policy-modification"></span><h3><a class="toc-backref" href="#id74">Domain Policy Modification</a><a class="headerlink" href="#domain-policy-modification" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1484">Mitre Description</a></p>
+</section>
+<section id="domain-trust-discovery">
+<span id="mitre-technique-domain-trust-discovery"></span><h3><a class="toc-backref" href="#id75">Domain Trust Discovery</a><a class="headerlink" href="#domain-trust-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1482">Mitre Description</a></p>
+</section>
+<section id="drive-by-compromise">
+<span id="mitre-technique-drive-by-compromise"></span><h3><a class="toc-backref" href="#id76">Drive-by Compromise</a><a class="headerlink" href="#drive-by-compromise" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1189">Mitre Description</a></p>
+</section>
+<section id="dynamic-resolution">
+<span id="mitre-technique-dynamic-resolution"></span><h3><a class="toc-backref" href="#id77">Dynamic Resolution</a><a class="headerlink" href="#dynamic-resolution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1568">Mitre Description</a></p>
+</section>
+<section id="email-collection">
+<span id="mitre-technique-email-collection"></span><h3><a class="toc-backref" href="#id78">Email Collection</a><a class="headerlink" href="#email-collection" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1114">Mitre Description</a></p>
+</section>
+<section id="encrypted-channel">
+<span id="mitre-technique-encrypted-channel"></span><h3><a class="toc-backref" href="#id79">Encrypted Channel</a><a class="headerlink" href="#encrypted-channel" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1573">Mitre Description</a></p>
+</section>
+<section id="endpoint-denial-of-service">
+<span id="mitre-technique-endpoint-denial-of-service"></span><h3><a class="toc-backref" href="#id80">Endpoint Denial of Service</a><a class="headerlink" href="#endpoint-denial-of-service" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1499">Mitre Description</a></p>
+</section>
+<section id="escape-to-host">
+<span id="mitre-technique-escape-to-host"></span><h3><a class="toc-backref" href="#id81">Escape to Host</a><a class="headerlink" href="#escape-to-host" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1611">Mitre Description</a></p>
+</section>
+<section id="establish-accounts">
+<span id="mitre-technique-establish-accounts"></span><h3><a class="toc-backref" href="#id82">Establish Accounts</a><a class="headerlink" href="#establish-accounts" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1585">Mitre Description</a></p>
+</section>
+<section id="event-triggered-execution">
+<span id="mitre-technique-event-triggered-execution"></span><h3><a class="toc-backref" href="#id83">Event Triggered Execution</a><a class="headerlink" href="#event-triggered-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1546">Mitre Description</a></p>
+</section>
+<section id="execution-guardrails">
+<span id="mitre-technique-execution-guardrails"></span><h3><a class="toc-backref" href="#id84">Execution Guardrails</a><a class="headerlink" href="#execution-guardrails" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1480">Mitre Description</a></p>
+</section>
+<section id="exfiltration-over-alternative-protocol">
+<span id="mitre-technique-exfiltration-over-alternative-protocol"></span><h3><a class="toc-backref" href="#id85">Exfiltration Over Alternative Protocol</a><a class="headerlink" href="#exfiltration-over-alternative-protocol" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1048">Mitre Description</a></p>
+</section>
+<section id="exfiltration-over-c2-channel">
+<span id="mitre-technique-exfiltration-over-c2-channel"></span><h3><a class="toc-backref" href="#id86">Exfiltration Over C2 Channel</a><a class="headerlink" href="#exfiltration-over-c2-channel" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1041">Mitre Description</a></p>
+</section>
+<section id="exfiltration-over-other-network-medium">
+<span id="mitre-technique-exfiltration-over-other-network-medium"></span><h3><a class="toc-backref" href="#id87">Exfiltration Over Other Network Medium</a><a class="headerlink" href="#exfiltration-over-other-network-medium" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1011">Mitre Description</a></p>
+</section>
+<section id="exfiltration-over-physical-medium">
+<span id="mitre-technique-exfiltration-over-physical-medium"></span><h3><a class="toc-backref" href="#id88">Exfiltration Over Physical Medium</a><a class="headerlink" href="#exfiltration-over-physical-medium" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1052">Mitre Description</a></p>
+</section>
+<section id="exfiltration-over-web-service">
+<span id="mitre-technique-exfiltration-over-web-service"></span><h3><a class="toc-backref" href="#id89">Exfiltration Over Web Service</a><a class="headerlink" href="#exfiltration-over-web-service" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1567">Mitre Description</a></p>
+</section>
+<section id="exploit-public-facing-application">
+<span id="mitre-technique-exploit-public-facing-application"></span><h3><a class="toc-backref" href="#id90">Exploit Public-Facing Application</a><a class="headerlink" href="#exploit-public-facing-application" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1190">Mitre Description</a></p>
+</section>
+<section id="exploitation-for-client-execution">
+<span id="mitre-technique-exploitation-for-client-execution"></span><h3><a class="toc-backref" href="#id91">Exploitation for Client Execution</a><a class="headerlink" href="#exploitation-for-client-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1203">Mitre Description</a></p>
+</section>
+<section id="exploitation-for-credential-access">
+<span id="mitre-technique-exploitation-for-credential-access"></span><h3><a class="toc-backref" href="#id92">Exploitation for Credential Access</a><a class="headerlink" href="#exploitation-for-credential-access" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1212">Mitre Description</a></p>
+</section>
+<section id="exploitation-for-defense-evasion">
+<span id="mitre-technique-exploitation-for-defense-evasion"></span><h3><a class="toc-backref" href="#id93">Exploitation for Defense Evasion</a><a class="headerlink" href="#exploitation-for-defense-evasion" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1211">Mitre Description</a></p>
 </section>
 <section id="exploitation-for-privilege-escalation">
-<span id="mitre-technique-exploit-for-privilege-escalation"></span><h3><a class="toc-backref" href="#id5">Exploitation for Privilege Escalation</a><a class="headerlink" href="#exploitation-for-privilege-escalation" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://attack.mitre.org/https://attack.mitre.org/techniques/T1068/">Mitre Description</a></p>
+<span id="mitre-technique-exploitation-for-privilege-escalation"></span><h3><a class="toc-backref" href="#id94">Exploitation for Privilege Escalation</a><a class="headerlink" href="#exploitation-for-privilege-escalation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1068">Mitre Description</a></p>
+</section>
+<section id="exploitation-of-remote-services">
+<span id="mitre-technique-exploitation-of-remote-services"></span><h3><a class="toc-backref" href="#id95">Exploitation of Remote Services</a><a class="headerlink" href="#exploitation-of-remote-services" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1210">Mitre Description</a></p>
+</section>
+<section id="external-remote-services">
+<span id="mitre-technique-external-remote-services"></span><h3><a class="toc-backref" href="#id96">External Remote Services</a><a class="headerlink" href="#external-remote-services" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1133">Mitre Description</a></p>
+</section>
+<section id="fallback-channels">
+<span id="mitre-technique-fallback-channels"></span><h3><a class="toc-backref" href="#id97">Fallback Channels</a><a class="headerlink" href="#fallback-channels" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1008">Mitre Description</a></p>
+</section>
+<section id="file-and-directory-discovery">
+<span id="mitre-technique-file-and-directory-discovery"></span><h3><a class="toc-backref" href="#id98">File and Directory Discovery</a><a class="headerlink" href="#file-and-directory-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1083">Mitre Description</a></p>
+</section>
+<section id="file-and-directory-permissions-modification">
+<span id="mitre-technique-file-and-directory-permissions-modification"></span><h3><a class="toc-backref" href="#id99">File and Directory Permissions Modification</a><a class="headerlink" href="#file-and-directory-permissions-modification" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1222">Mitre Description</a></p>
+</section>
+<section id="firmware-corruption">
+<span id="mitre-technique-firmware-corruption"></span><h3><a class="toc-backref" href="#id100">Firmware Corruption</a><a class="headerlink" href="#firmware-corruption" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1495">Mitre Description</a></p>
+</section>
+<section id="forced-authentication">
+<span id="mitre-technique-forced-authentication"></span><h3><a class="toc-backref" href="#id101">Forced Authentication</a><a class="headerlink" href="#forced-authentication" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1187">Mitre Description</a></p>
+</section>
+<section id="forge-web-credentials">
+<span id="mitre-technique-forge-web-credentials"></span><h3><a class="toc-backref" href="#id102">Forge Web Credentials</a><a class="headerlink" href="#forge-web-credentials" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1606">Mitre Description</a></p>
+</section>
+<section id="gather-victim-host-information">
+<span id="mitre-technique-gather-victim-host-information"></span><h3><a class="toc-backref" href="#id103">Gather Victim Host Information</a><a class="headerlink" href="#gather-victim-host-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1592">Mitre Description</a></p>
+</section>
+<section id="gather-victim-identity-information">
+<span id="mitre-technique-gather-victim-identity-information"></span><h3><a class="toc-backref" href="#id104">Gather Victim Identity Information</a><a class="headerlink" href="#gather-victim-identity-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1589">Mitre Description</a></p>
+</section>
+<section id="gather-victim-network-information">
+<span id="mitre-technique-gather-victim-network-information"></span><h3><a class="toc-backref" href="#id105">Gather Victim Network Information</a><a class="headerlink" href="#gather-victim-network-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1590">Mitre Description</a></p>
+</section>
+<section id="gather-victim-org-information">
+<span id="mitre-technique-gather-victim-org-information"></span><h3><a class="toc-backref" href="#id106">Gather Victim Org Information</a><a class="headerlink" href="#gather-victim-org-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1591">Mitre Description</a></p>
+</section>
+<section id="group-policy-discovery">
+<span id="mitre-technique-group-policy-discovery"></span><h3><a class="toc-backref" href="#id107">Group Policy Discovery</a><a class="headerlink" href="#group-policy-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1615">Mitre Description</a></p>
+</section>
+<section id="hardware-additions">
+<span id="mitre-technique-hardware-additions"></span><h3><a class="toc-backref" href="#id108">Hardware Additions</a><a class="headerlink" href="#hardware-additions" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1200">Mitre Description</a></p>
+</section>
+<section id="hide-artifacts">
+<span id="mitre-technique-hide-artifacts"></span><h3><a class="toc-backref" href="#id109">Hide Artifacts</a><a class="headerlink" href="#hide-artifacts" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1564">Mitre Description</a></p>
+</section>
+<section id="hijack-execution-flow">
+<span id="mitre-technique-hijack-execution-flow"></span><h3><a class="toc-backref" href="#id110">Hijack Execution Flow</a><a class="headerlink" href="#hijack-execution-flow" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1574">Mitre Description</a></p>
+</section>
+<section id="impair-defenses">
+<span id="mitre-technique-impair-defenses"></span><h3><a class="toc-backref" href="#id111">Impair Defenses</a><a class="headerlink" href="#impair-defenses" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1562">Mitre Description</a></p>
+</section>
+<section id="implant-internal-image">
+<span id="mitre-technique-implant-internal-image"></span><h3><a class="toc-backref" href="#id112">Implant Internal Image</a><a class="headerlink" href="#implant-internal-image" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1525">Mitre Description</a></p>
+</section>
+<section id="indicator-removal">
+<span id="mitre-technique-indicator-removal"></span><h3><a class="toc-backref" href="#id113">Indicator Removal</a><a class="headerlink" href="#indicator-removal" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1070">Mitre Description</a></p>
+</section>
+<section id="indirect-command-execution">
+<span id="mitre-technique-indirect-command-execution"></span><h3><a class="toc-backref" href="#id114">Indirect Command Execution</a><a class="headerlink" href="#indirect-command-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1202">Mitre Description</a></p>
+</section>
+<section id="ingress-tool-transfer">
+<span id="mitre-technique-ingress-tool-transfer"></span><h3><a class="toc-backref" href="#id115">Ingress Tool Transfer</a><a class="headerlink" href="#ingress-tool-transfer" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1105">Mitre Description</a></p>
+</section>
+<section id="inhibit-system-recovery">
+<span id="mitre-technique-inhibit-system-recovery"></span><h3><a class="toc-backref" href="#id116">Inhibit System Recovery</a><a class="headerlink" href="#inhibit-system-recovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1490">Mitre Description</a></p>
+</section>
+<section id="input-capture">
+<span id="mitre-technique-input-capture"></span><h3><a class="toc-backref" href="#id117">Input Capture</a><a class="headerlink" href="#input-capture" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a>, <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1056">Mitre Description</a></p>
+</section>
+<section id="inter-process-communication">
+<span id="mitre-technique-inter-process-communication"></span><h3><a class="toc-backref" href="#id118">Inter-Process Communication</a><a class="headerlink" href="#inter-process-communication" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1559">Mitre Description</a></p>
+</section>
+<section id="internal-spearphishing">
+<span id="mitre-technique-internal-spearphishing"></span><h3><a class="toc-backref" href="#id119">Internal Spearphishing</a><a class="headerlink" href="#internal-spearphishing" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1534">Mitre Description</a></p>
+</section>
+<section id="lateral-tool-transfer">
+<span id="mitre-technique-lateral-tool-transfer"></span><h3><a class="toc-backref" href="#id120">Lateral Tool Transfer</a><a class="headerlink" href="#lateral-tool-transfer" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1570">Mitre Description</a></p>
+</section>
+<section id="masquerading">
+<span id="mitre-technique-masquerading"></span><h3><a class="toc-backref" href="#id121">Masquerading</a><a class="headerlink" href="#masquerading" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1036">Mitre Description</a></p>
+</section>
+<section id="modify-authentication-process">
+<span id="mitre-technique-modify-authentication-process"></span><h3><a class="toc-backref" href="#id122">Modify Authentication Process</a><a class="headerlink" href="#modify-authentication-process" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a>, <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1556">Mitre Description</a></p>
+</section>
+<section id="modify-cloud-compute-infrastructure">
+<span id="mitre-technique-modify-cloud-compute-infrastructure"></span><h3><a class="toc-backref" href="#id123">Modify Cloud Compute Infrastructure</a><a class="headerlink" href="#modify-cloud-compute-infrastructure" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1578">Mitre Description</a></p>
+</section>
+<section id="modify-registry">
+<span id="mitre-technique-modify-registry"></span><h3><a class="toc-backref" href="#id124">Modify Registry</a><a class="headerlink" href="#modify-registry" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1112">Mitre Description</a></p>
+</section>
+<section id="modify-system-image">
+<span id="mitre-technique-modify-system-image"></span><h3><a class="toc-backref" href="#id125">Modify System Image</a><a class="headerlink" href="#modify-system-image" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1601">Mitre Description</a></p>
+</section>
+<section id="multi-factor-authentication-interception">
+<span id="mitre-technique-multi-factor-authentication-interception"></span><h3><a class="toc-backref" href="#id126">Multi-Factor Authentication Interception</a><a class="headerlink" href="#multi-factor-authentication-interception" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1111">Mitre Description</a></p>
+</section>
+<section id="multi-factor-authentication-request-generation">
+<span id="mitre-technique-multi-factor-authentication-request-generation"></span><h3><a class="toc-backref" href="#id127">Multi-Factor Authentication Request Generation</a><a class="headerlink" href="#multi-factor-authentication-request-generation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1621">Mitre Description</a></p>
+</section>
+<section id="multi-stage-channels">
+<span id="mitre-technique-multi-stage-channels"></span><h3><a class="toc-backref" href="#id128">Multi-Stage Channels</a><a class="headerlink" href="#multi-stage-channels" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1104">Mitre Description</a></p>
+</section>
+<section id="native-api">
+<span id="mitre-technique-native-api"></span><h3><a class="toc-backref" href="#id129">Native API</a><a class="headerlink" href="#native-api" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1106">Mitre Description</a></p>
+</section>
+<section id="network-boundary-bridging">
+<span id="mitre-technique-network-boundary-bridging"></span><h3><a class="toc-backref" href="#id130">Network Boundary Bridging</a><a class="headerlink" href="#network-boundary-bridging" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1599">Mitre Description</a></p>
+</section>
+<section id="network-denial-of-service">
+<span id="mitre-technique-network-denial-of-service"></span><h3><a class="toc-backref" href="#id131">Network Denial of Service</a><a class="headerlink" href="#network-denial-of-service" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1498">Mitre Description</a></p>
+</section>
+<section id="network-service-discovery">
+<span id="mitre-technique-network-service-discovery"></span><h3><a class="toc-backref" href="#id132">Network Service Discovery</a><a class="headerlink" href="#network-service-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1046">Mitre Description</a></p>
+</section>
+<section id="network-share-discovery">
+<span id="mitre-technique-network-share-discovery"></span><h3><a class="toc-backref" href="#id133">Network Share Discovery</a><a class="headerlink" href="#network-share-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1135">Mitre Description</a></p>
+</section>
+<section id="network-sniffing">
+<span id="mitre-technique-network-sniffing"></span><h3><a class="toc-backref" href="#id134">Network Sniffing</a><a class="headerlink" href="#network-sniffing" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a>, <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1040">Mitre Description</a></p>
+</section>
+<section id="non-application-layer-protocol">
+<span id="mitre-technique-non-application-layer-protocol"></span><h3><a class="toc-backref" href="#id135">Non-Application Layer Protocol</a><a class="headerlink" href="#non-application-layer-protocol" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1095">Mitre Description</a></p>
+</section>
+<section id="non-standard-port">
+<span id="mitre-technique-non-standard-port"></span><h3><a class="toc-backref" href="#id136">Non-Standard Port</a><a class="headerlink" href="#non-standard-port" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1571">Mitre Description</a></p>
+</section>
+<section id="os-credential-dumping">
+<span id="mitre-technique-os-credential-dumping"></span><h3><a class="toc-backref" href="#id137">OS Credential Dumping</a><a class="headerlink" href="#os-credential-dumping" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1003">Mitre Description</a></p>
+</section>
+<section id="obfuscated-files-or-information">
+<span id="mitre-technique-obfuscated-files-or-information"></span><h3><a class="toc-backref" href="#id138">Obfuscated Files or Information</a><a class="headerlink" href="#obfuscated-files-or-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1027">Mitre Description</a></p>
+</section>
+<section id="obtain-capabilities">
+<span id="mitre-technique-obtain-capabilities"></span><h3><a class="toc-backref" href="#id139">Obtain Capabilities</a><a class="headerlink" href="#obtain-capabilities" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1588">Mitre Description</a></p>
+</section>
+<section id="office-application-startup">
+<span id="mitre-technique-office-application-startup"></span><h3><a class="toc-backref" href="#id140">Office Application Startup</a><a class="headerlink" href="#office-application-startup" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1137">Mitre Description</a></p>
+</section>
+<section id="password-policy-discovery">
+<span id="mitre-technique-password-policy-discovery"></span><h3><a class="toc-backref" href="#id141">Password Policy Discovery</a><a class="headerlink" href="#password-policy-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1201">Mitre Description</a></p>
+</section>
+<section id="peripheral-device-discovery">
+<span id="mitre-technique-peripheral-device-discovery"></span><h3><a class="toc-backref" href="#id142">Peripheral Device Discovery</a><a class="headerlink" href="#peripheral-device-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1120">Mitre Description</a></p>
+</section>
+<section id="permission-groups-discovery">
+<span id="mitre-technique-permission-groups-discovery"></span><h3><a class="toc-backref" href="#id143">Permission Groups Discovery</a><a class="headerlink" href="#permission-groups-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1069">Mitre Description</a></p>
+</section>
+<section id="phishing">
+<span id="mitre-technique-phishing"></span><h3><a class="toc-backref" href="#id144">Phishing</a><a class="headerlink" href="#phishing" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1566">Mitre Description</a></p>
+</section>
+<section id="phishing-for-information">
+<span id="mitre-technique-phishing-for-information"></span><h3><a class="toc-backref" href="#id145">Phishing for Information</a><a class="headerlink" href="#phishing-for-information" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1598">Mitre Description</a></p>
+</section>
+<section id="plist-file-modification">
+<span id="mitre-technique-plist-file-modification"></span><h3><a class="toc-backref" href="#id146">Plist File Modification</a><a class="headerlink" href="#plist-file-modification" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1647">Mitre Description</a></p>
+</section>
+<section id="pre-os-boot">
+<span id="mitre-technique-pre-os-boot"></span><h3><a class="toc-backref" href="#id147">Pre-OS Boot</a><a class="headerlink" href="#pre-os-boot" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1542">Mitre Description</a></p>
+</section>
+<section id="process-discovery">
+<span id="mitre-technique-process-discovery"></span><h3><a class="toc-backref" href="#id148">Process Discovery</a><a class="headerlink" href="#process-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1057">Mitre Description</a></p>
+</section>
+<section id="process-injection">
+<span id="mitre-technique-process-injection"></span><h3><a class="toc-backref" href="#id149">Process Injection</a><a class="headerlink" href="#process-injection" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1055">Mitre Description</a></p>
+</section>
+<section id="protocol-tunneling">
+<span id="mitre-technique-protocol-tunneling"></span><h3><a class="toc-backref" href="#id150">Protocol Tunneling</a><a class="headerlink" href="#protocol-tunneling" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1572">Mitre Description</a></p>
+</section>
+<section id="proxy">
+<span id="mitre-technique-proxy"></span><h3><a class="toc-backref" href="#id151">Proxy</a><a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1090">Mitre Description</a></p>
+</section>
+<section id="query-registry">
+<span id="mitre-technique-query-registry"></span><h3><a class="toc-backref" href="#id152">Query Registry</a><a class="headerlink" href="#query-registry" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1012">Mitre Description</a></p>
+</section>
+<section id="reflective-code-loading">
+<span id="mitre-technique-reflective-code-loading"></span><h3><a class="toc-backref" href="#id153">Reflective Code Loading</a><a class="headerlink" href="#reflective-code-loading" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1620">Mitre Description</a></p>
+</section>
+<section id="remote-access-software">
+<span id="mitre-technique-remote-access-software"></span><h3><a class="toc-backref" href="#id154">Remote Access Software</a><a class="headerlink" href="#remote-access-software" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1219">Mitre Description</a></p>
+</section>
+<section id="remote-service-session-hijacking">
+<span id="mitre-technique-remote-service-session-hijacking"></span><h3><a class="toc-backref" href="#id155">Remote Service Session Hijacking</a><a class="headerlink" href="#remote-service-session-hijacking" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1563">Mitre Description</a></p>
+</section>
+<section id="remote-services">
+<span id="mitre-technique-remote-services"></span><h3><a class="toc-backref" href="#id156">Remote Services</a><a class="headerlink" href="#remote-services" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1021">Mitre Description</a></p>
+</section>
+<section id="remote-system-discovery">
+<span id="mitre-technique-remote-system-discovery"></span><h3><a class="toc-backref" href="#id157">Remote System Discovery</a><a class="headerlink" href="#remote-system-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1018">Mitre Description</a></p>
+</section>
+<section id="replication-through-removable-media">
+<span id="mitre-technique-replication-through-removable-media"></span><h3><a class="toc-backref" href="#id158">Replication Through Removable Media</a><a class="headerlink" href="#replication-through-removable-media" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a>, <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1091">Mitre Description</a></p>
+</section>
+<section id="resource-hijacking">
+<span id="mitre-technique-resource-hijacking"></span><h3><a class="toc-backref" href="#id159">Resource Hijacking</a><a class="headerlink" href="#resource-hijacking" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1496">Mitre Description</a></p>
+</section>
+<section id="rogue-domain-controller">
+<span id="mitre-technique-rogue-domain-controller"></span><h3><a class="toc-backref" href="#id160">Rogue Domain Controller</a><a class="headerlink" href="#rogue-domain-controller" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1207">Mitre Description</a></p>
+</section>
+<section id="rootkit">
+<span id="mitre-technique-rootkit"></span><h3><a class="toc-backref" href="#id161">Rootkit</a><a class="headerlink" href="#rootkit" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1014">Mitre Description</a></p>
+</section>
+<section id="scheduled-task-job">
+<span id="mitre-technique-scheduled-task-job"></span><h3><a class="toc-backref" href="#id162">Scheduled Task/Job</a><a class="headerlink" href="#scheduled-task-job" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1053">Mitre Description</a></p>
+</section>
+<section id="scheduled-transfer">
+<span id="mitre-technique-scheduled-transfer"></span><h3><a class="toc-backref" href="#id163">Scheduled Transfer</a><a class="headerlink" href="#scheduled-transfer" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1029">Mitre Description</a></p>
+</section>
+<section id="screen-capture">
+<span id="mitre-technique-screen-capture"></span><h3><a class="toc-backref" href="#id164">Screen Capture</a><a class="headerlink" href="#screen-capture" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1113">Mitre Description</a></p>
+</section>
+<section id="search-closed-sources">
+<span id="mitre-technique-search-closed-sources"></span><h3><a class="toc-backref" href="#id165">Search Closed Sources</a><a class="headerlink" href="#search-closed-sources" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1597">Mitre Description</a></p>
+</section>
+<section id="search-open-technical-databases">
+<span id="mitre-technique-search-open-technical-databases"></span><h3><a class="toc-backref" href="#id166">Search Open Technical Databases</a><a class="headerlink" href="#search-open-technical-databases" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1596">Mitre Description</a></p>
+</section>
+<section id="search-open-websites-domains">
+<span id="mitre-technique-search-open-websites-domains"></span><h3><a class="toc-backref" href="#id167">Search Open Websites/Domains</a><a class="headerlink" href="#search-open-websites-domains" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1593">Mitre Description</a></p>
+</section>
+<section id="search-victim-owned-websites">
+<span id="mitre-technique-search-victim-owned-websites"></span><h3><a class="toc-backref" href="#id168">Search Victim-Owned Websites</a><a class="headerlink" href="#search-victim-owned-websites" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-reconnaissance"><span class="std std-ref">Reconnaissance</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1594">Mitre Description</a></p>
+</section>
+<section id="server-software-component">
+<span id="mitre-technique-server-software-component"></span><h3><a class="toc-backref" href="#id169">Server Software Component</a><a class="headerlink" href="#server-software-component" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1505">Mitre Description</a></p>
+</section>
+<section id="serverless-execution">
+<span id="mitre-technique-serverless-execution"></span><h3><a class="toc-backref" href="#id170">Serverless Execution</a><a class="headerlink" href="#serverless-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1648">Mitre Description</a></p>
+</section>
+<section id="service-stop">
+<span id="mitre-technique-service-stop"></span><h3><a class="toc-backref" href="#id171">Service Stop</a><a class="headerlink" href="#service-stop" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1489">Mitre Description</a></p>
+</section>
+<section id="shared-modules">
+<span id="mitre-technique-shared-modules"></span><h3><a class="toc-backref" href="#id172">Shared Modules</a><a class="headerlink" href="#shared-modules" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1129">Mitre Description</a></p>
+</section>
+<section id="software-deployment-tools">
+<span id="mitre-technique-software-deployment-tools"></span><h3><a class="toc-backref" href="#id173">Software Deployment Tools</a><a class="headerlink" href="#software-deployment-tools" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a>, <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1072">Mitre Description</a></p>
+</section>
+<section id="software-discovery">
+<span id="mitre-technique-software-discovery"></span><h3><a class="toc-backref" href="#id174">Software Discovery</a><a class="headerlink" href="#software-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1518">Mitre Description</a></p>
+</section>
+<section id="stage-capabilities">
+<span id="mitre-technique-stage-capabilities"></span><h3><a class="toc-backref" href="#id175">Stage Capabilities</a><a class="headerlink" href="#stage-capabilities" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-resource-development"><span class="std std-ref">Resource Development</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1608">Mitre Description</a></p>
+</section>
+<section id="steal-application-access-token">
+<span id="mitre-technique-steal-application-access-token"></span><h3><a class="toc-backref" href="#id176">Steal Application Access Token</a><a class="headerlink" href="#steal-application-access-token" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1528">Mitre Description</a></p>
+</section>
+<section id="steal-web-session-cookie">
+<span id="mitre-technique-steal-web-session-cookie"></span><h3><a class="toc-backref" href="#id177">Steal Web Session Cookie</a><a class="headerlink" href="#steal-web-session-cookie" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1539">Mitre Description</a></p>
+</section>
+<section id="steal-or-forge-authentication-certificates">
+<span id="mitre-technique-steal-or-forge-authentication-certificates"></span><h3><a class="toc-backref" href="#id178">Steal or Forge Authentication Certificates</a><a class="headerlink" href="#steal-or-forge-authentication-certificates" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1649">Mitre Description</a></p>
+</section>
+<section id="steal-or-forge-kerberos-tickets">
+<span id="mitre-technique-steal-or-forge-kerberos-tickets"></span><h3><a class="toc-backref" href="#id179">Steal or Forge Kerberos Tickets</a><a class="headerlink" href="#steal-or-forge-kerberos-tickets" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1558">Mitre Description</a></p>
+</section>
+<section id="subvert-trust-controls">
+<span id="mitre-technique-subvert-trust-controls"></span><h3><a class="toc-backref" href="#id180">Subvert Trust Controls</a><a class="headerlink" href="#subvert-trust-controls" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1553">Mitre Description</a></p>
+</section>
+<section id="supply-chain-compromise">
+<span id="mitre-technique-supply-chain-compromise"></span><h3><a class="toc-backref" href="#id181">Supply Chain Compromise</a><a class="headerlink" href="#supply-chain-compromise" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1195">Mitre Description</a></p>
+</section>
+<section id="system-binary-proxy-execution">
+<span id="mitre-technique-system-binary-proxy-execution"></span><h3><a class="toc-backref" href="#id182">System Binary Proxy Execution</a><a class="headerlink" href="#system-binary-proxy-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1218">Mitre Description</a></p>
+</section>
+<section id="system-information-discovery">
+<span id="mitre-technique-system-information-discovery"></span><h3><a class="toc-backref" href="#id183">System Information Discovery</a><a class="headerlink" href="#system-information-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1082">Mitre Description</a></p>
+</section>
+<section id="system-location-discovery">
+<span id="mitre-technique-system-location-discovery"></span><h3><a class="toc-backref" href="#id184">System Location Discovery</a><a class="headerlink" href="#system-location-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1614">Mitre Description</a></p>
+</section>
+<section id="system-network-configuration-discovery">
+<span id="mitre-technique-system-network-configuration-discovery"></span><h3><a class="toc-backref" href="#id185">System Network Configuration Discovery</a><a class="headerlink" href="#system-network-configuration-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1016">Mitre Description</a></p>
+</section>
+<section id="system-network-connections-discovery">
+<span id="mitre-technique-system-network-connections-discovery"></span><h3><a class="toc-backref" href="#id186">System Network Connections Discovery</a><a class="headerlink" href="#system-network-connections-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1049">Mitre Description</a></p>
+</section>
+<section id="system-owner-user-discovery">
+<span id="mitre-technique-system-owner-user-discovery"></span><h3><a class="toc-backref" href="#id187">System Owner/User Discovery</a><a class="headerlink" href="#system-owner-user-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1033">Mitre Description</a></p>
+</section>
+<section id="system-script-proxy-execution">
+<span id="mitre-technique-system-script-proxy-execution"></span><h3><a class="toc-backref" href="#id188">System Script Proxy Execution</a><a class="headerlink" href="#system-script-proxy-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1216">Mitre Description</a></p>
+</section>
+<section id="system-service-discovery">
+<span id="mitre-technique-system-service-discovery"></span><h3><a class="toc-backref" href="#id189">System Service Discovery</a><a class="headerlink" href="#system-service-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1007">Mitre Description</a></p>
+</section>
+<section id="system-services">
+<span id="mitre-technique-system-services"></span><h3><a class="toc-backref" href="#id190">System Services</a><a class="headerlink" href="#system-services" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1569">Mitre Description</a></p>
+</section>
+<section id="system-shutdown-reboot">
+<span id="mitre-technique-system-shutdown-reboot"></span><h3><a class="toc-backref" href="#id191">System Shutdown/Reboot</a><a class="headerlink" href="#system-shutdown-reboot" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-impact"><span class="std std-ref">Impact</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1529">Mitre Description</a></p>
+</section>
+<section id="system-time-discovery">
+<span id="mitre-technique-system-time-discovery"></span><h3><a class="toc-backref" href="#id192">System Time Discovery</a><a class="headerlink" href="#system-time-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1124">Mitre Description</a></p>
+</section>
+<section id="taint-shared-content">
+<span id="mitre-technique-taint-shared-content"></span><h3><a class="toc-backref" href="#id193">Taint Shared Content</a><a class="headerlink" href="#taint-shared-content" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1080">Mitre Description</a></p>
+</section>
+<section id="template-injection">
+<span id="mitre-technique-template-injection"></span><h3><a class="toc-backref" href="#id194">Template Injection</a><a class="headerlink" href="#template-injection" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1221">Mitre Description</a></p>
+</section>
+<section id="traffic-signaling">
+<span id="mitre-technique-traffic-signaling"></span><h3><a class="toc-backref" href="#id195">Traffic Signaling</a><a class="headerlink" href="#traffic-signaling" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a>, <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1205">Mitre Description</a></p>
+</section>
+<section id="transfer-data-to-cloud-account">
+<span id="mitre-technique-transfer-data-to-cloud-account"></span><h3><a class="toc-backref" href="#id196">Transfer Data to Cloud Account</a><a class="headerlink" href="#transfer-data-to-cloud-account" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-exfiltration"><span class="std std-ref">Exfiltration</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1537">Mitre Description</a></p>
+</section>
+<section id="trusted-developer-utilities-proxy-execution">
+<span id="mitre-technique-trusted-developer-utilities-proxy-execution"></span><h3><a class="toc-backref" href="#id197">Trusted Developer Utilities Proxy Execution</a><a class="headerlink" href="#trusted-developer-utilities-proxy-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1127">Mitre Description</a></p>
+</section>
+<section id="trusted-relationship">
+<span id="mitre-technique-trusted-relationship"></span><h3><a class="toc-backref" href="#id198">Trusted Relationship</a><a class="headerlink" href="#trusted-relationship" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1199">Mitre Description</a></p>
+</section>
+<section id="unsecured-credentials">
+<span id="mitre-technique-unsecured-credentials"></span><h3><a class="toc-backref" href="#id199">Unsecured Credentials</a><a class="headerlink" href="#unsecured-credentials" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-credential-access"><span class="std std-ref">Credential Access</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1552">Mitre Description</a></p>
+</section>
+<section id="unused-unsupported-cloud-regions">
+<span id="mitre-technique-unused-unsupported-cloud-regions"></span><h3><a class="toc-backref" href="#id200">Unused/Unsupported Cloud Regions</a><a class="headerlink" href="#unused-unsupported-cloud-regions" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1535">Mitre Description</a></p>
+</section>
+<section id="use-alternate-authentication-material">
+<span id="mitre-technique-use-alternate-authentication-material"></span><h3><a class="toc-backref" href="#id201">Use Alternate Authentication Material</a><a class="headerlink" href="#use-alternate-authentication-material" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-lateral-movement"><span class="std std-ref">Lateral Movement</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1550">Mitre Description</a></p>
+</section>
+<section id="user-execution">
+<span id="mitre-technique-user-execution"></span><h3><a class="toc-backref" href="#id202">User Execution</a><a class="headerlink" href="#user-execution" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1204">Mitre Description</a></p>
+</section>
+<section id="valid-accounts">
+<span id="mitre-technique-valid-accounts"></span><h3><a class="toc-backref" href="#id203">Valid Accounts</a><a class="headerlink" href="#valid-accounts" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-initial-access"><span class="std std-ref">Initial Access</span></a>, <a class="reference internal" href="#mitre-tactic-persistence"><span class="std std-ref">Persistence</span></a>, <a class="reference internal" href="#mitre-tactic-privilege-escalation"><span class="std std-ref">Privilege Escalation</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1078">Mitre Description</a></p>
+</section>
+<section id="video-capture">
+<span id="mitre-technique-video-capture"></span><h3><a class="toc-backref" href="#id204">Video Capture</a><a class="headerlink" href="#video-capture" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-collection"><span class="std std-ref">Collection</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1125">Mitre Description</a></p>
+</section>
+<section id="virtualization-sandbox-evasion">
+<span id="mitre-technique-virtualization-sandbox-evasion"></span><h3><a class="toc-backref" href="#id205">Virtualization/Sandbox Evasion</a><a class="headerlink" href="#virtualization-sandbox-evasion" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a>, <a class="reference internal" href="#mitre-tactic-discovery"><span class="std std-ref">Discovery</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1497">Mitre Description</a></p>
+</section>
+<section id="weaken-encryption">
+<span id="mitre-technique-weaken-encryption"></span><h3><a class="toc-backref" href="#id206">Weaken Encryption</a><a class="headerlink" href="#weaken-encryption" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1600">Mitre Description</a></p>
+</section>
+<section id="web-service">
+<span id="mitre-technique-web-service"></span><h3><a class="toc-backref" href="#id207">Web Service</a><a class="headerlink" href="#web-service" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-command-and-control"><span class="std std-ref">Command and Control</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1102">Mitre Description</a></p>
+</section>
+<section id="windows-management-instrumentation">
+<span id="mitre-technique-windows-management-instrumentation"></span><h3><a class="toc-backref" href="#id208">Windows Management Instrumentation</a><a class="headerlink" href="#windows-management-instrumentation" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-execution"><span class="std std-ref">Execution</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1047">Mitre Description</a></p>
+</section>
+<section id="xsl-script-processing">
+<span id="mitre-technique-xsl-script-processing"></span><h3><a class="toc-backref" href="#id209">XSL Script Processing</a><a class="headerlink" href="#xsl-script-processing" title="Permalink to this headline">¶</a></h3>
+<p>Tactics: <a class="reference internal" href="#mitre-tactic-defense-evasion"><span class="std std-ref">Defense Evasion</span></a></p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1220">Mitre Description</a></p>
 </section>
 </section>
 </section>
@@ -96,6 +1309,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mitigations.html">Mitigations</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../validation/validation.html">Validation</a></li>
 </ul>
 
 <div class="relations">

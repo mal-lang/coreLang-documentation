@@ -363,7 +363,7 @@ nested and multiple required factors can be specified for the same
 :ref:`asset_credentials`.
 
 Furthermore, three defenses on the :ref:`asset_credentials` asset exist that
-allow the modeler to define its characteristics
+allow the modeler to define its characteristics,
 :ref:`asset_credentials_notguessable`, :ref:`asset_credentials_unique`, and
 :ref:`asset_credentials_notphishable`. These allow :ref:`asset_credentials` to
 represent a variety of authentication mechanisms, from biometrics to one-time
@@ -383,7 +383,7 @@ Payload based filtering in coreLang is implemented via the
 being able to :ref:`exploit vulnerabilities
 <asset_application_usevulnerability>` or :ref:`induce unsafe user
 actions <asset_application_unsafeuseractivity>` on the
-:ref:`Applications <asset_application>` it reaches via inspected
+:ref:`Applications <asset_application>` they reach via inspected
 :ref:`Connection Rules <asset_connectionrule>`, as the payload inspection is
 expected to detect the anomalous patterns and filter the traffic out. However,
 the adversary would still be able to utilize legitimate
@@ -615,7 +615,7 @@ Control feature to reduce the risks of privilege escalation. It can be
 implemented by removing, or enabling the
 :ref:`asset_softwarevulnerability_notpresent` defense on, the
 :ref:`asset_softwarevulnerability` described in the
-:ref:`mitre_technique_exploit_for_privilege_escalation` technique.
+:ref:`mitre_technique_exploitation_for_privilege_escalation` technique.
 
 .. _mitre_user_account_management:
 
