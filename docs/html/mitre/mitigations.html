@@ -362,19 +362,13 @@ atypical.</p>
 <section id="m1028-operating-system-configuration">
 <span id="mitre-operating-system-configuration"></span><h2><a class="toc-backref" href="#id26">M1028   Operating System Configuration</a><a class="headerlink" href="#m1028-operating-system-configuration" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://attack.mitre.org/mitigations/M1028/">Mitre Description</a></p>
+<p>This is a more specific application of the same mechanisms described for
+<a class="reference internal" href="#mitre-software-configuration"><span class="std std-ref">M1054   Software Configuration</span></a>.</p>
 <p>This mitigation defines a specific place, the operating system, where security
 improvements can be made. From coreLang’s perspective the operating system is
 simply an <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Application</span></a>. Usually, it will host other
 <a class="reference internal" href="../assets.html#asset-application"><span class="std std-ref">Applications</span></a> <a class="reference internal" href="../associations.html#association-appexecution"><span class="std std-ref">running on</span></a> it and sometimes the <a class="reference internal" href="../assets.html#asset-hardware"><span class="std std-ref">Hardware</span></a> it
 <a class="reference internal" href="../associations.html#association-sysexecution"><span class="std std-ref">runs on</span></a> will also be represented.</p>
-<p>Most of the implementations suggested by this mitigation for various
-techniques are covered by other mitigations, they are just applied to
-operating system components. See
-<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>,
-<a class="reference internal" href="#mitre-disable-or-remove-feature-or-program"><span class="std std-ref">M1042   Disable or Remove Feature or Program</span></a>,
-<a class="reference internal" href="#mitre-limit-hardware-installation"><span class="std std-ref">M1034   Limit Hardware Installation</span></a>, <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a>,
-<a class="reference internal" href="#mitre-privileged-account-management"><span class="std std-ref">M1026   Privileged Account Management</span></a>, and
-<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.</p>
 </section>
 <section id="m1027-password-policies">
 <span id="mitre-password-policies"></span><h2><a class="toc-backref" href="#id27">M1027   Password Policies</a><a class="headerlink" href="#m1027-password-policies" title="Permalink to this headline">¶</a></h2>
@@ -438,7 +432,7 @@ which is how files and directories are represented in coreLang.</p>
 extraneous privileges. The <a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on the
 <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets can be used to speculate about the attack
 vectors that removing these permission would thwart. <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>
-are a good candidate for modelling these scenarios since they can be
+are a good candidate for modeling these scenarios since they can be
 associated with either an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> or a <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a> as
 <a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> to represent that those
 <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a> act as a subset of permissions available to those
@@ -466,8 +460,14 @@ match <a class="reference internal" href="#mitre-exploit-protection"><span class
 <section id="m1054-software-configuration">
 <span id="mitre-software-configuration"></span><h2><a class="toc-backref" href="#id36">M1054   Software Configuration</a><a class="headerlink" href="#m1054-software-configuration" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://attack.mitre.org/mitigations/M1054/">Mitre Description</a></p>
-<p>This is a more general application of the same mechanisms described for
-<a class="reference internal" href="#mitre-operating-system-configuration"><span class="std std-ref">M1028   Operating System Configuration</span></a>.</p>
+<p>Most of the implementations suggested by this mitigation for various
+techniques are covered by other mitigations, they are just usually part of
+software configurations. See
+<a class="reference internal" href="#mitre-exploit-protection"><span class="std std-ref">M1050   Exploit Protection</span></a>,
+<a class="reference internal" href="#mitre-disable-or-remove-feature-or-program"><span class="std std-ref">M1042   Disable or Remove Feature or Program</span></a>,
+<a class="reference internal" href="#mitre-limit-hardware-installation"><span class="std std-ref">M1034   Limit Hardware Installation</span></a>, <a class="reference internal" href="#mitre-code-signing"><span class="std std-ref">M1045   Code Signing</span></a>,
+<a class="reference internal" href="#mitre-privileged-account-management"><span class="std std-ref">M1026   Privileged Account Management</span></a>, and
+<a class="reference internal" href="#mitre-restrict-file-and-directory-permissions"><span class="std std-ref">M1022   Restrict File and Directory Permissions</span></a>.</p>
 </section>
 <section id="m1020-ssl-tls-inspection">
 <span id="mitre-ssl-tls-inspection"></span><h2><a class="toc-backref" href="#id37">M1020   SSL/TLS Inspection</a><a class="headerlink" href="#m1020-ssl-tls-inspection" title="Permalink to this headline">¶</a></h2>
@@ -514,7 +514,7 @@ or <a class="reference internal" href="../assets.html#asset-privileges"><span cl
 extraneous privileges. The <a class="reference internal" href="../assets.html#asset-iamobject-notpresent"><span class="std std-ref">notPresent</span></a> defense on the
 <a class="reference internal" href="../assets.html#asset-iamobject"><span class="std std-ref">IAM</span></a> assets can be used to speculate about the attack
 vectors that removing these permissions would thwart. <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a>
-are a good candidate for modelling these scenarios since they can be
+are a good candidate for modeling these scenarios since they can be
 associated with either an <a class="reference internal" href="../assets.html#asset-identity"><span class="std std-ref">Identity</span></a> or a <a class="reference internal" href="../assets.html#asset-group"><span class="std std-ref">Group</span></a> as
 <a class="reference internal" href="../associations.html#association-hasprivileges"><span class="std std-ref">Subprivileges</span></a> to represent that those
 <a class="reference internal" href="../assets.html#asset-privileges"><span class="std std-ref">Privileges</span></a> act as a subset of permissions available to those

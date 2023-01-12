@@ -412,21 +412,15 @@ M1028 	Operating System Configuration
 
 `Mitre Description <https://attack.mitre.org/mitigations/M1028/>`__
 
+This is a more specific application of the same mechanisms described for
+:ref:`mitre_software_configuration`.
+
 This mitigation defines a specific place, the operating system, where security
 improvements can be made. From coreLang's perspective the operating system is
 simply an :ref:`asset_application`. Usually, it will host other
 :ref:`Applications <asset_application>` :ref:`running on
 <association_appexecution>` it and sometimes the :ref:`asset_hardware` it
 :ref:`runs on <association_sysexecution>` will also be represented.
-
-Most of the implementations suggested by this mitigation for various
-techniques are covered by other mitigations, they are just applied to
-operating system components. See
-:ref:`mitre_exploit_protection`,
-:ref:`mitre_disable_or_remove_feature_or_program`,
-:ref:`mitre_limit_hardware_installation`, :ref:`mitre_code_signing`,
-:ref:`mitre_privileged_account_management`, and
-:ref:`mitre_restrict_file_and_directory_permissions`.
 
 .. _mitre_password_policies:
 
@@ -523,7 +517,7 @@ This mitigation suggests structural changes to the models by removing
 extraneous privileges. The :ref:`asset_iamobject_notpresent` defense on the
 :ref:`IAM <asset_iamobject>` assets can be used to speculate about the attack
 vectors that removing these permission would thwart. :ref:`asset_privileges`
-are a good candidate for modelling these scenarios since they can be
+are a good candidate for modeling these scenarios since they can be
 associated with either an :ref:`asset_identity` or a :ref:`asset_group` as
 :ref:`Subprivileges <association_hasprivileges>` to represent that those
 :ref:`asset_privileges` act as a subset of permissions available to those
@@ -567,8 +561,15 @@ M1054 	Software Configuration
 
 `Mitre Description <https://attack.mitre.org/mitigations/M1054/>`__
 
-This is a more general application of the same mechanisms described for
-:ref:`mitre_operating_system_configuration`.
+Most of the implementations suggested by this mitigation for various
+techniques are covered by other mitigations, they are just usually part of
+software configurations. See
+:ref:`mitre_exploit_protection`,
+:ref:`mitre_disable_or_remove_feature_or_program`,
+:ref:`mitre_limit_hardware_installation`, :ref:`mitre_code_signing`,
+:ref:`mitre_privileged_account_management`, and
+:ref:`mitre_restrict_file_and_directory_permissions`.
+
 
 .. _mitre_ssl_tls_inspection:
 
@@ -642,7 +643,7 @@ This mitigation suggests structural changes to the models by removing
 extraneous privileges. The :ref:`asset_iamobject_notpresent` defense on the
 :ref:`IAM <asset_iamobject>` assets can be used to speculate about the attack
 vectors that removing these permissions would thwart. :ref:`asset_privileges`
-are a good candidate for modelling these scenarios since they can be
+are a good candidate for modeling these scenarios since they can be
 associated with either an :ref:`asset_identity` or a :ref:`asset_group` as
 :ref:`Subprivileges <association_hasprivileges>` to represent that those
 :ref:`asset_privileges` act as a subset of permissions available to those
