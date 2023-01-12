@@ -1,0 +1,1401 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Assets &#8212; coreLang v1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Associations" href="associations.html" />
+    <link rel="prev" title="Welcome to coreLang’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="assets">
+<h1>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#iamobject" id="id69">IAMObject</a></p>
+<ul>
+<li><p><a class="reference internal" href="#notpresent" id="id70">notPresent</a></p></li>
+<li><p><a class="reference internal" href="#attemptassume" id="id71">attemptAssume</a></p></li>
+<li><p><a class="reference internal" href="#successfulassume" id="id72">successfulAssume</a></p></li>
+<li><p><a class="reference internal" href="#assume" id="id73">assume</a></p></li>
+<li><p><a class="reference internal" href="#deny" id="id74">deny</a></p></li>
+<li><p><a class="reference internal" href="#write" id="id75">write</a></p></li>
+<li><p><a class="reference internal" href="#attemptlockout" id="id76">attemptLockout</a></p></li>
+<li><p><a class="reference internal" href="#successfullockout" id="id77">successfulLockout</a></p></li>
+<li><p><a class="reference internal" href="#lockout" id="id78">lockout</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#asset-identity" id="id79">Identity</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id80">assume</a></p></li>
+<li><p><a class="reference internal" href="#lockoutfromcredentials" id="id81">lockoutFromCredentials</a></p></li>
+<li><p><a class="reference internal" href="#asset-identity-lockout" id="id82">lockout</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#privileges" id="id83">Privileges</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id84">assume</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#group" id="id85">Group</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id86">assume</a></p></li>
+<li><p><a class="reference internal" href="#lockoutfrommembers" id="id87">lockoutFromMembers</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#credentials" id="id88">Credentials</a></p>
+<ul>
+<li><p><a class="reference internal" href="#notdisclosed" id="id89">notDisclosed</a></p></li>
+<li><p><a class="reference internal" href="#notguessable" id="id90">notGuessable</a></p></li>
+<li><p><a class="reference internal" href="#unique" id="id91">unique</a></p></li>
+<li><p><a class="reference internal" href="#notphishable" id="id92">notPhishable</a></p></li>
+<li><p><a class="reference internal" href="#read" id="id93">read</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id94">write</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id95">deny</a></p></li>
+<li><p><a class="reference internal" href="#useleakedcredentials" id="id96">useLeakedCredentials</a></p></li>
+<li><p><a class="reference internal" href="#attemptcredentialsreuse" id="id97">attemptCredentialsReuse</a></p></li>
+<li><p><a class="reference internal" href="#credentialsreuse" id="id98">credentialsReuse</a></p></li>
+<li><p><a class="reference internal" href="#use" id="id99">use</a></p></li>
+<li><p><a class="reference internal" href="#attemptpropagateonecredentialcompromised" id="id100">attemptPropagateOneCredentialCompromised</a></p></li>
+<li><p><a class="reference internal" href="#propagateonecredentialcompromised" id="id101">propagateOneCredentialCompromised</a></p></li>
+<li><p><a class="reference internal" href="#attemptcredentialtheft" id="id102">attemptCredentialTheft</a></p></li>
+<li><p><a class="reference internal" href="#credentialtheft" id="id103">credentialTheft</a></p></li>
+<li><p><a class="reference internal" href="#weakcredentials" id="id104">weakCredentials</a></p></li>
+<li><p><a class="reference internal" href="#guesscredentialsfromhash" id="id105">guessCredentialsFromHash</a></p></li>
+<li><p><a class="reference internal" href="#guesscredentials" id="id106">guessCredentials</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#information" id="id107">Information</a></p>
+<ul>
+<li><p><a class="reference internal" href="#asset-information-read" id="id108">read</a></p></li>
+<li><p><a class="reference internal" href="#asset-information-write" id="id109">write</a></p></li>
+<li><p><a class="reference internal" href="#delete" id="id110">delete</a></p></li>
+<li><p><a class="reference internal" href="#asset-information-deny" id="id111">deny</a></p></li>
+<li><p><a class="reference internal" href="#extract" id="id112">extract</a></p></li>
+<li><p><a class="reference internal" href="#attemptreadfromreplica" id="id113">attemptReadFromReplica</a></p></li>
+<li><p><a class="reference internal" href="#attemptwritefromreplica" id="id114">attemptWriteFromReplica</a></p></li>
+<li><p><a class="reference internal" href="#attemptdeletefromreplica" id="id115">attemptDeleteFromReplica</a></p></li>
+<li><p><a class="reference internal" href="#attemptdenyfromreplica" id="id116">attemptDenyFromReplica</a></p></li>
+<li><p><a class="reference internal" href="#attemptextractfromreplica" id="id117">attemptExtractFromReplica</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#data" id="id118">Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#authorizedaccessfromapplication" id="id119">authorizedAccessFromApplication</a></p></li>
+<li><p><a class="reference internal" href="#bypasspayloadinspectionfromencrypteddata" id="id120">bypassPayloadInspectionFromEncryptedData</a></p></li>
+<li><p><a class="reference internal" href="#accessunencrypteddata" id="id121">accessUnencryptedData</a></p></li>
+<li><p><a class="reference internal" href="#accessunsigneddata" id="id122">accessUnsignedData</a></p></li>
+<li><p><a class="reference internal" href="#accessspoofeddata" id="id123">accessSpoofedData</a></p></li>
+<li><p><a class="reference internal" href="#accessdecrypteddata" id="id124">accessDecryptedData</a></p></li>
+<li><p><a class="reference internal" href="#attemptapplicationrespondconnect" id="id125">attemptApplicationRespondConnect</a></p></li>
+<li><p><a class="reference internal" href="#applicationrespondconnect" id="id126">applicationRespondConnect</a></p></li>
+<li><p><a class="reference internal" href="#authorizedapplicationrespondconnectfromapplication" id="id127">authorizedApplicationRespondConnectFromApplication</a></p></li>
+<li><p><a class="reference internal" href="#authorizedapplicationrespondconnectfromiam" id="id128">authorizedApplicationRespondConnectFromIAM</a></p></li>
+<li><p><a class="reference internal" href="#authorizedapplicationrespondconnect" id="id129">authorizedApplicationRespondConnect</a></p></li>
+<li><p><a class="reference internal" href="#attemptread" id="id130">attemptRead</a></p></li>
+<li><p><a class="reference internal" href="#successfulread" id="id131">successfulRead</a></p></li>
+<li><p><a class="reference internal" href="#asset-data-read" id="id132">read</a></p></li>
+<li><p><a class="reference internal" href="#authorizedreadfromiam" id="id133">authorizedReadFromIAM</a></p></li>
+<li><p><a class="reference internal" href="#authorizedreadfromapplication" id="id134">authorizedReadFromApplication</a></p></li>
+<li><p><a class="reference internal" href="#authorizedread" id="id135">authorizedRead</a></p></li>
+<li><p><a class="reference internal" href="#attemptwrite" id="id136">attemptWrite</a></p></li>
+<li><p><a class="reference internal" href="#successfulwrite" id="id137">successfulWrite</a></p></li>
+<li><p><a class="reference internal" href="#asset-data-write" id="id138">write</a></p></li>
+<li><p><a class="reference internal" href="#authorizedwritefromiam" id="id139">authorizedWriteFromIAM</a></p></li>
+<li><p><a class="reference internal" href="#authorizedwritefromapplication" id="id140">authorizedWriteFromApplication</a></p></li>
+<li><p><a class="reference internal" href="#authorizedwrite" id="id141">authorizedWrite</a></p></li>
+<li><p><a class="reference internal" href="#attemptdelete" id="id142">attemptDelete</a></p></li>
+<li><p><a class="reference internal" href="#successfuldelete" id="id143">successfulDelete</a></p></li>
+<li><p><a class="reference internal" href="#asset-data-delete" id="id144">delete</a></p></li>
+<li><p><a class="reference internal" href="#authorizeddeletefromiam" id="id145">authorizedDeleteFromIAM</a></p></li>
+<li><p><a class="reference internal" href="#authorizeddeletefromapplication" id="id146">authorizedDeleteFromApplication</a></p></li>
+<li><p><a class="reference internal" href="#authorizeddelete" id="id147">authorizedDelete</a></p></li>
+<li><p><a class="reference internal" href="#attemptdeny" id="id148">attemptDeny</a></p></li>
+<li><p><a class="reference internal" href="#successfuldeny" id="id149">successfulDeny</a></p></li>
+<li><p><a class="reference internal" href="#asset-data-deny" id="id150">deny</a></p></li>
+<li><p><a class="reference internal" href="#denyfromlockout" id="id151">denyFromLockout</a></p></li>
+<li><p><a class="reference internal" href="#attemptreversereach" id="id152">attemptReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#reversereach" id="id153">reverseReach</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id154">extract</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#hardware" id="id155">Hardware</a></p>
+<ul>
+<li><p><a class="reference internal" href="#attemptusevulnerabilityfromphysicalaccess" id="id156">attemptUseVulnerabilityFromPhysicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#successfulusevulnerabilityfromphysicalaccess" id="id157">successfulUseVulnerabilityFromPhysicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#attemptusevulnerabilityfromsoftwarefullaccess" id="id158">attemptUseVulnerabilityFromSoftwareFullAccess</a></p></li>
+<li><p><a class="reference internal" href="#usevulnerability" id="id159">useVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#attemptspreadwormthroughremovablemedia" id="id160">attemptSpreadWormThroughRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#successfulspreadwormthroughremovablemedia" id="id161">successfulSpreadWormThroughRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#spreadwormthroughremovablemedia" id="id162">spreadWormThroughRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#fullaccess" id="id163">fullAccess</a></p></li>
+<li><p><a class="reference internal" href="#attemptsupplychainattack" id="id164">attemptSupplyChainAttack</a></p></li>
+<li><p><a class="reference internal" href="#successfulsupplychainattack" id="id165">successfulSupplyChainAttack</a></p></li>
+<li><p><a class="reference internal" href="#supplychainattack" id="id166">supplyChainAttack</a></p></li>
+<li><p><a class="reference internal" href="#bypasssupplychainauditing" id="id167">bypassSupplyChainAuditing</a></p></li>
+<li><p><a class="reference internal" href="#supplychainauditingbypassed" id="id168">supplyChainAuditingBypassed</a></p></li>
+<li><p><a class="reference internal" href="#physicalaccess" id="id169">physicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#attempthardwaremodifications" id="id170">attemptHardwareModifications</a></p></li>
+<li><p><a class="reference internal" href="#successfulhardwaremodifications" id="id171">successfulHardwareModifications</a></p></li>
+<li><p><a class="reference internal" href="#hardwaremodifications" id="id172">hardwareModifications</a></p></li>
+<li><p><a class="reference internal" href="#hardwaremodificationsprotection" id="id173">hardwareModificationsProtection</a></p></li>
+<li><p><a class="reference internal" href="#bypasshardwaremodificationsprotection" id="id174">bypassHardwareModificationsProtection</a></p></li>
+<li><p><a class="reference internal" href="#hardwaremodificationsprotectionbypassed" id="id175">hardwareModificationsProtectionBypassed</a></p></li>
+<li><p><a class="reference internal" href="#attemptunsafeuseractivity" id="id176">attemptUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#successfulunsafeuseractivity" id="id177">successfulUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#unsafeuseractivity" id="id178">unsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id179">deny</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id180">read</a></p></li>
+<li><p><a class="reference internal" href="#modify" id="id181">modify</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#softwareproduct" id="id182">SoftwareProduct</a></p>
+<ul>
+<li><p><a class="reference internal" href="#compromiseapplications" id="id183">compromiseApplications</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id184">write</a></p></li>
+<li><p><a class="reference internal" href="#readapplications" id="id185">readApplications</a></p></li>
+<li><p><a class="reference internal" href="#modifyapplications" id="id186">modifyApplications</a></p></li>
+<li><p><a class="reference internal" href="#denyapplications" id="id187">denyApplications</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#application" id="id188">Application</a></p>
+<ul>
+<li><p><a class="reference internal" href="#asset-application-notpresent" id="id189">notPresent</a></p></li>
+<li><p><a class="reference internal" href="#attemptusevulnerability" id="id190">attemptUseVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#successfulusevulnerability" id="id191">successfulUseVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#asset-application-usevulnerability" id="id192">useVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id193">attemptReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#successfulreversereach" id="id194">successfulReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id195">reverseReach</a></p></li>
+<li><p><a class="reference internal" href="#localconnect" id="id196">localConnect</a></p></li>
+<li><p><a class="reference internal" href="#networkconnectuninspected" id="id197">networkConnectUninspected</a></p></li>
+<li><p><a class="reference internal" href="#networkconnectinspected" id="id198">networkConnectInspected</a></p></li>
+<li><p><a class="reference internal" href="#networkconnect" id="id199">networkConnect</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessnetworkconnect" id="id200">specificAccessNetworkConnect</a></p></li>
+<li><p><a class="reference internal" href="#accessnetworkandconnections" id="id201">accessNetworkAndConnections</a></p></li>
+<li><p><a class="reference internal" href="#attemptnetworkconnectfromresponse" id="id202">attemptNetworkConnectFromResponse</a></p></li>
+<li><p><a class="reference internal" href="#networkconnectfromresponse" id="id203">networkConnectFromResponse</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessfromlocalconnection" id="id204">specificAccessFromLocalConnection</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessfromnetworkconnection" id="id205">specificAccessFromNetworkConnection</a></p></li>
+<li><p><a class="reference internal" href="#specificaccess" id="id206">specificAccess</a></p></li>
+<li><p><a class="reference internal" href="#bypasscontainerization" id="id207">bypassContainerization</a></p></li>
+<li><p><a class="reference internal" href="#authenticate" id="id208">authenticate</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessauthenticate" id="id209">specificAccessAuthenticate</a></p></li>
+<li><p><a class="reference internal" href="#localaccess" id="id210">localAccess</a></p></li>
+<li><p><a class="reference internal" href="#networkaccess" id="id211">networkAccess</a></p></li>
+<li><p><a class="reference internal" href="#asset-application-fullaccess" id="id212">fullAccess</a></p></li>
+<li><p><a class="reference internal" href="#physicalaccessachieved" id="id213">physicalAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id214">attemptUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id215">successfulUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#asset-application-unsafeuseractivity" id="id216">unsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#attackerunsafeuseractivitycapability" id="id217">attackerUnsafeUserActivityCapability</a></p></li>
+<li><p><a class="reference internal" href="#attackerunsafeuseractivitycapabilitywithreversereach" id="id218">attackerUnsafeUserActivityCapabilityWithReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#attackerunsafeuseractivitycapabilitywithoutreversereach" id="id219">attackerUnsafeUserActivityCapabilityWithoutReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id220">bypassSupplyChainAuditing</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id221">supplyChainAuditingBypassed</a></p></li>
+<li><p><a class="reference internal" href="#attemptfullaccessfromsupplychaincompromise" id="id222">attemptFullAccessFromSupplyChainCompromise</a></p></li>
+<li><p><a class="reference internal" href="#fullaccessfromsupplychaincompromise" id="id223">fullAccessFromSupplyChainCompromise</a></p></li>
+<li><p><a class="reference internal" href="#attemptreadfromsoftprodvulnerability" id="id224">attemptReadFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#attemptmodifyfromsoftprodvulnerability" id="id225">attemptModifyFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#attemptdenyfromsoftprodvulnerability" id="id226">attemptDenyFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilitylocalaccessachieved" id="id227">softwareProductVulnerabilityLocalAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilitynetworkaccessachieved" id="id228">softwareProductVulnerabilityNetworkAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilityphysicalaccessachieved" id="id229">softwareProductVulnerabilityPhysicalAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilitylowprivilegesachieved" id="id230">softwareProductVulnerabilityLowPrivilegesAchieved</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilityhighprivilegesachieved" id="id231">softwareProductVulnerabilityHighPrivilegesAchieved</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductvulnerabilityuserinteractionachieved" id="id232">softwareProductVulnerabilityUserInteractionAchieved</a></p></li>
+<li><p><a class="reference internal" href="#attemptsoftwareproductabuse" id="id233">attemptSoftwareProductAbuse</a></p></li>
+<li><p><a class="reference internal" href="#softwareproductabuse" id="id234">softwareProductAbuse</a></p></li>
+<li><p><a class="reference internal" href="#readfromsoftprodvulnerability" id="id235">readFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#modifyfromsoftprodvulnerability" id="id236">modifyFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#denyfromsoftprodvulnerability" id="id237">denyFromSoftProdVulnerability</a></p></li>
+<li><p><a class="reference internal" href="#attemptapplicationrespondconnectthroughdata" id="id238">attemptApplicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#successfulapplicationrespondconnectthroughdata" id="id239">successfulApplicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#applicationrespondconnectthroughdata" id="id240">applicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#attemptauthorizedapplicationrespondconnectthroughdata" id="id241">attemptAuthorizedApplicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#successfulauthorizedapplicationrespondconnectthroughdata" id="id242">successfulAuthorizedApplicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#authorizedapplicationrespondconnectthroughdata" id="id243">authorizedApplicationRespondConnectThroughData</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id244">attemptRead</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id245">successfulRead</a></p></li>
+<li><p><a class="reference internal" href="#id30" id="id246">read</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessread" id="id247">specificAccessRead</a></p></li>
+<li><p><a class="reference internal" href="#attemptmodify" id="id248">attemptModify</a></p></li>
+<li><p><a class="reference internal" href="#successfulmodify" id="id249">successfulModify</a></p></li>
+<li><p><a class="reference internal" href="#id31" id="id250">modify</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessmodify" id="id251">specificAccessModify</a></p></li>
+<li><p><a class="reference internal" href="#id32" id="id252">attemptDeny</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id253">successfulDeny</a></p></li>
+<li><p><a class="reference internal" href="#id34" id="id254">deny</a></p></li>
+<li><p><a class="reference internal" href="#specificaccessdelete" id="id255">specificAccessDelete</a></p></li>
+<li><p><a class="reference internal" href="#denyfromnetworkingasset" id="id256">denyFromNetworkingAsset</a></p></li>
+<li><p><a class="reference internal" href="#id35" id="id257">denyFromLockout</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#asset-idps" id="id258">IDPS</a></p>
+<ul>
+<li><p><a class="reference internal" href="#bypasseffectiveness" id="id259">bypassEffectiveness</a></p></li>
+<li><p><a class="reference internal" href="#effectivenessbypassed" id="id260">effectivenessBypassed</a></p></li>
+<li><p><a class="reference internal" href="#id36" id="id261">fullAccess</a></p></li>
+<li><p><a class="reference internal" href="#id37" id="id262">deny</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#physicalzone" id="id263">PhysicalZone</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gainphysicalaccess" id="id264">gainPhysicalAccess</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#network" id="id265">Network</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id38" id="id266">physicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#bypasseavesdropdefensefromphysicalaccess" id="id267">bypassEavesdropDefenseFromPhysicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#bypassadversaryinthemiddledefensefromphysicalaccess" id="id268">bypassAdversaryInTheMiddleDefenseFromPhysicalAccess</a></p></li>
+<li><p><a class="reference internal" href="#bypassaccesscontrol" id="id269">bypassAccessControl</a></p></li>
+<li><p><a class="reference internal" href="#accesscontrolbypassed" id="id270">accessControlBypassed</a></p></li>
+<li><p><a class="reference internal" href="#attemptaccessuninspected" id="id271">attemptAccessUninspected</a></p></li>
+<li><p><a class="reference internal" href="#attemptaccessinspected" id="id272">attemptAccessInspected</a></p></li>
+<li><p><a class="reference internal" href="#successfulaccessuninspected" id="id273">successfulAccessUninspected</a></p></li>
+<li><p><a class="reference internal" href="#successfulaccessinspected" id="id274">successfulAccessInspected</a></p></li>
+<li><p><a class="reference internal" href="#accessuninspected" id="id275">accessUninspected</a></p></li>
+<li><p><a class="reference internal" href="#accessinspected" id="id276">accessInspected</a></p></li>
+<li><p><a class="reference internal" href="#id39" id="id277">attemptReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#id40" id="id278">reverseReach</a></p></li>
+<li><p><a class="reference internal" href="#networkforwardinguninspected" id="id279">networkForwardingUninspected</a></p></li>
+<li><p><a class="reference internal" href="#networkforwardinginspected" id="id280">networkForwardingInspected</a></p></li>
+<li><p><a class="reference internal" href="#id41" id="id281">deny</a></p></li>
+<li><p><a class="reference internal" href="#accessnetworkdata" id="id282">accessNetworkData</a></p></li>
+<li><p><a class="reference internal" href="#eavesdropdefense" id="id283">eavesdropDefense</a></p></li>
+<li><p><a class="reference internal" href="#bypasseavesdropdefense" id="id284">bypassEavesdropDefense</a></p></li>
+<li><p><a class="reference internal" href="#eavesdropdefensebypassed" id="id285">eavesdropDefenseBypassed</a></p></li>
+<li><p><a class="reference internal" href="#attempteavesdrop" id="id286">attemptEavesdrop</a></p></li>
+<li><p><a class="reference internal" href="#successfuleavesdrop" id="id287">successfulEavesdrop</a></p></li>
+<li><p><a class="reference internal" href="#eavesdrop" id="id288">eavesdrop</a></p></li>
+<li><p><a class="reference internal" href="#adversaryinthemiddledefense" id="id289">adversaryInTheMiddleDefense</a></p></li>
+<li><p><a class="reference internal" href="#bypassadversaryinthemiddledefense" id="id290">bypassAdversaryInTheMiddleDefense</a></p></li>
+<li><p><a class="reference internal" href="#adversaryinthemiddledefensebypassed" id="id291">adversaryInTheMiddleDefenseBypassed</a></p></li>
+<li><p><a class="reference internal" href="#attemptadversaryinthemiddle" id="id292">attemptAdversaryInTheMiddle</a></p></li>
+<li><p><a class="reference internal" href="#successfuladversaryinthemiddle" id="id293">successfulAdversaryInTheMiddle</a></p></li>
+<li><p><a class="reference internal" href="#adversaryinthemiddle" id="id294">adversaryInTheMiddle</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#routingfirewall" id="id295">RoutingFirewall</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id42" id="id296">deny</a></p></li>
+<li><p><a class="reference internal" href="#id43" id="id297">fullAccess</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#connectionrule" id="id298">ConnectionRule</a></p>
+<ul>
+<li><p><a class="reference internal" href="#restricted" id="id299">restricted</a></p></li>
+<li><p><a class="reference internal" href="#payloadinspection" id="id300">payloadInspection</a></p></li>
+<li><p><a class="reference internal" href="#bypassrestricted" id="id301">bypassRestricted</a></p></li>
+<li><p><a class="reference internal" href="#restrictedbypassed" id="id302">restrictedBypassed</a></p></li>
+<li><p><a class="reference internal" href="#bypasspayloadinspection" id="id303">bypassPayloadInspection</a></p></li>
+<li><p><a class="reference internal" href="#payloadinspectionbypassed" id="id304">payloadInspectionBypassed</a></p></li>
+<li><p><a class="reference internal" href="#id44" id="id305">attemptReverseReach</a></p></li>
+<li><p><a class="reference internal" href="#id45" id="id306">reverseReach</a></p></li>
+<li><p><a class="reference internal" href="#attemptaccessnetworksuninspected" id="id307">attemptAccessNetworksUninspected</a></p></li>
+<li><p><a class="reference internal" href="#attemptaccessnetworksinspected" id="id308">attemptAccessNetworksInspected</a></p></li>
+<li><p><a class="reference internal" href="#successfulaccessnetworksuninspected" id="id309">successfulAccessNetworksUninspected</a></p></li>
+<li><p><a class="reference internal" href="#successfulaccessnetworksinspected" id="id310">successfulAccessNetworksInspected</a></p></li>
+<li><p><a class="reference internal" href="#accessnetworksuninspected" id="id311">accessNetworksUninspected</a></p></li>
+<li><p><a class="reference internal" href="#accessnetworksinspected" id="id312">accessNetworksInspected</a></p></li>
+<li><p><a class="reference internal" href="#attemptconnecttoapplicationsuninspected" id="id313">attemptConnectToApplicationsUninspected</a></p></li>
+<li><p><a class="reference internal" href="#attemptconnecttoapplicationsinspected" id="id314">attemptConnectToApplicationsInspected</a></p></li>
+<li><p><a class="reference internal" href="#connecttoapplicationsuninspected" id="id315">connectToApplicationsUninspected</a></p></li>
+<li><p><a class="reference internal" href="#connecttoapplicationsinspected" id="id316">connectToApplicationsInspected</a></p></li>
+<li><p><a class="reference internal" href="#id46" id="id317">attemptDeny</a></p></li>
+<li><p><a class="reference internal" href="#id47" id="id318">deny</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#user" id="id319">User</a></p>
+<ul>
+<li><p><a class="reference internal" href="#nopasswordreuse" id="id320">noPasswordReuse</a></p></li>
+<li><p><a class="reference internal" href="#noremovablemediausage" id="id321">noRemovableMediaUsage</a></p></li>
+<li><p><a class="reference internal" href="#securityawareness" id="id322">securityAwareness</a></p></li>
+<li><p><a class="reference internal" href="#bypasssecurityawareness" id="id323">bypassSecurityAwareness</a></p></li>
+<li><p><a class="reference internal" href="#securityawarenessbypassed" id="id324">securityAwarenessBypassed</a></p></li>
+<li><p><a class="reference internal" href="#onecredentialcompromised" id="id325">oneCredentialCompromised</a></p></li>
+<li><p><a class="reference internal" href="#passwordreusecompromise" id="id326">passwordReuseCompromise</a></p></li>
+<li><p><a class="reference internal" href="#id48" id="id327">weakCredentials</a></p></li>
+<li><p><a class="reference internal" href="#attemptsocialengineering" id="id328">attemptSocialEngineering</a></p></li>
+<li><p><a class="reference internal" href="#successfulsocialengineering" id="id329">successfulSocialEngineering</a></p></li>
+<li><p><a class="reference internal" href="#socialengineering" id="id330">socialEngineering</a></p></li>
+<li><p><a class="reference internal" href="#attemptdelivermaliciousremovablemedia" id="id331">attemptDeliverMaliciousRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#successfuldelivermaliciousremovablemedia" id="id332">successfulDeliverMaliciousRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#delivermaliciousremovablemedia" id="id333">deliverMaliciousRemovableMedia</a></p></li>
+<li><p><a class="reference internal" href="#phishuser" id="id334">phishUser</a></p></li>
+<li><p><a class="reference internal" href="#id49" id="id335">credentialTheft</a></p></li>
+<li><p><a class="reference internal" href="#id50" id="id336">attemptUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#id51" id="id337">successfulUnsafeUserActivity</a></p></li>
+<li><p><a class="reference internal" href="#asset-user-unsafeuseractivity" id="id338">unsafeUserActivity</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vulnerability" id="id339">Vulnerability</a></p>
+<ul>
+<li><p><a class="reference internal" href="#attemptabuse" id="id340">attemptAbuse</a></p></li>
+<li><p><a class="reference internal" href="#abuse" id="id341">abuse</a></p></li>
+<li><p><a class="reference internal" href="#attemptexploit" id="id342">attemptExploit</a></p></li>
+<li><p><a class="reference internal" href="#exploit" id="id343">exploit</a></p></li>
+<li><p><a class="reference internal" href="#impact" id="id344">impact</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#softwarevulnerability" id="id345">SoftwareVulnerability</a></p>
+<ul>
+<li><p><a class="reference internal" href="#asset-softwarevulnerability-notpresent" id="id346">notPresent</a></p></li>
+<li><p><a class="reference internal" href="#inherentuserinteraction" id="id347">inherentUserInteraction</a></p></li>
+<li><p><a class="reference internal" href="#networkaccessachieved" id="id348">networkAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#localaccessachieved" id="id349">localAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#id54" id="id350">physicalAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#lowprivilegesachieved" id="id351">lowPrivilegesAchieved</a></p></li>
+<li><p><a class="reference internal" href="#highprivilegesachieved" id="id352">highPrivilegesAchieved</a></p></li>
+<li><p><a class="reference internal" href="#userinteractionachieved" id="id353">userInteractionAchieved</a></p></li>
+<li><p><a class="reference internal" href="#id55" id="id354">impact</a></p></li>
+<li><p><a class="reference internal" href="#id56" id="id355">read</a></p></li>
+<li><p><a class="reference internal" href="#id57" id="id356">modify</a></p></li>
+<li><p><a class="reference internal" href="#id58" id="id357">deny</a></p></li>
+<li><p><a class="reference internal" href="#id59" id="id358">attemptAbuse</a></p></li>
+<li><p><a class="reference internal" href="#id60" id="id359">attemptExploit</a></p></li>
+<li><p><a class="reference internal" href="#exploittrivially" id="id360">exploitTrivially</a></p></li>
+<li><p><a class="reference internal" href="#exploitwitheffort" id="id361">exploitWithEffort</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#hardwarevulnerability" id="id362">HardwareVulnerability</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id61" id="id363">physicalAccessAchieved</a></p></li>
+<li><p><a class="reference internal" href="#id62" id="id364">impact</a></p></li>
+<li><p><a class="reference internal" href="#id63" id="id365">read</a></p></li>
+<li><p><a class="reference internal" href="#id64" id="id366">modify</a></p></li>
+<li><p><a class="reference internal" href="#id65" id="id367">deny</a></p></li>
+<li><p><a class="reference internal" href="#id66" id="id368">attemptExploit</a></p></li>
+<li><p><a class="reference internal" href="#id67" id="id369">exploitTrivially</a></p></li>
+<li><p><a class="reference internal" href="#id68" id="id370">exploitWithEffort</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="iamobject">
+<span id="asset-iamobject"></span><h2><a class="toc-backref" href="#id69">IAMObject</a><a class="headerlink" href="#iamobject" title="Permalink to this headline">¶</a></h2>
+<section id="notpresent">
+<span id="asset-iamobject-notpresent"></span><h3><a class="toc-backref" href="#id70">notPresent</a><a class="headerlink" href="#notpresent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptassume">
+<h3><a class="toc-backref" href="#id71">attemptAssume</a><a class="headerlink" href="#attemptassume" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulassume">
+<h3><a class="toc-backref" href="#id72">successfulAssume</a><a class="headerlink" href="#successfulassume" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="assume">
+<h3><a class="toc-backref" href="#id73">assume</a><a class="headerlink" href="#assume" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deny">
+<h3><a class="toc-backref" href="#id74">deny</a><a class="headerlink" href="#deny" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="write">
+<h3><a class="toc-backref" href="#id75">write</a><a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptlockout">
+<h3><a class="toc-backref" href="#id76">attemptLockout</a><a class="headerlink" href="#attemptlockout" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfullockout">
+<h3><a class="toc-backref" href="#id77">successfulLockout</a><a class="headerlink" href="#successfullockout" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lockout">
+<h3><a class="toc-backref" href="#id78">lockout</a><a class="headerlink" href="#lockout" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="asset-identity">
+<span id="identity"></span><h2><a class="toc-backref" href="#id79">Identity</a><a class="headerlink" href="#asset-identity" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3><a class="toc-backref" href="#id80">assume</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lockoutfromcredentials">
+<h3><a class="toc-backref" href="#id81">lockoutFromCredentials</a><a class="headerlink" href="#lockoutfromcredentials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-identity-lockout">
+<span id="id2"></span><h3><a class="toc-backref" href="#id82">lockout</a><a class="headerlink" href="#asset-identity-lockout" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="privileges">
+<span id="asset-privileges"></span><h2><a class="toc-backref" href="#id83">Privileges</a><a class="headerlink" href="#privileges" title="Permalink to this headline">¶</a></h2>
+<section id="id3">
+<h3><a class="toc-backref" href="#id84">assume</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="group">
+<span id="asset-group"></span><h2><a class="toc-backref" href="#id85">Group</a><a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
+<section id="id4">
+<h3><a class="toc-backref" href="#id86">assume</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lockoutfrommembers">
+<h3><a class="toc-backref" href="#id87">lockoutFromMembers</a><a class="headerlink" href="#lockoutfrommembers" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="credentials">
+<span id="asset-credentials"></span><h2><a class="toc-backref" href="#id88">Credentials</a><a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h2>
+<section id="notdisclosed">
+<span id="asset-credentials-notdisclosed"></span><h3><a class="toc-backref" href="#id89">notDisclosed</a><a class="headerlink" href="#notdisclosed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="notguessable">
+<span id="asset-credentials-notguessable"></span><h3><a class="toc-backref" href="#id90">notGuessable</a><a class="headerlink" href="#notguessable" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unique">
+<span id="asset-credentials-unique"></span><h3><a class="toc-backref" href="#id91">unique</a><a class="headerlink" href="#unique" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="notphishable">
+<span id="asset-credentials-notphishable"></span><h3><a class="toc-backref" href="#id92">notPhishable</a><a class="headerlink" href="#notphishable" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read">
+<h3><a class="toc-backref" href="#id93">read</a><a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id94">write</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id95">deny</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="useleakedcredentials">
+<h3><a class="toc-backref" href="#id96">useLeakedCredentials</a><a class="headerlink" href="#useleakedcredentials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptcredentialsreuse">
+<h3><a class="toc-backref" href="#id97">attemptCredentialsReuse</a><a class="headerlink" href="#attemptcredentialsreuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="credentialsreuse">
+<h3><a class="toc-backref" href="#id98">credentialsReuse</a><a class="headerlink" href="#credentialsreuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="use">
+<h3><a class="toc-backref" href="#id99">use</a><a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptpropagateonecredentialcompromised">
+<h3><a class="toc-backref" href="#id100">attemptPropagateOneCredentialCompromised</a><a class="headerlink" href="#attemptpropagateonecredentialcompromised" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="propagateonecredentialcompromised">
+<h3><a class="toc-backref" href="#id101">propagateOneCredentialCompromised</a><a class="headerlink" href="#propagateonecredentialcompromised" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptcredentialtheft">
+<h3><a class="toc-backref" href="#id102">attemptCredentialTheft</a><a class="headerlink" href="#attemptcredentialtheft" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="credentialtheft">
+<h3><a class="toc-backref" href="#id103">credentialTheft</a><a class="headerlink" href="#credentialtheft" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="weakcredentials">
+<h3><a class="toc-backref" href="#id104">weakCredentials</a><a class="headerlink" href="#weakcredentials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="guesscredentialsfromhash">
+<h3><a class="toc-backref" href="#id105">guessCredentialsFromHash</a><a class="headerlink" href="#guesscredentialsfromhash" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="guesscredentials">
+<h3><a class="toc-backref" href="#id106">guessCredentials</a><a class="headerlink" href="#guesscredentials" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="information">
+<span id="asset-information"></span><h2><a class="toc-backref" href="#id107">Information</a><a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<section id="asset-information-read">
+<span id="id7"></span><h3><a class="toc-backref" href="#id108">read</a><a class="headerlink" href="#asset-information-read" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-information-write">
+<span id="id8"></span><h3><a class="toc-backref" href="#id109">write</a><a class="headerlink" href="#asset-information-write" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="delete">
+<span id="asset-information-delete"></span><h3><a class="toc-backref" href="#id110">delete</a><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-information-deny">
+<span id="id9"></span><h3><a class="toc-backref" href="#id111">deny</a><a class="headerlink" href="#asset-information-deny" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="extract">
+<span id="asset-information-extract"></span><h3><a class="toc-backref" href="#id112">extract</a><a class="headerlink" href="#extract" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptreadfromreplica">
+<h3><a class="toc-backref" href="#id113">attemptReadFromReplica</a><a class="headerlink" href="#attemptreadfromreplica" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptwritefromreplica">
+<h3><a class="toc-backref" href="#id114">attemptWriteFromReplica</a><a class="headerlink" href="#attemptwritefromreplica" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdeletefromreplica">
+<h3><a class="toc-backref" href="#id115">attemptDeleteFromReplica</a><a class="headerlink" href="#attemptdeletefromreplica" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdenyfromreplica">
+<h3><a class="toc-backref" href="#id116">attemptDenyFromReplica</a><a class="headerlink" href="#attemptdenyfromreplica" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptextractfromreplica">
+<h3><a class="toc-backref" href="#id117">attemptExtractFromReplica</a><a class="headerlink" href="#attemptextractfromreplica" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="data">
+<span id="asset-data"></span><h2><a class="toc-backref" href="#id118">Data</a><a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<section id="authorizedaccessfromapplication">
+<h3><a class="toc-backref" href="#id119">authorizedAccessFromApplication</a><a class="headerlink" href="#authorizedaccessfromapplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasspayloadinspectionfromencrypteddata">
+<h3><a class="toc-backref" href="#id120">bypassPayloadInspectionFromEncryptedData</a><a class="headerlink" href="#bypasspayloadinspectionfromencrypteddata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessunencrypteddata">
+<h3><a class="toc-backref" href="#id121">accessUnencryptedData</a><a class="headerlink" href="#accessunencrypteddata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessunsigneddata">
+<h3><a class="toc-backref" href="#id122">accessUnsignedData</a><a class="headerlink" href="#accessunsigneddata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessspoofeddata">
+<h3><a class="toc-backref" href="#id123">accessSpoofedData</a><a class="headerlink" href="#accessspoofeddata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessdecrypteddata">
+<h3><a class="toc-backref" href="#id124">accessDecryptedData</a><a class="headerlink" href="#accessdecrypteddata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptapplicationrespondconnect">
+<h3><a class="toc-backref" href="#id125">attemptApplicationRespondConnect</a><a class="headerlink" href="#attemptapplicationrespondconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="applicationrespondconnect">
+<h3><a class="toc-backref" href="#id126">applicationRespondConnect</a><a class="headerlink" href="#applicationrespondconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedapplicationrespondconnectfromapplication">
+<h3><a class="toc-backref" href="#id127">authorizedApplicationRespondConnectFromApplication</a><a class="headerlink" href="#authorizedapplicationrespondconnectfromapplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedapplicationrespondconnectfromiam">
+<h3><a class="toc-backref" href="#id128">authorizedApplicationRespondConnectFromIAM</a><a class="headerlink" href="#authorizedapplicationrespondconnectfromiam" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedapplicationrespondconnect">
+<h3><a class="toc-backref" href="#id129">authorizedApplicationRespondConnect</a><a class="headerlink" href="#authorizedapplicationrespondconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptread">
+<h3><a class="toc-backref" href="#id130">attemptRead</a><a class="headerlink" href="#attemptread" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulread">
+<h3><a class="toc-backref" href="#id131">successfulRead</a><a class="headerlink" href="#successfulread" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-data-read">
+<span id="id10"></span><h3><a class="toc-backref" href="#id132">read</a><a class="headerlink" href="#asset-data-read" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedreadfromiam">
+<h3><a class="toc-backref" href="#id133">authorizedReadFromIAM</a><a class="headerlink" href="#authorizedreadfromiam" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedreadfromapplication">
+<h3><a class="toc-backref" href="#id134">authorizedReadFromApplication</a><a class="headerlink" href="#authorizedreadfromapplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedread">
+<h3><a class="toc-backref" href="#id135">authorizedRead</a><a class="headerlink" href="#authorizedread" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptwrite">
+<h3><a class="toc-backref" href="#id136">attemptWrite</a><a class="headerlink" href="#attemptwrite" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulwrite">
+<h3><a class="toc-backref" href="#id137">successfulWrite</a><a class="headerlink" href="#successfulwrite" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-data-write">
+<span id="id11"></span><h3><a class="toc-backref" href="#id138">write</a><a class="headerlink" href="#asset-data-write" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedwritefromiam">
+<h3><a class="toc-backref" href="#id139">authorizedWriteFromIAM</a><a class="headerlink" href="#authorizedwritefromiam" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedwritefromapplication">
+<h3><a class="toc-backref" href="#id140">authorizedWriteFromApplication</a><a class="headerlink" href="#authorizedwritefromapplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedwrite">
+<h3><a class="toc-backref" href="#id141">authorizedWrite</a><a class="headerlink" href="#authorizedwrite" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdelete">
+<h3><a class="toc-backref" href="#id142">attemptDelete</a><a class="headerlink" href="#attemptdelete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfuldelete">
+<h3><a class="toc-backref" href="#id143">successfulDelete</a><a class="headerlink" href="#successfuldelete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-data-delete">
+<span id="id12"></span><h3><a class="toc-backref" href="#id144">delete</a><a class="headerlink" href="#asset-data-delete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizeddeletefromiam">
+<h3><a class="toc-backref" href="#id145">authorizedDeleteFromIAM</a><a class="headerlink" href="#authorizeddeletefromiam" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizeddeletefromapplication">
+<h3><a class="toc-backref" href="#id146">authorizedDeleteFromApplication</a><a class="headerlink" href="#authorizeddeletefromapplication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizeddelete">
+<h3><a class="toc-backref" href="#id147">authorizedDelete</a><a class="headerlink" href="#authorizeddelete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdeny">
+<h3><a class="toc-backref" href="#id148">attemptDeny</a><a class="headerlink" href="#attemptdeny" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfuldeny">
+<h3><a class="toc-backref" href="#id149">successfulDeny</a><a class="headerlink" href="#successfuldeny" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-data-deny">
+<span id="id13"></span><h3><a class="toc-backref" href="#id150">deny</a><a class="headerlink" href="#asset-data-deny" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="denyfromlockout">
+<h3><a class="toc-backref" href="#id151">denyFromLockout</a><a class="headerlink" href="#denyfromlockout" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptreversereach">
+<h3><a class="toc-backref" href="#id152">attemptReverseReach</a><a class="headerlink" href="#attemptreversereach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reversereach">
+<h3><a class="toc-backref" href="#id153">reverseReach</a><a class="headerlink" href="#reversereach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id14">
+<h3><a class="toc-backref" href="#id154">extract</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="hardware">
+<span id="asset-hardware"></span><h2><a class="toc-backref" href="#id155">Hardware</a><a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h2>
+<section id="attemptusevulnerabilityfromphysicalaccess">
+<h3><a class="toc-backref" href="#id156">attemptUseVulnerabilityFromPhysicalAccess</a><a class="headerlink" href="#attemptusevulnerabilityfromphysicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulusevulnerabilityfromphysicalaccess">
+<h3><a class="toc-backref" href="#id157">successfulUseVulnerabilityFromPhysicalAccess</a><a class="headerlink" href="#successfulusevulnerabilityfromphysicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptusevulnerabilityfromsoftwarefullaccess">
+<h3><a class="toc-backref" href="#id158">attemptUseVulnerabilityFromSoftwareFullAccess</a><a class="headerlink" href="#attemptusevulnerabilityfromsoftwarefullaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="usevulnerability">
+<h3><a class="toc-backref" href="#id159">useVulnerability</a><a class="headerlink" href="#usevulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptspreadwormthroughremovablemedia">
+<h3><a class="toc-backref" href="#id160">attemptSpreadWormThroughRemovableMedia</a><a class="headerlink" href="#attemptspreadwormthroughremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulspreadwormthroughremovablemedia">
+<h3><a class="toc-backref" href="#id161">successfulSpreadWormThroughRemovableMedia</a><a class="headerlink" href="#successfulspreadwormthroughremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="spreadwormthroughremovablemedia">
+<h3><a class="toc-backref" href="#id162">spreadWormThroughRemovableMedia</a><a class="headerlink" href="#spreadwormthroughremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fullaccess">
+<h3><a class="toc-backref" href="#id163">fullAccess</a><a class="headerlink" href="#fullaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptsupplychainattack">
+<h3><a class="toc-backref" href="#id164">attemptSupplyChainAttack</a><a class="headerlink" href="#attemptsupplychainattack" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulsupplychainattack">
+<h3><a class="toc-backref" href="#id165">successfulSupplyChainAttack</a><a class="headerlink" href="#successfulsupplychainattack" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="supplychainattack">
+<h3><a class="toc-backref" href="#id166">supplyChainAttack</a><a class="headerlink" href="#supplychainattack" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasssupplychainauditing">
+<h3><a class="toc-backref" href="#id167">bypassSupplyChainAuditing</a><a class="headerlink" href="#bypasssupplychainauditing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="supplychainauditingbypassed">
+<h3><a class="toc-backref" href="#id168">supplyChainAuditingBypassed</a><a class="headerlink" href="#supplychainauditingbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="physicalaccess">
+<h3><a class="toc-backref" href="#id169">physicalAccess</a><a class="headerlink" href="#physicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attempthardwaremodifications">
+<h3><a class="toc-backref" href="#id170">attemptHardwareModifications</a><a class="headerlink" href="#attempthardwaremodifications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulhardwaremodifications">
+<h3><a class="toc-backref" href="#id171">successfulHardwareModifications</a><a class="headerlink" href="#successfulhardwaremodifications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hardwaremodifications">
+<h3><a class="toc-backref" href="#id172">hardwareModifications</a><a class="headerlink" href="#hardwaremodifications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hardwaremodificationsprotection">
+<span id="asset-hardware-hardwaremodificationsprotection"></span><h3><a class="toc-backref" href="#id173">hardwareModificationsProtection</a><a class="headerlink" href="#hardwaremodificationsprotection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasshardwaremodificationsprotection">
+<h3><a class="toc-backref" href="#id174">bypassHardwareModificationsProtection</a><a class="headerlink" href="#bypasshardwaremodificationsprotection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hardwaremodificationsprotectionbypassed">
+<h3><a class="toc-backref" href="#id175">hardwareModificationsProtectionBypassed</a><a class="headerlink" href="#hardwaremodificationsprotectionbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptunsafeuseractivity">
+<h3><a class="toc-backref" href="#id176">attemptUnsafeUserActivity</a><a class="headerlink" href="#attemptunsafeuseractivity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulunsafeuseractivity">
+<h3><a class="toc-backref" href="#id177">successfulUnsafeUserActivity</a><a class="headerlink" href="#successfulunsafeuseractivity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unsafeuseractivity">
+<h3><a class="toc-backref" href="#id178">unsafeUserActivity</a><a class="headerlink" href="#unsafeuseractivity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3><a class="toc-backref" href="#id179">deny</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id16">
+<h3><a class="toc-backref" href="#id180">read</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="modify">
+<h3><a class="toc-backref" href="#id181">modify</a><a class="headerlink" href="#modify" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="softwareproduct">
+<span id="asset-softwareproduct"></span><h2><a class="toc-backref" href="#id182">SoftwareProduct</a><a class="headerlink" href="#softwareproduct" title="Permalink to this headline">¶</a></h2>
+<section id="compromiseapplications">
+<h3><a class="toc-backref" href="#id183">compromiseApplications</a><a class="headerlink" href="#compromiseapplications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3><a class="toc-backref" href="#id184">write</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="readapplications">
+<h3><a class="toc-backref" href="#id185">readApplications</a><a class="headerlink" href="#readapplications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="modifyapplications">
+<h3><a class="toc-backref" href="#id186">modifyApplications</a><a class="headerlink" href="#modifyapplications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="denyapplications">
+<h3><a class="toc-backref" href="#id187">denyApplications</a><a class="headerlink" href="#denyapplications" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="application">
+<span id="asset-application"></span><h2><a class="toc-backref" href="#id188">Application</a><a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<section id="asset-application-notpresent">
+<span id="id18"></span><h3><a class="toc-backref" href="#id189">notPresent</a><a class="headerlink" href="#asset-application-notpresent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptusevulnerability">
+<h3><a class="toc-backref" href="#id190">attemptUseVulnerability</a><a class="headerlink" href="#attemptusevulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulusevulnerability">
+<h3><a class="toc-backref" href="#id191">successfulUseVulnerability</a><a class="headerlink" href="#successfulusevulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-application-usevulnerability">
+<span id="id19"></span><h3><a class="toc-backref" href="#id192">useVulnerability</a><a class="headerlink" href="#asset-application-usevulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id20">
+<h3><a class="toc-backref" href="#id193">attemptReverseReach</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulreversereach">
+<h3><a class="toc-backref" href="#id194">successfulReverseReach</a><a class="headerlink" href="#successfulreversereach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id21">
+<h3><a class="toc-backref" href="#id195">reverseReach</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="localconnect">
+<h3><a class="toc-backref" href="#id196">localConnect</a><a class="headerlink" href="#localconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkconnectuninspected">
+<h3><a class="toc-backref" href="#id197">networkConnectUninspected</a><a class="headerlink" href="#networkconnectuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkconnectinspected">
+<h3><a class="toc-backref" href="#id198">networkConnectInspected</a><a class="headerlink" href="#networkconnectinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkconnect">
+<h3><a class="toc-backref" href="#id199">networkConnect</a><a class="headerlink" href="#networkconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessnetworkconnect">
+<h3><a class="toc-backref" href="#id200">specificAccessNetworkConnect</a><a class="headerlink" href="#specificaccessnetworkconnect" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessnetworkandconnections">
+<h3><a class="toc-backref" href="#id201">accessNetworkAndConnections</a><a class="headerlink" href="#accessnetworkandconnections" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptnetworkconnectfromresponse">
+<h3><a class="toc-backref" href="#id202">attemptNetworkConnectFromResponse</a><a class="headerlink" href="#attemptnetworkconnectfromresponse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkconnectfromresponse">
+<h3><a class="toc-backref" href="#id203">networkConnectFromResponse</a><a class="headerlink" href="#networkconnectfromresponse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessfromlocalconnection">
+<h3><a class="toc-backref" href="#id204">specificAccessFromLocalConnection</a><a class="headerlink" href="#specificaccessfromlocalconnection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessfromnetworkconnection">
+<h3><a class="toc-backref" href="#id205">specificAccessFromNetworkConnection</a><a class="headerlink" href="#specificaccessfromnetworkconnection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccess">
+<span id="asset-application-specificaccess"></span><h3><a class="toc-backref" href="#id206">specificAccess</a><a class="headerlink" href="#specificaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasscontainerization">
+<h3><a class="toc-backref" href="#id207">bypassContainerization</a><a class="headerlink" href="#bypasscontainerization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authenticate">
+<h3><a class="toc-backref" href="#id208">authenticate</a><a class="headerlink" href="#authenticate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessauthenticate">
+<h3><a class="toc-backref" href="#id209">specificAccessAuthenticate</a><a class="headerlink" href="#specificaccessauthenticate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="localaccess">
+<h3><a class="toc-backref" href="#id210">localAccess</a><a class="headerlink" href="#localaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkaccess">
+<h3><a class="toc-backref" href="#id211">networkAccess</a><a class="headerlink" href="#networkaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-application-fullaccess">
+<span id="id22"></span><h3><a class="toc-backref" href="#id212">fullAccess</a><a class="headerlink" href="#asset-application-fullaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="physicalaccessachieved">
+<h3><a class="toc-backref" href="#id213">physicalAccessAchieved</a><a class="headerlink" href="#physicalaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id23">
+<h3><a class="toc-backref" href="#id214">attemptUnsafeUserActivity</a><a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id24">
+<h3><a class="toc-backref" href="#id215">successfulUnsafeUserActivity</a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-application-unsafeuseractivity">
+<span id="id25"></span><h3><a class="toc-backref" href="#id216">unsafeUserActivity</a><a class="headerlink" href="#asset-application-unsafeuseractivity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attackerunsafeuseractivitycapability">
+<h3><a class="toc-backref" href="#id217">attackerUnsafeUserActivityCapability</a><a class="headerlink" href="#attackerunsafeuseractivitycapability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attackerunsafeuseractivitycapabilitywithreversereach">
+<h3><a class="toc-backref" href="#id218">attackerUnsafeUserActivityCapabilityWithReverseReach</a><a class="headerlink" href="#attackerunsafeuseractivitycapabilitywithreversereach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attackerunsafeuseractivitycapabilitywithoutreversereach">
+<h3><a class="toc-backref" href="#id219">attackerUnsafeUserActivityCapabilityWithoutReverseReach</a><a class="headerlink" href="#attackerunsafeuseractivitycapabilitywithoutreversereach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id26">
+<h3><a class="toc-backref" href="#id220">bypassSupplyChainAuditing</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id27">
+<h3><a class="toc-backref" href="#id221">supplyChainAuditingBypassed</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptfullaccessfromsupplychaincompromise">
+<h3><a class="toc-backref" href="#id222">attemptFullAccessFromSupplyChainCompromise</a><a class="headerlink" href="#attemptfullaccessfromsupplychaincompromise" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fullaccessfromsupplychaincompromise">
+<h3><a class="toc-backref" href="#id223">fullAccessFromSupplyChainCompromise</a><a class="headerlink" href="#fullaccessfromsupplychaincompromise" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptreadfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id224">attemptReadFromSoftProdVulnerability</a><a class="headerlink" href="#attemptreadfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptmodifyfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id225">attemptModifyFromSoftProdVulnerability</a><a class="headerlink" href="#attemptmodifyfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdenyfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id226">attemptDenyFromSoftProdVulnerability</a><a class="headerlink" href="#attemptdenyfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilitylocalaccessachieved">
+<h3><a class="toc-backref" href="#id227">softwareProductVulnerabilityLocalAccessAchieved</a><a class="headerlink" href="#softwareproductvulnerabilitylocalaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilitynetworkaccessachieved">
+<h3><a class="toc-backref" href="#id228">softwareProductVulnerabilityNetworkAccessAchieved</a><a class="headerlink" href="#softwareproductvulnerabilitynetworkaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilityphysicalaccessachieved">
+<h3><a class="toc-backref" href="#id229">softwareProductVulnerabilityPhysicalAccessAchieved</a><a class="headerlink" href="#softwareproductvulnerabilityphysicalaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilitylowprivilegesachieved">
+<h3><a class="toc-backref" href="#id230">softwareProductVulnerabilityLowPrivilegesAchieved</a><a class="headerlink" href="#softwareproductvulnerabilitylowprivilegesachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilityhighprivilegesachieved">
+<h3><a class="toc-backref" href="#id231">softwareProductVulnerabilityHighPrivilegesAchieved</a><a class="headerlink" href="#softwareproductvulnerabilityhighprivilegesachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductvulnerabilityuserinteractionachieved">
+<h3><a class="toc-backref" href="#id232">softwareProductVulnerabilityUserInteractionAchieved</a><a class="headerlink" href="#softwareproductvulnerabilityuserinteractionachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptsoftwareproductabuse">
+<h3><a class="toc-backref" href="#id233">attemptSoftwareProductAbuse</a><a class="headerlink" href="#attemptsoftwareproductabuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="softwareproductabuse">
+<h3><a class="toc-backref" href="#id234">softwareProductAbuse</a><a class="headerlink" href="#softwareproductabuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="readfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id235">readFromSoftProdVulnerability</a><a class="headerlink" href="#readfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="modifyfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id236">modifyFromSoftProdVulnerability</a><a class="headerlink" href="#modifyfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="denyfromsoftprodvulnerability">
+<h3><a class="toc-backref" href="#id237">denyFromSoftProdVulnerability</a><a class="headerlink" href="#denyfromsoftprodvulnerability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptapplicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id238">attemptApplicationRespondConnectThroughData</a><a class="headerlink" href="#attemptapplicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulapplicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id239">successfulApplicationRespondConnectThroughData</a><a class="headerlink" href="#successfulapplicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="applicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id240">applicationRespondConnectThroughData</a><a class="headerlink" href="#applicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptauthorizedapplicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id241">attemptAuthorizedApplicationRespondConnectThroughData</a><a class="headerlink" href="#attemptauthorizedapplicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulauthorizedapplicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id242">successfulAuthorizedApplicationRespondConnectThroughData</a><a class="headerlink" href="#successfulauthorizedapplicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authorizedapplicationrespondconnectthroughdata">
+<h3><a class="toc-backref" href="#id243">authorizedApplicationRespondConnectThroughData</a><a class="headerlink" href="#authorizedapplicationrespondconnectthroughdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id28">
+<h3><a class="toc-backref" href="#id244">attemptRead</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id29">
+<h3><a class="toc-backref" href="#id245">successfulRead</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id30">
+<h3><a class="toc-backref" href="#id246">read</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessread">
+<h3><a class="toc-backref" href="#id247">specificAccessRead</a><a class="headerlink" href="#specificaccessread" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptmodify">
+<h3><a class="toc-backref" href="#id248">attemptModify</a><a class="headerlink" href="#attemptmodify" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulmodify">
+<h3><a class="toc-backref" href="#id249">successfulModify</a><a class="headerlink" href="#successfulmodify" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id31">
+<h3><a class="toc-backref" href="#id250">modify</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessmodify">
+<h3><a class="toc-backref" href="#id251">specificAccessModify</a><a class="headerlink" href="#specificaccessmodify" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id32">
+<h3><a class="toc-backref" href="#id252">attemptDeny</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id33">
+<h3><a class="toc-backref" href="#id253">successfulDeny</a><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id34">
+<h3><a class="toc-backref" href="#id254">deny</a><a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specificaccessdelete">
+<h3><a class="toc-backref" href="#id255">specificAccessDelete</a><a class="headerlink" href="#specificaccessdelete" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="denyfromnetworkingasset">
+<h3><a class="toc-backref" href="#id256">denyFromNetworkingAsset</a><a class="headerlink" href="#denyfromnetworkingasset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id35">
+<h3><a class="toc-backref" href="#id257">denyFromLockout</a><a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="asset-idps">
+<span id="idps"></span><h2><a class="toc-backref" href="#id258">IDPS</a><a class="headerlink" href="#asset-idps" title="Permalink to this headline">¶</a></h2>
+<section id="bypasseffectiveness">
+<h3><a class="toc-backref" href="#id259">bypassEffectiveness</a><a class="headerlink" href="#bypasseffectiveness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="effectivenessbypassed">
+<h3><a class="toc-backref" href="#id260">effectivenessBypassed</a><a class="headerlink" href="#effectivenessbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id36">
+<h3><a class="toc-backref" href="#id261">fullAccess</a><a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id37">
+<h3><a class="toc-backref" href="#id262">deny</a><a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="physicalzone">
+<span id="asset-physicalzone"></span><h2><a class="toc-backref" href="#id263">PhysicalZone</a><a class="headerlink" href="#physicalzone" title="Permalink to this headline">¶</a></h2>
+<section id="gainphysicalaccess">
+<h3><a class="toc-backref" href="#id264">gainPhysicalAccess</a><a class="headerlink" href="#gainphysicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="network">
+<span id="asset-network"></span><h2><a class="toc-backref" href="#id265">Network</a><a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<section id="id38">
+<h3><a class="toc-backref" href="#id266">physicalAccess</a><a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasseavesdropdefensefromphysicalaccess">
+<h3><a class="toc-backref" href="#id267">bypassEavesdropDefenseFromPhysicalAccess</a><a class="headerlink" href="#bypasseavesdropdefensefromphysicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypassadversaryinthemiddledefensefromphysicalaccess">
+<h3><a class="toc-backref" href="#id268">bypassAdversaryInTheMiddleDefenseFromPhysicalAccess</a><a class="headerlink" href="#bypassadversaryinthemiddledefensefromphysicalaccess" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypassaccesscontrol">
+<h3><a class="toc-backref" href="#id269">bypassAccessControl</a><a class="headerlink" href="#bypassaccesscontrol" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accesscontrolbypassed">
+<h3><a class="toc-backref" href="#id270">accessControlBypassed</a><a class="headerlink" href="#accesscontrolbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptaccessuninspected">
+<h3><a class="toc-backref" href="#id271">attemptAccessUninspected</a><a class="headerlink" href="#attemptaccessuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptaccessinspected">
+<h3><a class="toc-backref" href="#id272">attemptAccessInspected</a><a class="headerlink" href="#attemptaccessinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulaccessuninspected">
+<h3><a class="toc-backref" href="#id273">successfulAccessUninspected</a><a class="headerlink" href="#successfulaccessuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulaccessinspected">
+<h3><a class="toc-backref" href="#id274">successfulAccessInspected</a><a class="headerlink" href="#successfulaccessinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessuninspected">
+<h3><a class="toc-backref" href="#id275">accessUninspected</a><a class="headerlink" href="#accessuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessinspected">
+<h3><a class="toc-backref" href="#id276">accessInspected</a><a class="headerlink" href="#accessinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id39">
+<h3><a class="toc-backref" href="#id277">attemptReverseReach</a><a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id40">
+<h3><a class="toc-backref" href="#id278">reverseReach</a><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkforwardinguninspected">
+<h3><a class="toc-backref" href="#id279">networkForwardingUninspected</a><a class="headerlink" href="#networkforwardinguninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkforwardinginspected">
+<h3><a class="toc-backref" href="#id280">networkForwardingInspected</a><a class="headerlink" href="#networkforwardinginspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id41">
+<h3><a class="toc-backref" href="#id281">deny</a><a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessnetworkdata">
+<h3><a class="toc-backref" href="#id282">accessNetworkData</a><a class="headerlink" href="#accessnetworkdata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="eavesdropdefense">
+<span id="asset-network-eavesdropdefense"></span><h3><a class="toc-backref" href="#id283">eavesdropDefense</a><a class="headerlink" href="#eavesdropdefense" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasseavesdropdefense">
+<h3><a class="toc-backref" href="#id284">bypassEavesdropDefense</a><a class="headerlink" href="#bypasseavesdropdefense" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="eavesdropdefensebypassed">
+<h3><a class="toc-backref" href="#id285">eavesdropDefenseBypassed</a><a class="headerlink" href="#eavesdropdefensebypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attempteavesdrop">
+<h3><a class="toc-backref" href="#id286">attemptEavesdrop</a><a class="headerlink" href="#attempteavesdrop" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfuleavesdrop">
+<h3><a class="toc-backref" href="#id287">successfulEavesdrop</a><a class="headerlink" href="#successfuleavesdrop" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="eavesdrop">
+<h3><a class="toc-backref" href="#id288">eavesdrop</a><a class="headerlink" href="#eavesdrop" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adversaryinthemiddledefense">
+<span id="asset-network-adversaryinthemiddledefense"></span><h3><a class="toc-backref" href="#id289">adversaryInTheMiddleDefense</a><a class="headerlink" href="#adversaryinthemiddledefense" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypassadversaryinthemiddledefense">
+<h3><a class="toc-backref" href="#id290">bypassAdversaryInTheMiddleDefense</a><a class="headerlink" href="#bypassadversaryinthemiddledefense" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adversaryinthemiddledefensebypassed">
+<h3><a class="toc-backref" href="#id291">adversaryInTheMiddleDefenseBypassed</a><a class="headerlink" href="#adversaryinthemiddledefensebypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptadversaryinthemiddle">
+<h3><a class="toc-backref" href="#id292">attemptAdversaryInTheMiddle</a><a class="headerlink" href="#attemptadversaryinthemiddle" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfuladversaryinthemiddle">
+<h3><a class="toc-backref" href="#id293">successfulAdversaryInTheMiddle</a><a class="headerlink" href="#successfuladversaryinthemiddle" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adversaryinthemiddle">
+<h3><a class="toc-backref" href="#id294">adversaryInTheMiddle</a><a class="headerlink" href="#adversaryinthemiddle" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="routingfirewall">
+<span id="asset-routingfirewall"></span><h2><a class="toc-backref" href="#id295">RoutingFirewall</a><a class="headerlink" href="#routingfirewall" title="Permalink to this headline">¶</a></h2>
+<section id="id42">
+<h3><a class="toc-backref" href="#id296">deny</a><a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id43">
+<h3><a class="toc-backref" href="#id297">fullAccess</a><a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="connectionrule">
+<span id="asset-connectionrule"></span><h2><a class="toc-backref" href="#id298">ConnectionRule</a><a class="headerlink" href="#connectionrule" title="Permalink to this headline">¶</a></h2>
+<section id="restricted">
+<span id="asset-connectionrule-restricted"></span><h3><a class="toc-backref" href="#id299">restricted</a><a class="headerlink" href="#restricted" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="payloadinspection">
+<span id="asset-connectionrule-payloadinspection"></span><h3><a class="toc-backref" href="#id300">payloadInspection</a><a class="headerlink" href="#payloadinspection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypassrestricted">
+<h3><a class="toc-backref" href="#id301">bypassRestricted</a><a class="headerlink" href="#bypassrestricted" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="restrictedbypassed">
+<h3><a class="toc-backref" href="#id302">restrictedBypassed</a><a class="headerlink" href="#restrictedbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasspayloadinspection">
+<h3><a class="toc-backref" href="#id303">bypassPayloadInspection</a><a class="headerlink" href="#bypasspayloadinspection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="payloadinspectionbypassed">
+<h3><a class="toc-backref" href="#id304">payloadInspectionBypassed</a><a class="headerlink" href="#payloadinspectionbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id44">
+<h3><a class="toc-backref" href="#id305">attemptReverseReach</a><a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id45">
+<h3><a class="toc-backref" href="#id306">reverseReach</a><a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptaccessnetworksuninspected">
+<h3><a class="toc-backref" href="#id307">attemptAccessNetworksUninspected</a><a class="headerlink" href="#attemptaccessnetworksuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptaccessnetworksinspected">
+<h3><a class="toc-backref" href="#id308">attemptAccessNetworksInspected</a><a class="headerlink" href="#attemptaccessnetworksinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulaccessnetworksuninspected">
+<h3><a class="toc-backref" href="#id309">successfulAccessNetworksUninspected</a><a class="headerlink" href="#successfulaccessnetworksuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulaccessnetworksinspected">
+<h3><a class="toc-backref" href="#id310">successfulAccessNetworksInspected</a><a class="headerlink" href="#successfulaccessnetworksinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessnetworksuninspected">
+<h3><a class="toc-backref" href="#id311">accessNetworksUninspected</a><a class="headerlink" href="#accessnetworksuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessnetworksinspected">
+<h3><a class="toc-backref" href="#id312">accessNetworksInspected</a><a class="headerlink" href="#accessnetworksinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptconnecttoapplicationsuninspected">
+<h3><a class="toc-backref" href="#id313">attemptConnectToApplicationsUninspected</a><a class="headerlink" href="#attemptconnecttoapplicationsuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptconnecttoapplicationsinspected">
+<h3><a class="toc-backref" href="#id314">attemptConnectToApplicationsInspected</a><a class="headerlink" href="#attemptconnecttoapplicationsinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="connecttoapplicationsuninspected">
+<h3><a class="toc-backref" href="#id315">connectToApplicationsUninspected</a><a class="headerlink" href="#connecttoapplicationsuninspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="connecttoapplicationsinspected">
+<h3><a class="toc-backref" href="#id316">connectToApplicationsInspected</a><a class="headerlink" href="#connecttoapplicationsinspected" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id46">
+<h3><a class="toc-backref" href="#id317">attemptDeny</a><a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id47">
+<h3><a class="toc-backref" href="#id318">deny</a><a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="user">
+<span id="asset-user"></span><h2><a class="toc-backref" href="#id319">User</a><a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
+<section id="nopasswordreuse">
+<span id="asset-user-nopasswordreuse"></span><h3><a class="toc-backref" href="#id320">noPasswordReuse</a><a class="headerlink" href="#nopasswordreuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="noremovablemediausage">
+<span id="asset-user-noremovablemediausage"></span><h3><a class="toc-backref" href="#id321">noRemovableMediaUsage</a><a class="headerlink" href="#noremovablemediausage" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="securityawareness">
+<span id="asset-user-securityawareness"></span><h3><a class="toc-backref" href="#id322">securityAwareness</a><a class="headerlink" href="#securityawareness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bypasssecurityawareness">
+<h3><a class="toc-backref" href="#id323">bypassSecurityAwareness</a><a class="headerlink" href="#bypasssecurityawareness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="securityawarenessbypassed">
+<h3><a class="toc-backref" href="#id324">securityAwarenessBypassed</a><a class="headerlink" href="#securityawarenessbypassed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="onecredentialcompromised">
+<h3><a class="toc-backref" href="#id325">oneCredentialCompromised</a><a class="headerlink" href="#onecredentialcompromised" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="passwordreusecompromise">
+<h3><a class="toc-backref" href="#id326">passwordReuseCompromise</a><a class="headerlink" href="#passwordreusecompromise" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id48">
+<h3><a class="toc-backref" href="#id327">weakCredentials</a><a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptsocialengineering">
+<h3><a class="toc-backref" href="#id328">attemptSocialEngineering</a><a class="headerlink" href="#attemptsocialengineering" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfulsocialengineering">
+<h3><a class="toc-backref" href="#id329">successfulSocialEngineering</a><a class="headerlink" href="#successfulsocialengineering" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="socialengineering">
+<span id="asset-user-socialengineering"></span><h3><a class="toc-backref" href="#id330">socialEngineering</a><a class="headerlink" href="#socialengineering" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptdelivermaliciousremovablemedia">
+<h3><a class="toc-backref" href="#id331">attemptDeliverMaliciousRemovableMedia</a><a class="headerlink" href="#attemptdelivermaliciousremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="successfuldelivermaliciousremovablemedia">
+<h3><a class="toc-backref" href="#id332">successfulDeliverMaliciousRemovableMedia</a><a class="headerlink" href="#successfuldelivermaliciousremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="delivermaliciousremovablemedia">
+<span id="asset-user-delivermaliciousremovablemedia"></span><h3><a class="toc-backref" href="#id333">deliverMaliciousRemovableMedia</a><a class="headerlink" href="#delivermaliciousremovablemedia" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="phishuser">
+<span id="asset-user-phishuser"></span><h3><a class="toc-backref" href="#id334">phishUser</a><a class="headerlink" href="#phishuser" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id49">
+<h3><a class="toc-backref" href="#id335">credentialTheft</a><a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id50">
+<h3><a class="toc-backref" href="#id336">attemptUnsafeUserActivity</a><a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id51">
+<h3><a class="toc-backref" href="#id337">successfulUnsafeUserActivity</a><a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asset-user-unsafeuseractivity">
+<span id="id52"></span><h3><a class="toc-backref" href="#id338">unsafeUserActivity</a><a class="headerlink" href="#asset-user-unsafeuseractivity" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="vulnerability">
+<span id="asset-vulnerability"></span><h2><a class="toc-backref" href="#id339">Vulnerability</a><a class="headerlink" href="#vulnerability" title="Permalink to this headline">¶</a></h2>
+<section id="attemptabuse">
+<h3><a class="toc-backref" href="#id340">attemptAbuse</a><a class="headerlink" href="#attemptabuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="abuse">
+<h3><a class="toc-backref" href="#id341">abuse</a><a class="headerlink" href="#abuse" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="attemptexploit">
+<h3><a class="toc-backref" href="#id342">attemptExploit</a><a class="headerlink" href="#attemptexploit" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exploit">
+<h3><a class="toc-backref" href="#id343">exploit</a><a class="headerlink" href="#exploit" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="impact">
+<h3><a class="toc-backref" href="#id344">impact</a><a class="headerlink" href="#impact" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="softwarevulnerability">
+<span id="asset-softwarevulnerability"></span><h2><a class="toc-backref" href="#id345">SoftwareVulnerability</a><a class="headerlink" href="#softwarevulnerability" title="Permalink to this headline">¶</a></h2>
+<section id="asset-softwarevulnerability-notpresent">
+<span id="id53"></span><h3><a class="toc-backref" href="#id346">notPresent</a><a class="headerlink" href="#asset-softwarevulnerability-notpresent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inherentuserinteraction">
+<h3><a class="toc-backref" href="#id347">inherentUserInteraction</a><a class="headerlink" href="#inherentuserinteraction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="networkaccessachieved">
+<h3><a class="toc-backref" href="#id348">networkAccessAchieved</a><a class="headerlink" href="#networkaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="localaccessachieved">
+<h3><a class="toc-backref" href="#id349">localAccessAchieved</a><a class="headerlink" href="#localaccessachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id54">
+<h3><a class="toc-backref" href="#id350">physicalAccessAchieved</a><a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lowprivilegesachieved">
+<h3><a class="toc-backref" href="#id351">lowPrivilegesAchieved</a><a class="headerlink" href="#lowprivilegesachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="highprivilegesachieved">
+<h3><a class="toc-backref" href="#id352">highPrivilegesAchieved</a><a class="headerlink" href="#highprivilegesachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="userinteractionachieved">
+<h3><a class="toc-backref" href="#id353">userInteractionAchieved</a><a class="headerlink" href="#userinteractionachieved" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id55">
+<h3><a class="toc-backref" href="#id354">impact</a><a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id56">
+<h3><a class="toc-backref" href="#id355">read</a><a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id57">
+<h3><a class="toc-backref" href="#id356">modify</a><a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id58">
+<h3><a class="toc-backref" href="#id357">deny</a><a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id59">
+<h3><a class="toc-backref" href="#id358">attemptAbuse</a><a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id60">
+<h3><a class="toc-backref" href="#id359">attemptExploit</a><a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exploittrivially">
+<h3><a class="toc-backref" href="#id360">exploitTrivially</a><a class="headerlink" href="#exploittrivially" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exploitwitheffort">
+<h3><a class="toc-backref" href="#id361">exploitWithEffort</a><a class="headerlink" href="#exploitwitheffort" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="hardwarevulnerability">
+<span id="asset-hardwarevulnerability"></span><h2><a class="toc-backref" href="#id362">HardwareVulnerability</a><a class="headerlink" href="#hardwarevulnerability" title="Permalink to this headline">¶</a></h2>
+<section id="id61">
+<h3><a class="toc-backref" href="#id363">physicalAccessAchieved</a><a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id62">
+<h3><a class="toc-backref" href="#id364">impact</a><a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id63">
+<h3><a class="toc-backref" href="#id365">read</a><a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id64">
+<h3><a class="toc-backref" href="#id366">modify</a><a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id65">
+<h3><a class="toc-backref" href="#id367">deny</a><a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id66">
+<h3><a class="toc-backref" href="#id368">attemptExploit</a><a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id67">
+<h3><a class="toc-backref" href="#id369">exploitTrivially</a><a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id68">
+<h3><a class="toc-backref" href="#id370">exploitWithEffort</a><a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">coreLang</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#iamobject">IAMObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asset-identity">Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#privileges">Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#softwareproduct">SoftwareProduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asset-idps">IDPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physicalzone">PhysicalZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#routingfirewall">RoutingFirewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connectionrule">ConnectionRule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vulnerability">Vulnerability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#softwarevulnerability">SoftwareVulnerability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardwarevulnerability">HardwareVulnerability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="associations.html">Associations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mitre/mitre.html">MITRE</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to coreLang’s documentation!</a></li>
+      <li>Next: <a href="associations.html" title="next chapter">Associations</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Andrei Buhaiu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/assets.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
