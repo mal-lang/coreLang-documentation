@@ -241,13 +241,13 @@ M1041 	Encrypt Sensitive Information
 
 `Mitre Description <https://attack.mitre.org/mitigations/M1041/>`__
 
-This can be represent in coreLang by using :ref:`asset_credentials` to
+This can be represented in coreLang by using :ref:`asset_credentials` to
 :ref:`encrypt <association_encryptioncredentials>` the relevant
 :ref:`asset_data`. The encrypted :ref:`asset_data` cannot be  :ref:`read
 <asset_data_read>`, :ref:`overwritten <asset_data_write>`, :ref:`deleted
 <asset_data_delete>` by the attacker unless they were able to compromise the
-encryption :ref:`asset_credentials`.  However, the :ref:`asset_data` can still
-be :ref:`denied <asset_data_deny>`.
+encryption :ref:`asset_credentials`.  However, the encrypted :ref:`asset_data`
+can still be :ref:`denied <asset_data_deny>`.
 
 .. _mitre_environment_variable_permissions:
 
@@ -658,7 +658,7 @@ M1017 	User Training
 
 `Mitre Description <https://attack.mitre.org/mitigations/M1017/>`__
 
-The principle way to represent this technique in coreLang is the
+The principal way to represent this technique in coreLang is the
 :ref:`Security Awareness<asset_user_securityawareness>` defense on the
 :ref:`asset_user`. This defense prevents a variety of disruptions enabled by
 :ref:`Social Engineering <asset_user_socialengineering>`, such as
